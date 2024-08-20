@@ -1,0 +1,32 @@
+[pyprland]
+plugins = ["scratchpads", "expose", "magnify"]
+
+[scratchpads.bluetooth]
+command = "blueman-manager"
+animation = "fromRight"
+margin = 4
+lazy = true
+
+[scratchpads.volume]
+command = "pavucontrol"
+animation = "fromRight"
+margin = 4
+lazy = true
+
+[scratchpads.terminal]
+command = "kitty --class scratchpad"
+excludes = ["dots"]
+lazy = true
+
+[scratchpads.yazi]
+command = "kitty --class scratchpad yazi"
+lazy = true
+
+[scratchpads.dots]
+command = "kitty --class scratchpad yadm enter lazygit"
+excludes = ["terminal"]
+lazy = true
+
+[scratchpads.youtube-music]
+command = "youtube-music"
+lazy = true
