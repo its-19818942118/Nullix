@@ -2,6 +2,7 @@
 # A custom cross platform unix compatible Hyprland theming framework/rice
 
 ## FrameWork Structure
+```
 ~
 ├── .cache
 ├── .config
@@ -38,3 +39,4 @@
 │   └── wallpapers
 │       └── Catppuccin-Mocha
 └── .zshenv
+```
