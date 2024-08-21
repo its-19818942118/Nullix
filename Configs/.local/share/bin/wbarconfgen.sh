@@ -66,8 +66,8 @@ if [ $i_size -lt 12 ] ; then
 fi
 
 export i_theme="$(
-{ grep -q "^[[:space:]]*\$ICON-THEME\s*=" "${HelixThemeDir}/hypr.theme" && grep "^[[:space:]]*\$ICON-THEME\s*=" "${HelixThemeDir}/hypr.theme" | cut -d '=' -f2 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' ;} ||
-grep 'gsettings set org.gnome.desktop.interface icon-theme' "${HelixThemeDir}/hypr.theme" | awk -F "'" '{print $((NF - 1))}'
+{ grep -q "^[[:space:]]*\$ICON-THEME\s*=" "${wormwitchThemeDir}/hypr.theme" && grep "^[[:space:]]*\$ICON-THEME\s*=" "${wormwitchThemeDir}/hypr.theme" | cut -d '=' -f2 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' ;} ||
+grep 'gsettings set org.gnome.desktop.interface icon-theme' "${wormwitchThemeDir}/hypr.theme" | awk -F "'" '{print $((NF - 1))}'
 )"
 export i_task=$(( w_height*6/10 ))
 if [ $i_task -lt 16 ] ; then

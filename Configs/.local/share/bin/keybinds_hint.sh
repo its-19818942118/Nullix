@@ -13,12 +13,12 @@ confDir="${XDG_CONFIG_HOME:-$HOME/.config}"
 keyconfDir="$confDir/hypr"
 kb_hint_conf=("$keyconfDir/hyprland.conf" "$keyconfDir/keybindings.conf" "$keyconfDir/userprefs.conf" )
 tmpMapDir="/tmp"
-tmpMap="$tmpMapDir/Helix-keybinds.jq"
-keycodeFile="${HelixConfDir}/keycode.kb"
-modmaskFile="${HelixConfDir}/modmask.kb"
-keyFile="${HelixConfDir}/key.kb"
-categoryFile="${HelixConfDir}/category.kb"
-dispatcherFile="${HelixConfDir}/dispatcher.kb"
+tmpMap="$tmpMapDir/wormwitch-keybinds.jq"
+keycodeFile="${wormwitchConfDir}/keycode.kb"
+modmaskFile="${wormwitchConfDir}/modmask.kb"
+keyFile="${wormwitchConfDir}/key.kb"
+categoryFile="${wormwitchConfDir}/category.kb"
+dispatcherFile="${wormwitchConfDir}/dispatcher.kb"
 
 roDir="$confDir/rofi"
 roconf="$roDir/clipboard.rasi"
@@ -36,7 +36,7 @@ Options:
     --help Display this help message
 Example:
  $(basename "$0") -j -p -d '>' -f custom_file.txt -w 80 -h 90"
-Users can also add a global overrides inside ${HelixConfDir}/Helix.conf
+Users can also add a global overrides inside ${wormwitchConfDir}/wormwitch.conf
   Available overrides:
 
     kb_hint_delim=">"                         ﯦ add a custom custom delimeter
@@ -45,7 +45,7 @@ Users can also add a global overrides inside ${HelixConfDir}/Helix.conf
     kb_hint_height="35em"                     ﯦ custom height supports [ 'em' '%' 'px' ]
     kb_hint_line=13                           ﯦ adjust how many lines are listed
 
-Users can also add a key overrides inside ${HelixConfDir}
+Users can also add a key overrides inside ${wormwitchConfDir}
 List of file override:
 ${keycodeFile} => keycode 
 ${modmaskFile} => modmask   
@@ -150,7 +150,7 @@ comments=$(substitute_vars "$initialized_comments" | awk -F'#' \
 # echo "$comments"
 
 cat <<OVERRIDES >$tmpMap
-# Helix-keybinds.jq
+# wormwitch-keybinds.jq
 #! This is Our Translator for some binds  #🦆
 def executables_mapping: {  #? Derived from .args to parse scripts to be Readable
 #? Auto Generated Comment Conversion
@@ -258,7 +258,7 @@ OVERRIDES
 #? Basically we are using jq to handle json data and outputs a pretty and friendly output
 jsonData="$(
   hyprctl binds -j | jq -L "$tmpMapDir" -c '
-include "Helix-keybinds";
+include "wormwitch-keybinds";
 
   #? Funtions to Convert modmask into Keys, There should be a beter math for this but Im lazy
   #? Also we can just map it manually too

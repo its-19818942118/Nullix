@@ -9,7 +9,7 @@ set -e
 scrDir="$(dirname "$(realpath "$0")")"
 cloneDir="$(dirname "${scrDir}")"
 confDir="${XDG_CONFIG_HOME:-$HOME/.config}"
-cacheDir="$HOME/.cache/Helix"
+cacheDir="$HOME/.cache/wormwitch"
 aurList=(yay paru trizen)
 ntdList=(dunst swaync) #swaynotificationcenter
 idlList=(swayidle hypridle hypridle-git)

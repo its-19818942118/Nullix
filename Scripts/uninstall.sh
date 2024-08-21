@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #|---/ /+-------------------------------+---/ /|#
-#|--/ /-| Script to remove Helix configs |--/ /-|#
+#|--/ /-| Script to remove wormwitch configs |--/ /-|#
 #|-/ /--| Prasanth Rangan               |-/ /--|#
 #|/ /---+-------------------------------+/ /---|#
 
@@ -17,13 +17,13 @@ cat << "EOF"
 -------------------------------------------------
 
 
-.: WARNING :: This will remove all config files related to Helix :.
+.: WARNING :: This will remove all config files related to wormwitch :.
 
-please type "DONT Helix" to continue...
+please type "DONT wormwitch" to continue...
 EOF
 
 read promptIn
-[ "${promptIn}" == "DONT Helix" ] || exit 0
+[ "${promptIn}" == "DONT wormwitch" ] || exit 0
 
 cat << "EOF"
 
@@ -69,15 +69,15 @@ cat "${CfgLst}" | while read lst ; do
     done
 done
 
-[ -d "$HOME/.config/Helix" ] && rm -rf "$HOME/.config/Helix"
-[ -d "$HOME/.cache/Helix" ] && rm -rf "$HOME/.cache/Helix"
+[ -d "$HOME/.config/wormwitch" ] && rm -rf "$HOME/.config/wormwitch"
+[ -d "$HOME/.cache/wormwitch" ] && rm -rf "$HOME/.cache/wormwitch"
 
 echo -e "\n
 -------------------------------------------------------
 .: Manual action required to complete uninstallation :.
 -------------------------------------------------------
 
-Remove Helix related backups/icons/fonts/themes manually from these paths
+Remove wormwitch related backups/icons/fonts/themes manually from these paths
 $HOME/.config/cfg_backups               # remove all previous backups
 $HOME/.local/share/fonts                # remove fonts from here
 $HOME/.local/share/.icons                            # remove icons from here

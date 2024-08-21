@@ -3,7 +3,7 @@
 undock=false
 scrDir=$(dirname "$(realpath "$0")")
 source $scrDir/globalcontrol.sh
-batterynotify_conf="${HelixConfDir}/Helix.conf" # Shared with Helix configuration
+batterynotify_conf="${wormwitchConfDir}/wormwitch.conf" # Shared with wormwitch configuration
 config_info() {
 cat <<  EOF
 

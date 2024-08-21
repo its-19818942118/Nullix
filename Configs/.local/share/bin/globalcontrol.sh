@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 
-#// Helix envs
+#// wormwitch envs
 
 export confDir="${XDG_CONFIG_HOME:-$HOME/.config}"
-export HelixConfDir="${confDir}/Helix"
-export cacheDir="$HOME/.cache/Helix"
+export wormwitchConfDir="${confDir}/wormwitch"
+export cacheDir="$HOME/.cache/wormwitch"
 export thmbDir="${cacheDir}/thumbs"
 export dcolDir="${cacheDir}/dcols"
 export hashMech="sha1sum"
@@ -69,7 +69,7 @@ get_themes()
         [ -f "${thmDir}/.sort" ] && thmSortS+=("$(head -1 "${thmDir}/.sort")") || thmSortS+=("0")
         thmListS+=("$(basename "${thmDir}")")
         thmWallS+=("$(readlink "${thmDir}/wall.set")")
-    done < <(find "${HelixConfDir}/themes" -mindepth 1 -maxdepth 1 -type d)
+    done < <(find "${wormwitchConfDir}/themes" -mindepth 1 -maxdepth 1 -type d)
 
     while IFS='|' read -r sort theme wall ; do
         thmSort+=("${sort}")
@@ -85,21 +85,21 @@ get_themes()
     fi
 }
 
-[ -f "${HelixConfDir}/Helix.conf" ] && source "${HelixConfDir}/Helix.conf"
+[ -f "${wormwitchConfDir}/wormwitch.conf" ] && source "${wormwitchConfDir}/wormwitch.conf"
 
 case "${enableWallDcol}" in
     0|1|2|3) ;;
     *) enableWallDcol=0 ;;
 esac
 
-if [ -z "${HelixTheme}" ] || [ ! -d "${HelixConfDir}/themes/${HelixTheme}" ] ; then
+if [ -z "${wormwitchTheme}" ] || [ ! -d "${wormwitchConfDir}/themes/${wormwitchTheme}" ] ; then
     get_themes
-    HelixTheme="${thmList[0]}"
+    wormwitchTheme="${thmList[0]}"
 fi
 
-export HelixTheme
-export HelixThemeDir="${HelixConfDir}/themes/${HelixTheme}"
-export wallbashDir="${HelixConfDir}/wallbash"
+export wormwitchTheme
+export wormwitchThemeDir="${wormwitchConfDir}/themes/${wormwitchTheme}"
+export wallbashDir="${wormwitchConfDir}/wallbash"
 export enableWallDcol
 
 
@@ -142,12 +142,12 @@ set_conf()
 {
     local varName="${1}"
     local varData="${2}"
-    touch "${HelixConfDir}/Helix.conf"
+    touch "${wormwitchConfDir}/wormwitch.conf"
 
-    if [ $(grep -c "^${varName}=" "${HelixConfDir}/Helix.conf") -eq 1 ] ; then
-        sed -i "/^${varName}=/c${varName}=\"${varData}\"" "${HelixConfDir}/Helix.conf"
+    if [ $(grep -c "^${varName}=" "${wormwitchConfDir}/wormwitch.conf") -eq 1 ] ; then
+        sed -i "/^${varName}=/c${varName}=\"${varData}\"" "${wormwitchConfDir}/wormwitch.conf"
     else
-        echo "${varName}=\"${varData}\"" >> "${HelixConfDir}/Helix.conf"
+        echo "${varName}=\"${varData}\"" >> "${wormwitchConfDir}/wormwitch.conf"
     fi
 }
 

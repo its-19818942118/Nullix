@@ -47,7 +47,7 @@ get_themes
 
 rofiSel=$(for i in ${!thmList[@]} ; do
     echo -en "${thmList[i]}\x00icon\x1f${thmbDir}/$(set_hash "${thmWall[i]}").${thmbExtn}\n"
-done | rofi -dmenu -theme-str "${r_scale}" -theme-str "${r_override}" -config "${rofiConf}" -select "${HelixTheme}")
+done | rofi -dmenu -theme-str "${r_scale}" -theme-str "${r_override}" -config "${rofiConf}" -select "${wormwitchTheme}")
 
 
 #// apply theme

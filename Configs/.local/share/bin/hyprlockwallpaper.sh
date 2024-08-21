@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # lock instance
-lockFile="/tmp/Helix$(id -u)$(basename ${0}).lock"
+lockFile="/tmp/wormwitch$(id -u)$(basename ${0}).lock"
 [ -e "${lockFile}" ] && echo "An instance of the script is already running..." && exit 1
 touch "${lockFile}"
 trap 'rm -f ${lockFile}' EXIT
@@ -44,7 +44,6 @@ Wall_Cache()
     ln -fs "${thmbDir}/${wallHash[setIndex]}.thmb" "${wallTmb}"
     ln -fs "${thmbDir}/${wallHash[setIndex]}.blur" "${wallBlr}"
     ln -fs "${thmbDir}/${wallHash[setIndex]}.quad" "${wallQad}"
-    ln -fs "${dcolDir}/${wallHash[setIndex]}.dcol" "${wallDcl}"
 }
 
 Wall_Change() {
@@ -65,18 +64,17 @@ Wall_Change() {
 # set variables
 scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/globalcontrol.sh"
-wallSet="${HelixThemeDir}/wall.set"
+wallSet="${wormwitchThemeDir}/wall.set"
 wallCur="${cacheDir}/wall.set"
 wallSqr="${cacheDir}/wall.sqre"
 wallTmb="${cacheDir}/wall.thmb"
 wallBlr="${cacheDir}/wall.blur"
 wallQad="${cacheDir}/wall.quad"
-wallDcl="${cacheDir}/wall.dcol"
 
 # check wall
 setIndex=0
-[ ! -d "${HelixThemeDir}" ] && echo "ERROR: \"${HelixThemeDir}\" does not exist" && exit 0
-wallPathArray=("${HelixThemeDir}")
+[ ! -d "${wormwitchThemeDir}" ] && echo "ERROR: \"${wormwitchThemeDir}\" does not exist" && exit 0
+wallPathArray=("${wormwitchThemeDir}")
 wallPathArray+=("${wallAddCustomPath[@]}")
 get_hashmap "${wallPathArray[@]}"
 [ ! -e "$(readlink -f "${wallSet}")" ] && echo "fixig link :: ${wallSet}" && ln -fs "${wallList[setIndex]}" "${wallSet}"

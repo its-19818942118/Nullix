@@ -75,5 +75,5 @@ starship|fish                                          # customizable shell prom
 fastfetch                                              # system information fetch tool
 pokemon-colorscripts-git|zsh                           # display pokemon sprites
 
-# --------------------------------------------------- // Helix
-hyde-cli-git                                           # cli tool to manage Helix
+# --------------------------------------------------- // Wormwitch
+hyde-cli-git                                           # cli tool to manage Wormwitch

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #|---/ /+--------------------------------+---/ /|#
-#|--/ /-| Script to restore Helix configs |--/ /-|#
+#|--/ /-| Script to restore wormwitch configs |--/ /-|#
 #|-/ /--| Prasanth Rangan                |-/ /--|#
 #|/ /---+--------------------------------+/ /---|#
 

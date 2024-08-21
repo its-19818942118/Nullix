@@ -6,7 +6,7 @@ N|Y|${HOME}/.config|code-flags.conf|code
 N|Y|${HOME}/.config|spotify-flags.conf|spotify
 Y|Y|${HOME}/.config|dunst|dunst
 Y|Y|${HOME}/.config|fish|fish
-Y|Y|${HOME}/.config/Helix|wallbash|hyprland
+Y|Y|${HOME}/.config/wormwitch|wallbash|hyprland
 Y|Y|${HOME}/.config/hypr|animations.conf hyprland.conf windowrules.conf themes|hyprland
 N|Y|${HOME}/.config/hypr|keybindings.conf monitors.conf userprefs.conf|hyprland
 N|Y|${HOME}/.config/hypr|nvidia.conf|hyprland nvidia-utils
@@ -30,5 +30,5 @@ Y|Y|${HOME}/.config|dolphinrc kdeglobals|dolphin
 Y|Y|${HOME}/.config/menus|applications.menu|dolphin
 Y|Y|${HOME}/.local/share|dolphin|dolphin
 Y|Y|${HOME}/.local/share/kxmlgui5|dolphin|dolphin
-Y|Y|${HOME}/.local/share/kio/servicemenus|Helixwallpaper.desktop|dolphin
+Y|Y|${HOME}/.local/share/kio/servicemenus|wormwitchwallpaper.desktop|dolphin
 N|Y|${HOME}/.config|libinput-gestures.conf|libinput-gestures
