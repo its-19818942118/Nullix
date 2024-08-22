@@ -33,9 +33,11 @@ else
     echo -e "\n\033[0;32m[SHADER]\033[0m Shader: ${myShader}"
     echo "${myShader}" >>"${scrDir}/install_pkg.lst"
 
-    # remove -git from myShader for exec-once command
-    if [[ "${myShader}" == *"-git" ]]; then
-        myShader=$(echo "${myShader}" | sed -E 's/-git$//')
+    if $ID_LIKE == "arch"; then
+        # remove -git from myShader for exec-once command
+        if [[ "${myShader}" == *"-git" ]]; then
+            myShader=$(echo "${myShader}" | sed -E 's/-git$//')
+        fi
     fi
 
     update_shader_config() {

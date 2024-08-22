@@ -31,9 +31,11 @@ else
     echo -e "\n\033[0;32m[NOTIFICATIONDAEMON/CENTER]\033[0m Notification Center or daemon: ${myNotd}"
     echo "${myNotd}" >>"${scrDir}/install_pkg.lst"
 
-    # remove -git from myNotd for exec-once command
-    if [[ "${myNotd}" == *"-git" ]]; then
-        myNotd=$(echo "${myNotd}" | sed -E 's/-git$//')
+    if $ID_LIKE == "arch"; then
+        # remove -git from myNotd for exec-once command
+        if [[ "${myNotd}" == *"-git" ]]; then
+            myNotd=$(echo "${myNotd}" | sed -E 's/-git$//')
+        fi
     fi
 
     update_exec_once() {

@@ -7,16 +7,28 @@
 set -e
 
 scrDir="$(dirname "$(realpath "$0")")"
+source "${scrDir}/get_distro.sh"
 cloneDir="$(dirname "${scrDir}")"
 confDir="${XDG_CONFIG_HOME:-$HOME/.config}"
 cacheDir="$HOME/.cache/wormwitch"
-aurList=(yay paru trizen)
-ntdList=(dunst swaync) #swaynotificationcenter
-idlList=(swayidle hypridle hypridle-git)
-lckList=(swaylock-effects-git hyprlock hyprlock-git)
-shlList=(zsh fish bash)
-shdList=(hyprshade hyprshade-git wl-gammarelay-rs)
-source "${scrDir}/get_distro.sh"
+
+#------------------------#
+# detect distro and pkgs #
+#------------------------#
+if $ID_LIKE == "arch"; then
+    aurList=(yay paru)
+    ntdList=(dunst swaync)
+    idlList=(swayidle hypridle hypridle-git)
+    lckList=(swaylock-effects-git hyprlock hyprlock-git)
+    shlList=(zsh fish bash)
+    shdList=(hyprshade hyprshade-git wl-gammarelay-rs)
+elif $ID == "nixos"; then
+    ntdList=(dunst swaynotificationcenter)
+    idlList=(swayidle hypridle)
+    lckList=(swaylock-effects hyprlock)
+    shlList=(zsh fish bash)
+    shdList=(hyprshade wl-gammarelay-rs)
+fi
 
 pkg_installed() {
     local PkgIn=$1
@@ -120,17 +132,10 @@ nvidia_detect() {
 }
 
 prompt_timer() {
-    set +e
     unset promptIn
-    local timsec=$1
-    local msg=$2
-    while [[ ${timsec} -ge 0 ]]; do
-        echo -ne "\r :: ${msg} (${timsec}s) : "
-        read -t 1 -n 1 promptIn
-        [ $? -eq 0 ] && break
-        ((timsec--))
-    done
+    local msg=$1
+    echo -ne "\r :: ${msg} : "
+    read promptIn
     export promptIn
     echo ""
-    set -e
 }

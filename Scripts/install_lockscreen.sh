@@ -11,21 +11,38 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo -e "Select lock screen:\n[1] swaylock-effects\n[2] hyprlock\n[3] No lockscreen"
-prompt_timer 120 "Enter option number"
+if $ID_LIKE == "arch"; then
+    echo -e "Select lock screen:\n[1] swaylock-effects\n[2] swaylock-effects-git\n[3] hyprlock\n [4] hyprlock-git\n[5] No lockscreen"
+    prompt_timer 120 "Enter option number"
 
-case "${promptIn}" in
-1)
-    export myLock="swaylock-effects"
-    export myLock2="swaylock-fancy"
-    ;;
-2) export myLock="hyprlock" ;;
-3) export myLock="" ;;
-*)
+    case "${promptIn}" in
+    1) export myLock="swaylock-effects" ;;
+    2) export myLock="swaylock-effects-git" ;;
+    3) export myLock="hyprlock" ;;
+    4) export myLock="hyprlock-git" ;;
+    4) export myLock="" ;;
+    *)
     echo -e "...Invalid option selected..."
     exit 1
     ;;
 esac
+
+elif $ID == "nixos"; then
+    echo -e "Select lock screen:\n[1] swaylock-effects\n[2] hyprlock\n[3] No lockscreen"
+    prompt_timer 120 "Enter option number"
+
+    case "${promptIn}" in
+    1) export myLock="swaylock-effects"
+       export myLock2="swaylock-fancy"
+       ;;
+    2) export myLock="hyprlock" ;;
+    3) export myLock="" ;;
+    *)
+    echo -e "...Invalid option selected..."
+    exit 1
+    ;;
+esac
+fi
 
 # skip if user selects "" as lockscreen
 if [ "${myLock}" == "" ]; then
@@ -35,9 +52,11 @@ else
     echo -e "\n\033[0;32m[LOCKSCREEN]\033[0m Lockscreen: ${myLock}"
     echo "${myLock} ${myLock2}" >>"${scrDir}/install_pkg.lst"
 
-    # remove -git or -effects-git from myLock
-    if [[ "${myLock}" == *"-git" || "${myLock}" == *"-effects-git" ]]; then
-        myLock=$(echo "${myLock}" | sed -E 's/-.*$//')
+    if $ID_LIKE == "arch"; then
+        # remove -git or -effects-git from myLock
+        if [[ "${myLock}" == *"-git" || "${myLock}" == *"-effects-git" ]]; then
+            myLock=$(echo "${myLock}" | sed -E 's/-.*$//')
+        fi
     fi
 
     # Function to update the lock screen in a file if they do not match
