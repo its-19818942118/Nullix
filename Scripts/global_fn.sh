@@ -34,7 +34,11 @@ pkg_installed() {
     local PkgIn=$1
 
     if [[ ${ID} == "nixos" ]]; then
-        if nix-store -q --references /var/run/current-system/sw | cut -d'-' -f2 - | grep "${PkgIn}" &>/dev/null; then
+        if nix-store -q --references /var/run/current-system/sw \
+            | grep -vE '(-man|-doc|-info)$' \
+            | cut -d'-' -f2- \
+            | sed -E 's/-[0-9]+(\.[0-9]+)*.*$//' \
+            | grep -w "^${PkgIn}$" &> /dev/null; then
             return 0
         else
             return 1
