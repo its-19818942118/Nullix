@@ -9,6 +9,8 @@
       ./hardware-configuration.nix
       # Include NVIDIA configuration
       ./nvidia.nix
+      # Include stylix
+      ./stylix.nix
       # Include packages to install/build.
       ./packages.nix
       # Include services
@@ -57,7 +59,7 @@
   console.keyMap = "de";
 
   # enable nix commmands and nix flakes
-  # nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.derdelphin = {
