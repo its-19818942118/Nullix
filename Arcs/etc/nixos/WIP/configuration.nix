@@ -7,6 +7,9 @@
   imports =
     [ # Include the results of the hardware scan...
       ./hardware-configuration.nix
+      # Include home-manager
+      (import "${builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz"}")
+      ./home-manager.nix
       # Include NVIDIA configuration
       ./nvidia.nix
       # Include packages to install/build.
@@ -14,6 +17,10 @@
       # Include services
       ./services.nix
     ];
+
+  # Home Manager
+  home-manager.useGlobalPkgs = true;
+  #home-manager.useUserPkgs = true;
 
   # Optimise nix store
   nix.settings.auto-optimise-store = true;

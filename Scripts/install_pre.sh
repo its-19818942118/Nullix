@@ -4,7 +4,7 @@
 #|-/ /--| Prasanth Rangan                     |-/ /--|#
 #|/ /---+-------------------------------------+/ /---|#
 
-scrDir=$(dirname "$(realpath "$0")")
+scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/global_fn.sh"
 if [ $? -ne 0 ]; then
     echo "Error: unable to source global_fn.sh..."
@@ -29,9 +29,9 @@ if pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
         echo -e "Select grub theme:\n[1] Retroboot (dark)\n[2] Pochita (light)"
         read -p " :: Press enter to skip grub theme <or> Enter option number : " grubopt
         case ${grubopt} in
-            1) grubtheme="Retroboot" ;;
-            2) grubtheme="Pochita" ;;
-            *) grubtheme="None" ;;
+        1) grubtheme="Retroboot" ;;
+        2) grubtheme="Pochita" ;;
+        *) grubtheme="None" ;;
         esac
 
         if [ "${grubtheme}" == "None" ]; then
@@ -54,15 +54,15 @@ if pkg_installed grub && [ -f /boot/grub/grub.cfg ]; then
 fi
 
 # systemd-boot
-if pkg_installed systemd && nvidia_detect && [ $(bootctl status 2> /dev/null | awk '{if ($1 == "Product:") print $2}') == "systemd-boot" ]; then
+if pkg_installed systemd && nvidia_detect && [ $(bootctl status 2>/dev/null | awk '{if ($1 == "Product:") print $2}') == "systemd-boot" ]; then
     echo -e "\033[0;32m[BOOTLOADER]\033[0m detected // systemd-boot"
 
-    if [ $(ls -l /boot/loader/entries/*.conf.t2.bkp 2> /dev/null | wc -l) -ne $(ls -l /boot/loader/entries/*.conf 2> /dev/null | wc -l) ]; then
+    if [ $(ls -l /boot/loader/entries/*.conf.t2.bkp 2>/dev/null | wc -l) -ne $(ls -l /boot/loader/entries/*.conf 2>/dev/null | wc -l) ]; then
         echo "nvidia detected, adding nvidia_drm.modeset=1 to boot option..."
         find /boot/loader/entries/ -type f -name "*.conf" | while read imgconf; do
-            sudo cp ${imgconf} ${imgconf}.t2.bkp
-            sdopt=$(grep -w "^options" ${imgconf} | sed 's/\b quiet\b//g' | sed 's/\b splash\b//g' | sed 's/\b nvidia_drm.modeset=.\b//g')
-            sudo sed -i "/^options/c${sdopt} quiet splash nvidia_drm.modeset=1" ${imgconf}
+            sudo cp "${imgconf}" "${imgconf}.t2.bkp"
+            sdopt=$(grep -w "^options" "${imgconf}" | sed 's/\b quiet\b//g' | sed 's/\b splash\b//g' | sed 's/\b nvidia_drm.modeset=.\b//g')
+            sudo sed -i "/^options/c${sdopt} quiet splash nvidia_drm.modeset=1" "${imgconf}"
         done
     else
         echo -e "\033[0;33m[SKIP]\033[0m systemd-boot is already configured..."

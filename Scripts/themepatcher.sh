@@ -74,6 +74,9 @@ if [[ -z $1 || -z $2 ]]; then
     exit 1
 fi
 
+dcolDir="${confDir}/wormwitch/wallbash/Wall-Dcol"
+[ ! -d "${dcolDir}" ] && print_prompt "[ERROR]" "${dcolDir} do not exist!" && exit 1
+
 # set parameters
 Fav_Theme="$1"
 
@@ -123,7 +126,7 @@ fi
 
 print_prompt "Patching" -g " --// ${Fav_Theme} //-- " "from " -b "${Theme_Dir}\n"
 
-Fav_Theme_Dir="${Theme_Dir}/Configs/.config/wormwitch/themes/${Fav_Theme}"
+Fav_Theme_Dir="${Theme_Dir}/Configs/.config/hyde/themes/${Fav_Theme}"
 [ ! -d "${Fav_Theme_Dir}" ] && print_prompt -r "[ERROR] " "'${Fav_Theme_Dir}'" -y " Do not Exist" && exit 1
 
 config=$(find "${dcolDir}" -type f -name "*.dcol" | awk -v favTheme="${Fav_Theme}" -F 'Wall-Dcol/' '{gsub(/\.dcol$/, ".theme"); print ".config/wormwitch/themes/" favTheme "/" $2}')
@@ -174,7 +177,7 @@ print_prompt "" && [[ "${exit_flag}" = true ]] && exit 1
 
 # extract arcs
 prefix=("Gtk" "Icon" "Cursor")
-tgtDir=("$HOME/.themes" "$HOME/.local/share/.icons" "$HOME/.local/share/.icons")
+tgtDir=("$HOME/.themes" "$HOME/.icons" "$HOME/.icons")
 
 for indx in ${!prefix[@]}; do
     tarFile="$(find "${Theme_Dir}" -type f -name "${prefix[indx]}_*.tar.*")"

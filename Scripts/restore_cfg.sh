@@ -4,7 +4,7 @@
 #|-/ /--| Prasanth Rangan                |-/ /--|#
 #|/ /---+--------------------------------+/ /---|#
 
-scrDir=$(dirname "$(realpath "$0")")
+scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/global_fn.sh"
 if [ $? -ne 0 ]; then
     echo "Error: unable to source global_fn.sh..."
@@ -15,7 +15,7 @@ CfgLst="${1:-"${scrDir}/restore_cfg.lst"}"
 CfgDir="${2:-${cloneDir}/Configs}"
 ThemeOverride="${3:-}"
 
-if [ ! -f "${CfgLst}" ] || [ ! -d "${CfgDir}" ]; then
+if [ ! -f "${CfgLst}" ]; then
     echo "ERROR: '${CfgLst}' or '${CfgDir}' does not exist..."
     exit 1
 fi
@@ -29,7 +29,7 @@ else
     mkdir -p "${BkpDir}"
 fi
 
-cat "${CfgLst}" | while read lst; do
+cat <"${CfgLst}" | while read lst; do
 
     ovrWrte=$(echo "${lst}" | awk -F '|' '{print $1}')
     bkpFlag=$(echo "${lst}" | awk -F '|' '{print $2}')
@@ -49,7 +49,7 @@ cat "${CfgLst}" | while read lst; do
         if [[ -z "${pth}" ]]; then continue; fi
         tgt=$(echo "${pth}" | sed "s+^${HOME}++g")
 
-        if ( [ -d "${pth}/${cfg_chk}" ] || [ -f "${pth}/${cfg_chk}" ] ) && [ "${bkpFlag}" == "Y" ]; then
+        if { [ -d "${pth}/${cfg_chk}" ] || [ -f "${pth}/${cfg_chk}" ]; } && [ "${bkpFlag}" == "Y" ]; then
 
             if [ ! -d "${BkpDir}${tgt}" ]; then
                 mkdir -p "${BkpDir}${tgt}"
@@ -77,7 +77,7 @@ cat "${CfgLst}" | while read lst; do
 done
 
 if [ -z "${ThemeOverride}" ]; then
-    if nvidia_detect && [ $(grep '^source = ~/.config/hypr/nvidia.conf' "${HOME}/.config/hypr/hyprland.conf" | wc -l) -eq 0 ]; then
-        echo -e 'source = ~/.config/hypr/nvidia.conf # auto sourced vars for nvidia\n' >> "${HOME}/.config/hypr/hyprland.conf"
+    if nvidia_detect && [ "$(grep -c '^# █▄ █ █ █ █ █▀▄ █ ▄▀█\n# █ ▀█ ▀▄▀ █ █▄▀ █ █▀█' "${HOME}/.config/hypr/config/environments.conf")" -eq 0 ]; then
+        sed -i '$ {/^$/d;}' "${CfgDir}/.config/hypr/nvidia.conf" >>"${HOME}/.config/hypr/config/environments.conf"
     fi
 fi

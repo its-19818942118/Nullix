@@ -15,19 +15,21 @@ cacheDir="$HOME/.cache/wormwitch"
 #------------------------#
 # detect distro and pkgs #
 #------------------------#
-if $ID_LIKE == "arch"; then
+if [[ $ID_LIKE == "arch" ]]; then
     aurList=(yay paru)
     ntdList=(dunst swaync)
     idlList=(swayidle hypridle hypridle-git)
     lckList=(swaylock-effects-git hyprlock hyprlock-git)
     shlList=(zsh fish bash)
     shdList=(hyprshade hyprshade-git wl-gammarelay-rs)
-elif $ID == "nixos"; then
+
+elif [[ $ID == "nixos" ]]; then
     ntdList=(dunst swaynotificationcenter)
     idlList=(swayidle hypridle)
     lckList=(swaylock-effects hyprlock)
     shlList=(zsh fish bash)
     shdList=(hyprshade wl-gammarelay-rs)
+
 fi
 
 pkg_installed() {
@@ -40,15 +42,19 @@ pkg_installed() {
             | sed -E 's/-[0-9]+(\.[0-9]+)*.*$//' \
             | grep -w "^${PkgIn}$" &> /dev/null; then
             return 0
+
         else
             return 1
         fi
+
     elif [[ ${ID_LIKE} == "arch" ]]; then
         if pacman -Qi "${PkgIn}" &> /dev/null; then
             return 0
+
         else
             return 1
         fi
+
     fi
 }
 
@@ -67,19 +73,23 @@ chk_list() {
 
 pkg_available() {
     local PkgIn=$1
-    
+
     if [[ ${ID} == "nixos" ]]; then
         if echo -en <(nix-env -f '<nixpkgs>' -qaP -A "${PkgIn}" --no-name &>/dev/null); then
             return 0
         else
             return 1
+
         fi
+
     elif [[ ${ID_LIKE} == "arch" ]]; then
         if pacman -Si "${PkgIn}" &> /dev/null; then
             return 0
+
         else
             return 1
         fi
+
     fi
 }
 
@@ -88,8 +98,10 @@ aur_available() {
 
     if ${aurhlpr} -Si "${PkgIn}" &> /dev/null; then
         return 0
+
     else
         return 1
+
     fi
 }
 
@@ -113,6 +125,7 @@ nvidia_detect() {
         else
             return 1
         fi
+
     elif [[ $ID_LIKE == "arch" ]]; then
         readarray -t dGPU < <(lspci -k | grep -E "(VGA|3D)" | awk -F ': ' '{print $NF}')
         if [ "${1}" == "--verbose" ]; then
@@ -135,7 +148,7 @@ nvidia_detect() {
     fi
 }
 
-prompt_timer() {
+prompt() {
     unset promptIn
     local msg=$1
     echo -ne "\r :: ${msg} : "

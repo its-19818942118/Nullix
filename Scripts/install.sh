@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #|---/ /+--------------------------+---/ /|#
 #|--/ /-| Main installation script |--/ /-|#
-#|-/ /--| derDelphin               |-/ /--|#
+#|-/ /--| Prasanth Rangan          |-/ /--|#
 #|/ /---+--------------------------+/ /---|#
 
 cat <<EOF
@@ -118,13 +118,12 @@ EOF
     # get user prefs #
     #----------------#
     if ! chk_list "aurhlpr" "${aurList[@]}"; then # install selected aur helper
-        echo -e "Available aur helpers:\n[1] yay\n[2] paru\n[3] trizen"
-        prompt_timer 120 "Enter option number"
+        echo -e "Available aur helpers:\n[1] yay\n[2] paru"
+        prompt "Enter option number"
 
         case "${promptIn}" in
         1) export getAur="yay" ;;
         2) export getAur="paru" ;;
-        3) export getAur="trizen" ;;
         *)
             echo -e "...Invalid option selected..."
             exit 1

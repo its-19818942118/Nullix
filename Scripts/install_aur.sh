@@ -4,7 +4,7 @@
 #|-/ /--| Prasanth Rangan                           |-/ /--|#
 #|/ /---+-------------------------------------------+/ /---|#
 
-scrDir=$(dirname "$(realpath "$0")")
+scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/global_fn.sh"
 if [ $? -ne 0 ]; then
     echo "Error: unable to source global_fn.sh..."
@@ -23,7 +23,7 @@ if [ -d "$HOME/Clone" ]; then
     rm -rf "$HOME/Clone/${aurhlpr}"
 else
     mkdir "$HOME/Clone"
-    echo -e "[Desktop Entry]\nIcon=default-folder-git" > "$HOME/Clone/.directory"
+    echo -e "[Desktop Entry]\nIcon=default-folder-git" >"$HOME/Clone/.directory"
     echo "~/Clone directory created..."
 fi
 
@@ -35,7 +35,7 @@ else
 fi
 
 cd "$HOME/Clone/${aurhlpr}"
-makepkg ${use_default} -si
+makepkg "${use_default}" -si
 
 if [ $? -eq 0 ]; then
     echo "${aurhlpr} aur helper installed..."

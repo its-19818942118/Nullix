@@ -11,19 +11,36 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo -e "Select shader:\n[1] hyprshade\n[2] hyprshade-git\n[3] wl-gammarelay-rs\n[4] No Shader"
-prompt_timer 120 "Enter option number"
+if [[ $ID == "nixos" ]]; then
+    echo -e "Select shader:\n[1] hyprshade\n[2] wl-gammarelay-rs\n[3] No Shader"
+    prompt "Enter option number"
 
-case "${promptIn}" in
-1) export myShader="hyprshade" ;;
-2) export myShader="hyprshade-git" ;;
-3) export myShader="wl-gammarelay-rs" ;;
-4) export myShader="" ;;
-*)
-    echo -e "...Invalid option selected..."
-    exit 1
-    ;;
-esac
+    case "${promptIn}" in
+    1) export myShader="hyprshade" ;;
+    2) export myShader="wl-gammarelay-rs" ;;
+    3) export myShader="" ;;
+    *)
+        echo -e "...Invalid option selected..."
+        exit 1
+        ;;
+    esac
+
+elif [[ $ID_LIKE == "arch" ]]; then
+    echo -e "Select shader:\n[1] hyprshade\n[2] hyprshade-git\n[3] wl-gammarelay-rs\n[4] No Shader"
+    prompt "Enter option number"
+
+    case "${promptIn}" in
+    1) export myShader="hyprshade" ;;
+    2) export myShader="hyprshade-git" ;;
+    3) export myShader="wl-gammarelay-rs" ;;
+    4) export myShader="" ;;
+    *)
+        echo -e "...Invalid option selected..."
+        exit 1
+        ;;
+    esac
+
+fi
 
 # skip if user selects "" as shader
 if [[ "${myShader}" == "" ]]; then
@@ -33,7 +50,7 @@ else
     echo -e "\n\033[0;32m[SHADER]\033[0m Shader: ${myShader}"
     echo "${myShader}" >>"${scrDir}/install_pkg.lst"
 
-    if $ID_LIKE == "arch"; then
+    if [[ $ID_LIKE == "arch" ]]; then
         # remove -git from myShader for exec-once command
         if [[ "${myShader}" == *"-git" ]]; then
             myShader=$(echo "${myShader}" | sed -E 's/-git$//')

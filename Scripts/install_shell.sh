@@ -12,7 +12,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo -e "Select shell:\n[1] zsh\n[2] fish\n[3] bash\n[4] No Shell"
-prompt_timer 120 "Enter option number"
+prompt "Enter option number"
 
 case "${promptIn}" in
 1) export myShell="zsh" ;;

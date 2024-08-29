@@ -4,7 +4,7 @@
 #|-/ /--| Prasanth Rangan                        |-/ /--|#
 #|/ /---+----------------------------------------+/ /---|#
 
-scrDir=$(dirname "$(realpath "$0")")
+scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/global_fn.sh"
 if [ $? -ne 0 ]; then
     echo "Error: unable to source global_fn.sh..."
@@ -25,7 +25,7 @@ while read -r pkg deps; do
         continue
     fi
 
-    if [ ! -z "${deps}" ]; then
+    if [ -n "${deps}" ]; then
         deps="${deps%"${deps##*[![:space:]]}"}"
         while read -r cdep; do
             pass=$(cut -d '#' -f 1 "${listPkg}" | awk -F '|' -v chk="${cdep}" '{if($1 == chk) {print 1;exit}}')
@@ -65,5 +65,5 @@ if [[ ${#archPkg[@]} -gt 0 ]]; then
 fi
 
 if [[ ${#aurhPkg[@]} -gt 0 ]]; then
-    "${aurhlpr}" ${use_default} -S "${aurhPkg[@]}"
+    "${aurhlpr}" "${use_default}" -S "${aurhPkg[@]}"
 fi

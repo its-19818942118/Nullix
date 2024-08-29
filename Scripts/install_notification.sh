@@ -11,18 +11,37 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo -e "Select Notification Daemon or Center:\n[1] dunst\n[2] swaynotificationcenter"
-prompt_timer 120 "Enter option number"
+if [[ $ID_LIKE == "arch" ]]; then
+    echo -e "Select Notification Daemon or Center:\n[1] dunst\n[2] swaynotificationcenter"
+    prompt "Enter option number"
 
-case "${promptIn}" in
-1) export myNotd="dunst" ;;
-2) export myNotd="swaync" ;;
-3) export myNotd="" ;;
-*)
-    echo -e "...Invalid option selected..."
-    exit 1
-    ;;
-esac
+    case "${promptIn}" in
+    1) export myNotd="dunst" ;;
+    2) export myNotd="dunst-git" ;;
+    3) export myNotd="swaync" ;;
+    4) export myNotd="swaync-git" ;;
+    5) export myNotd="" ;;
+    *)
+        echo -e "...Invalid option selected..."
+        exit 1
+        ;;
+    esac
+
+elif [[ $ID == "nixos" ]]; then
+    echo -e "Select Notification Daemon or Center:\n[1] dunst\n[2] swaynotificationcenter"
+    prompt "Enter option number"
+
+    case "${promptIn}" in
+    1) export myNotd="dunst" ;;
+    2) export myNotd="swaynotificationcenter" ;;
+    3) export myNotd="" ;;
+    *)
+        echo -e "...Invalid option selected..."
+        exit 1
+        ;;
+    esac
+
+fi
 
 if [ "${myNotd}" == "" ]; then
     echo -e "\n\033[0;32m[SKIP]\033[0m Notification Center or daemon: No notification Center or daemon selected, skipping!"
@@ -31,7 +50,7 @@ else
     echo -e "\n\033[0;32m[NOTIFICATIONDAEMON/CENTER]\033[0m Notification Center or daemon: ${myNotd}"
     echo "${myNotd}" >>"${scrDir}/install_pkg.lst"
 
-    if $ID_LIKE == "arch"; then
+    if [[ $ID_LIKE == "arch" ]]; then
         # remove -git from myNotd for exec-once command
         if [[ "${myNotd}" == *"-git" ]]; then
             myNotd=$(echo "${myNotd}" | sed -E 's/-git$//')

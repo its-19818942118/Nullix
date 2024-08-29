@@ -11,9 +11,9 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-if $ID_LIKE == "arch"; then
+if [[ $ID_LIKE == "arch" ]]; then
     echo -e "Select idle manager:\n[1] swayidle\n[2] hypridle\n[3] hypridle-git\n[4] No Idle Manager"
-    prompt_timer 120 "Enter option number"
+    prompt "Enter option number"
 
     case "${promptIn}" in
     1) export myIdle="swayidle" ;;
@@ -26,9 +26,9 @@ if $ID_LIKE == "arch"; then
     ;;
 esac
 
-elif $ID == "nixos"; then
+elif [[ $ID == "nixos" ]]; then
     echo -e "Select idle manager:\n[1] swayidle\n[2] hypridle\n[3] No Idle Manager"
-    prompt_timer 120 "Enter option number"
+    prompt "Enter option number"
 
     case "${promptIn}" in
     1) export myIdle="swayidle" ;;
@@ -50,7 +50,7 @@ else
     echo -e "\n\033[0;32m[IDLEMANAGER]\033[0m Idle Manager: ${myIdle}"
     echo "${myIdle}" >>"${scrDir}/install_pkg.lst"
 
-    if $ID_LIKE == "arch"; then
+    if [[ $ID_LIKE == "arch" ]]; then
         # remove -git from myIdle for exec-once command
         if [[ "${myIdle}" == *"-git" ]]; then
             myIdle=$(echo "${myIdle}" | sed -E 's/-git$//')

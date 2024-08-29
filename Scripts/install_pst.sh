@@ -4,7 +4,7 @@
 #|-/ /--| Prasanth Rangan                      |-/ /--|#
 #|/ /---+--------------------------------------+/ /---|#
 
-scrDir=$(dirname "$(realpath "$0")")
+scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/global_fn.sh"
 if [ $? -ne 0 ]; then
     echo "Error: unable to source global_fn.sh..."
@@ -21,15 +21,16 @@ if pkg_installed sddm; then
 
     if [ ! -f /etc/sddm.conf.d/kde_settings.t2.bkp ]; then
         echo -e "\033[0;32m[DISPLAYMANAGER]\033[0m configuring sddm..."
-        echo -e "Select sddm theme:\n[1] Candy\n[2] Corners"
+        echo -e "Select sddm theme:\n[1] Candy\n[2] Chilly\n[3] Corners"
         read -p " :: Enter option number : " sddmopt
 
         case $sddmopt in
         1) sddmtheme="Candy" ;;
-        *) sddmtheme="Corners" ;;
+        2) sddmtheme="Chilly" ;;
+        3) sddmtheme="Corners" ;;
         esac
 
-        sudo tar -xzf ${cloneDir}/Source/arcs/Sddm_${sddmtheme}.tar.gz -C /usr/share/sddm/themes/
+        sudo tar -xzf "${cloneDir}/Source/arcs/Sddm_${sddmtheme}.tar.gz" -C /usr/share/sddm/themes/
         sudo touch /etc/sddm.conf.d/kde_settings.conf
         sudo cp /etc/sddm.conf.d/kde_settings.conf /etc/sddm.conf.d/kde_settings.t2.bkp
         sudo cp /usr/share/sddm/themes/${sddmtheme}/kde_settings.conf /etc/sddm.conf.d/
@@ -37,8 +38,8 @@ if pkg_installed sddm; then
         echo -e "\033[0;33m[SKIP]\033[0m sddm is already configured..."
     fi
 
-    if [ ! -f /usr/share/sddm/faces/${USER}.face.icon ] && [ -f ${cloneDir}/Source/misc/${USER}.face.icon ]; then
-        sudo cp ${cloneDir}/Source/misc/${USER}.face.icon /usr/share/sddm/faces/
+    if [ ! -f "/usr/share/sddm/faces/${USER}.face.icon" ] && [ -f "${cloneDir}/Source/misc/${USER}.face.icon" ]; then
+        sudo cp "${cloneDir}/Source/misc/${USER}.face.icon" /usr/share/sddm/faces/
         echo -e "\033[0;32m[DISPLAYMANAGER]\033[0m avatar set for ${USER}..."
     fi
 
@@ -51,7 +52,7 @@ if pkg_installed dolphin && pkg_installed xdg-utils; then
 
     echo -e "\033[0;32m[FILEMANAGER]\033[0m detected // dolphin"
     xdg-mime default org.kde.dolphin.desktop inode/directory
-    echo -e "\033[0;32m[FILEMANAGER]\033[0m setting" `xdg-mime query default "inode/directory"` "as default file explorer..."
+    echo -e "\033[0;32m[FILEMANAGER]\033[0m setting" "$(xdg-mime query default "inode/directory")" "as default file explorer..."
 
 else
     echo -e "\033[0;33m[WARNING]\033[0m dolphin is not installed..."
@@ -60,12 +61,28 @@ fi
 # shell
 "${scrDir}/restore_shl.sh"
 
+# hyprshade
+if [[ "${myShader}" = "hyprshade" || "${myShader}" = "wl-gammarelay-rs" ]]; then
+    if pkg_installed "${myShader}"; then
+        echo -e "\033[0;32m[SHADER]\033[0m detected // ${myShader}"
+    elif [ "${myShader}" == "hyprshade" ] && pkg_installed hyprshade; then
+        systemctl --user enable --now hyprshade.timer
+        echo -e "\033[0;32m[HYPRSHADE]\033[0m detected and enabled"
+    else
+        echo -e "\033[0;33m[WARNING]\033[0m ${myShader} is not installed..."
+    fi
+elif [ "${myShader}" = "" ]; then
+    echo -e "\033[0;33m[SKIP]\033[0m shader installation skipped..."
+else
+    echo -e "\033[0;33m[WARNING]\033[0m unknown shader: ${myShader}"
+fi
+
 # flatpak
 if ! pkg_installed flatpak; then
 
     echo -e "\033[0;32m[FLATPAK]\033[0m flatpak application list..."
     awk -F '#' '$1 != "" {print "["++count"]", $1}' "${scrDir}/.extra/custom_flat.lst"
-    prompt_timer 60 "Install these flatpaks? [Y/n]"
+    prompt "Install these flatpaks? [Y/n]"
     fpkopt=${promptIn,,}
 
     if [ "${fpkopt}" = "y" ]; then
@@ -74,7 +91,25 @@ if ! pkg_installed flatpak; then
     else
         echo -e "\033[0;33m[SKIP]\033[0m installing flatpaks..."
     fi
-
 else
     echo -e "\033[0;33m[SKIP]\033[0m flatpak is already installed..."
+
+fi
+
+# silos
+if ! pkg_installed silos; then
+
+    echo -e "\033[0;32m[SILOS]\033[0m silos application list..."
+    awk -F '#' '$1 != "" {print "["++count"]", $1}' "${scrDir}/.extra/custom_silo.lst"
+    prompt "Install these silos? [Y/n]"
+    silopt=${promptIn,,}
+    if [ "${silopt}" = "y" ]; then
+        echo -e "\033[0;32m[SILOS]\033[0m installing silos..."
+        "${scrDir}/.extra/install_silo.sh"
+    else
+        echo -e "\033[0;33m[SKIP]\033[0m installing silos..."
+    fi
+else
+    echo -e "\033[0;33m[SKIP]\033[0m silos is already installed..."
+
 fi
