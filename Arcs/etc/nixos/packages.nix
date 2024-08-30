@@ -25,7 +25,7 @@
 
     # Hyprland Ecosystem
     hyprpicker hyprpaper hypridle
-    kitty hyprlock #hyprshade
+    hyprlock #hyprshade
     hyprlandPlugins.hyprexpo
 
     # Wayland/Xorg dependencies
@@ -49,7 +49,7 @@
     pulsemixer pavucontrol pwvucontrol pamixer pamix
 
    ## Terminal emulators
-    foot
+    foot kitty
 
     # Terminal editors
     vim neovim nano # emacs #"emacs is a gui editor by default but you can use in terminal using flags"
@@ -81,8 +81,17 @@
     ## GTK dependencies
      gtk2 gtk3 gtk4
 
+    ## QT Dependencies
+     qt6.qmake libsForQt5.qt5.qtwayland qt5ct
+     qtcreator qt5.qtwayland qt6.qtwayland
+     gsettings-qt
+
+     # QT libs
+      libsForQt5.qtgraphicaleffects libsForQt5.qt5ct
+      libsForQt5.qt5.qtquickcontrols libsForQt5.qt5.qtquickcontrols2
+
     ## Default Theme
-     papirus-icon-theme bibata-cursors
+     papirus-icon-theme bibata-cursors tela-circle-icon-theme
 
     ## Media/Audio
      # Media Player
@@ -92,7 +101,7 @@
      #helvum audacious sox
 
      # Streaming
-     youtube-music spotube # spotify
+     youtube-music spotube #spotify
 
      # Downloading
      #yt-dlp spotdl

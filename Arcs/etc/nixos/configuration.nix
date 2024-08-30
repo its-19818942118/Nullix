@@ -25,6 +25,19 @@
     options = "--delete-older-than 30d";
   };
 
+  # USE WAYLAND
+  environment.variables = { NIXOS_OZONE_WL = "1"; };
+  environment.sessionVariables = {
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    QT_QPA_PLATFORM = "wayland;xcb";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    GDK_SCALE = "1";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -73,7 +86,7 @@
 
   qt = {
     enable = true;
-    platformTheme = "qt5ct";
+    #platformTheme = "qt5ct"; this option is declared above already and doesn't support the newer version qt6
     style = "kvantum";
   };
 
