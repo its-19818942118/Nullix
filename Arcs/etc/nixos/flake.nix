@@ -1,18 +1,25 @@
 {
-  description = "NixOS configuration";
+description = "NixOS configuration";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
-    stylix.url = "github:danth/stylix";
-    };
+inputs = {
+  nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+  stylix.url = "github:danth/stylix";
+};
 
-  outputs = { nixpkgs, ... }@inputs: {
-    nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
+outputs = { nixpkgs, stylix, ... }@inputs:
+let
+  inherit (import ./variables.nix) hostname system;
+in
+{
+  nixosConfigurations = {
+    "${hostname}" = nixpkgs.lib.nixosSystem rec {
+      inherit system;
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix
+        ./system/configuration.nix
         inputs.stylix.nixosModules.stylix
       ];
     };
   };
+};
 }
