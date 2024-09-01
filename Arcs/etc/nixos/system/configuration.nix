@@ -8,7 +8,7 @@ in
 {
   imports =
     [ # Include the results of the hardware scan...
-      ./hardware-config.nix
+      ./hardware-configuration.nix
       # Include NVIDIA configuration
       ./nvidia.nix
       # Include stylix
