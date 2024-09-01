@@ -40,32 +40,50 @@ if [ -z "$flats" ]; then
     exit 1
 fi
 
-# Convert flatpak list to array
+# Convert Flatpak list to array
 flats_array=($flats)
 
 # Prepare a menu for user selection
-echo "Please select the Flatpak applications you want to install:"
-options=("Install All" "${flats_array[@]}" "Cancel")
+echo "Please select an option:"
+echo "1) Install All"
+echo "2) Install Specific"
+echo "3) Cancel"
 
-select flatpak_option in "${options[@]}"; do
-    case $REPLY in
-        1)
-            selected_flats="${flats}"
-            break
-            ;;
-        $((${#flats_array[@]}+2)))  # "Cancel" option
-            echo "Operation cancelled."
-            exit 0
-            ;;
-        [2-$((${#flats_array[@]}+1))])
-            selected_flats="${flats_array[$REPLY-2]}"
-            break
-            ;;
-        *)
-            echo "Invalid selection."
-            ;;
-    esac
-done
+read -p "Enter your choice: " choice
+
+case $choice in
+    1)
+        selected_flats="${flats}"
+        ;;
+    2)
+        echo "Please select the Flatpak applications you want to install (e.g., 1,2,3):"
+        for i in "${!flats_array[@]}"; do
+            echo "$((i+1))) ${flats_array[i]}"
+        done
+        
+        read -p "Enter the numbers of the applications you want to install, separated by commas: " selected_indices
+        
+        IFS=',' read -r -a indices <<< "$selected_indices"
+        selected_flats=""
+        
+        for index in "${indices[@]}"; do
+            if [ "$index" -ge 1 ] && [ "$index" -le "${#flats_array[@]}" ]; then
+                selected_flats+="${flats_array[$((index-1))]} "
+            else
+                echo "Invalid selection: $index"
+                exit 1
+            fi
+        done
+        ;;
+    3)
+        echo "Operation cancelled."
+        exit 0
+        ;;
+    *)
+        echo "Invalid choice."
+        exit 1
+        ;;
+esac
 
 # Confirm installation
 echo "You have selected the following Flatpak applications for installation:"
@@ -80,7 +98,7 @@ fi
 echo "Installing Flatpak applications..."
 for flat in $selected_flats; do
     echo "Running: flatpak install --user -y flathub $flat"
-    flatpak install --user -y flathub $flat
+    flatpak install --user -y flathub "$flat"
 done
 
 # Remove unused Flatpak runtimes and dependencies
