@@ -2,7 +2,9 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, pkgs, ... }:
-
+let
+  inherit (import ../variables.nix) username hostname timezone locale keymap fullname stateVersion;
+in 
 {
   imports =
     [ # Include the results of the hardware scan...
@@ -43,7 +45,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.plymouth.enable = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "${hostname}"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -51,36 +53,37 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Set your time zone.
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "${timezone}";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "de_DE.UTF-8";
+  i18n.defaultLocale = "${locale}";
 
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
+    LC_ADDRESS = "${locale}";
+    LC_IDENTIFICATION = "${locale}";
+    LC_MEASUREMENT = "${locale}";
+    LC_MONETARY = "${locale}";
+    LC_NAME = "${locale}";
+    LC_NUMERIC = "${locale}";
+    LC_PAPER = "${locale}";
+    LC_TELEPHONE = "${locale}";
+    LC_TIME = "${locale}";
   };
 
   # Configure console keymap
-  console.keyMap = "de";
+  console.keyMap = "${keymap}";
 
   # enable nix commmands and nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.derdelphin = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "derDelphin";
+    description = "${fullname}";
     extraGroups = [
       "networkmanager"
       "wheel"
+      "video"
     ];
   };
 
@@ -102,5 +105,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "${stateVersion}"; # Did you read the comment?
 }
