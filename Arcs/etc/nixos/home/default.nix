@@ -1,10 +1,11 @@
 { config, pkgs, ...}:
 let
-  inherit (import ../variables.nix) username gitUsername gitEmail;
+  inherit (import ../variables.nix) username gitUsername gitEmail stateVersion;
 in
 {
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
+  stateVersion = "${stateVersion}";
   home.packages = with pkgs; [
     neovim zsh git tmux
   ];
