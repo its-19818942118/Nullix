@@ -6,9 +6,7 @@ in
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
   stateVersion = "${stateVersion}";
-  home.packages = with pkgs; [
-    neovim zsh git tmux
-  ];
+  home.packages = with pkgs; [];
   programs.zsh.enable = true;
   programs.neovim = {
     enable = true;
