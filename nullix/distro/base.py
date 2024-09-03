@@ -5,9 +5,11 @@ import subprocess
 from abc import ABC, abstractmethod
 from typing import List
 
+from rich.progress import Progress
+
 from nullix.exceptions import PackageInstallationError, PackageUpdateError
 from nullix.logging import Logger
-from nullix.utils.config_loader import distro_config
+from nullix.utils.config_loader import distro_config, nullix_config
 
 logger = Logger().get_logger()
 
@@ -81,6 +83,12 @@ class BaseDistro(ABC):
         KeyError
             If the specified `distro_name` is not found in the `distro_config`.
         """
+        self.name = distro_config["name"]
+
+        self.path = distro_config["path"]
+        self.git_command = distro_config["git"]["command"]
+        self.git_repo = distro_config["git"]["repo"]
+
         self.distro_name = distro_name
         self.config = distro_config[distro_name]
         self.package_manager = self.config["package_manager"]
@@ -160,29 +168,51 @@ class BaseDistro(ABC):
         logger.info("Starting parallel package installation process...")
         available_packages = []
 
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            future_to_package = {
-                executor.submit(self._is_package_available, package): package
-                for package in packages
-            }
-            for future in concurrent.futures.as_completed(future_to_package):
-                package = future_to_package[future]
-                try:
-                    if future.result():
-                        available_packages.append(package)
-                except (subprocess.CalledProcessError, OSError) as e:
-                    logger.error(
-                        "Error checking package availability: %s - %s", package, e
-                    )
+        with Progress() as progress:
+            task = progress.add_task(
+                "[cyan]Checking package availability...", total=len(packages)
+            )
+            with concurrent.futures.ThreadPoolExecutor() as executor:
+                future_to_package = {
+                    executor.submit(self._is_package_available, package): package
+                    for package in packages
+                }
+                for future in concurrent.futures.as_completed(future_to_package):
+                    package = future_to_package[future]
+                    try:
+                        if future.result():
+                            available_packages.append(package)
+                    except (subprocess.CalledProcessError, OSError) as e:
+                        logger.error(
+                            "Error checking package availability: %s - %s", package, e
+                        )
+                    progress.update(task, advance=1)
 
         if available_packages:
             logger.info("Installing packages: %s", ", ".join(available_packages))
             try:
-                cmd = f"{self.install_command} {' '.join(available_packages)}"
-                subprocess.run(cmd, shell=True, check=True)
-                logger.info(
-                    "Packages installed successfully: %s", ", ".join(available_packages)
-                )
+                with Progress() as progress:
+                    task = progress.add_task(
+                        "[green]Installing packages...", total=len(available_packages)
+                    )
+                    cmd = f"{self.install_command} {' '.join(available_packages)}"
+                    process = subprocess.Popen(
+                        cmd,
+                        shell=True,
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE,
+                        text=True,
+                    )
+                    for line in process.stdout:
+                        progress.update(task, advance=1)
+                        logger.debug(line.strip())
+                    process.wait()
+                    if process.returncode != 0:
+                        raise subprocess.CalledProcessError(process.returncode, cmd)
+                    logger.info(
+                        "Packages installed successfully: %s",
+                        ", ".join(available_packages),
+                    )
             except subprocess.CalledProcessError as e:
                 error_msg = f"Failed to install packages: {e}"
                 logger.error(error_msg)
@@ -228,6 +258,31 @@ class BaseDistro(ABC):
             logger.error(error_msg)
             raise PackageUpdateError(error_msg) from e
         logger.info("Package update process completed.")
+
+    def install_from_git(self) -> None:
+        """
+        This method clones Nullix into the path specified in the config.
+
+        Raises
+        ------
+        PackageInstallationError
+            If the installation fails.
+        """
+        logger.info("Installing %s from %s", self.name, self.git_repo)
+        try:
+            subprocess.run(
+                ["cd", self.path, "&&", self.git_command, self.git_repo],
+                shell=True,
+                check=True,
+            )
+            subprocess.run(
+                ["cd", self.path, "&&", "make", "install"], shell=True, check=True
+            )
+            logger.info("Successfully installed %s from %s", self.name, self.git_repo)
+        except subprocess.CalledProcessError as e:
+            error_msg = f"Failed to install {self.name} from {self.git_repo}: {e}"
+            logger.error(error_msg)
+            raise PackageInstallationError(error_msg) from e
 
 
 class ExampleDistro(BaseDistro):
