@@ -22,8 +22,8 @@
 
 - [X] Load distribution configurations from YAML file 🔴✅
 - [ ] Add support for custom configuration files 🔴🔄
-- [X] Validate configuration keys 🔴🔄
-- [X] Handle configuration errors 🔴🔄
+- [ ] Validate configuration keys 🔴🔄
+- [ ] Handle configuration errors 🔴🔄
 
 ## Exception Handling 🚨
 
