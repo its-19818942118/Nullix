@@ -3,6 +3,7 @@ distributions:
     package_manager: nix
     install_command: nix-env -iA
     update_command: nix-channel --update && nix-env -u
+
   arch:
     package_manager: pacman
     install_command: pacman -S
@@ -11,6 +12,7 @@ distributions:
     aur_helper: yay
     aur_install_command: yay -S
     aur_update_command: yay -Syu
+
   debian:
     package_manager: apt
     install_command: apt-get install
