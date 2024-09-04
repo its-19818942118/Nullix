@@ -1,0 +1,2 @@
+fastfetch
+google-chrome
