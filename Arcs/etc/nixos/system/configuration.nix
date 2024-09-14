@@ -4,7 +4,7 @@
 { config, pkgs, ... }:
 let
   inherit (import ../variables.nix) username hostname timezone locale keymap fullname stateVersion;
-in 
+in
 {
   imports =
     [ # Include the results of the hardware scan...
@@ -29,10 +29,10 @@ in
 
   # Cachix
   nix.settings = {
-    substituters = [ 
+    substituters = [
       "https://cache.nixos.org"
     ];
-    trusted-public-keys = [ 
+    trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     ];
     extra-substituters = [
@@ -46,8 +46,8 @@ in
   };
 
   # USE WAYLAND
-  environment.variables = { NIXOS_OZONE_WL = "1"; };
   environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";
@@ -107,7 +107,6 @@ in
 
   qt = {
     enable = true;
-    #platformTheme = "qt5ct"; this option is declared above already and doesn't support the newer version qt6
     style = "kvantum";
   };
 
