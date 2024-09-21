@@ -14,32 +14,17 @@
   home.homeDirectory = "/home/${username}";
 
   imports = [
-    ./modules/hyprdots/hyprdots.nix
+    ./modules/nullix/nullix.nix
   ];
 
-  # TODO: hyprdots-build module
-  # modules.hyprdots-build = {
-  #   enable = true;
-  #   cleanBuild = true;
-  # };
-
-  # modules.hyprdots-hyde = {
+  #! Enabling this will break because there are no dotfiles. 
+  # modules.nullix = {
   #   enable = true;
   # };
 
-  programs.hyprdots = {
-    enable = true;
-  };
-
-  # enabling this will create files in .config/hypr
-  # we will be replacing this with the hyprdots-build
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    # extraConfig = ''
-    #   exec-once = kitty $HOME/hyprdots-first-boot.sh
-    #   exec-once = touch $HOME/.zshrc
-    # '';
   };
 
   # ===== Home Packages =====
@@ -68,6 +53,8 @@
     nwg-look
     dolphin
     libinput-gestures
+
+    #! fixes pokemon-colorscripts, good example module
     (callPackage ./modules/pokemon-colorscripts.nix { })
   ];
 
