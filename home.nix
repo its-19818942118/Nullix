@@ -17,10 +17,9 @@
     ./modules/nullix/nullix.nix
   ];
 
-  #! Enabling this will break because there are no dotfiles. 
-  # modules.nullix = {
-  #   enable = true;
-  # };
+  modules.nullix = {
+    enable = true;
+  };
 
   wayland.windowManager.hyprland = {
     enable = true;

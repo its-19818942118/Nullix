@@ -35,16 +35,13 @@
         config.allowUnfreePredicate = _: true;
       };
 
-      mkVM = import ./systems/modules/mkVM.nix { inherit username defaultPassword; };
+      mkVM = import ./modules/mkVM.nix;
 
-    in
-    {
-      nixosConfigurations = {
-
-        #! This is the main config
-        nullix = nixpkgs.lib.nixosSystem {
+      # Common configuration function
+      mkCommonConfig =
+        extraSpecialArgs:
+        nixpkgs.lib.nixosSystem {
           inherit system pkgs;
-
           specialArgs = {
             inherit
               username
@@ -52,8 +49,7 @@
               gitEmail
               host
               ;
-          };
-
+          } // extraSpecialArgs;
           modules = [
             ./configuration.nix
             home-manager.nixosModules.home-manager
@@ -67,34 +63,18 @@
             }
           ];
         };
+    in
+    {
+      nixosConfigurations = {
+        #! This is the main config
+        nullix = mkCommonConfig { };
 
         nullix-vm = mkVM {
-          nixosSystem = nixpkgs.lib.nixosSystem {
-            inherit system pkgs;
-            specialArgs = {
-              inherit
-                username
-                gitUser
-                gitEmail
-                host
-                defaultPassword
-                ;
-            };
-            modules = [
-              ./configuration.nix
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.${username} = import ./home.nix;
-                home-manager.extraSpecialArgs = {
-                  inherit username gitUser gitEmail;
-                };
-              }
-            ];
-          };
+          nixosSystem = mkCommonConfig { inherit defaultPassword; };
+          inherit username defaultPassword;
         };
       };
+
       packages.${system} = {
         default = self.nixosConfigurations.nullix-vm.config.system.build.vm;
         nullix = self.nixosConfigurations.nullix.config.system.build.toplevel;
