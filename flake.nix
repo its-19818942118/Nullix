@@ -20,14 +20,14 @@
     let
       system = "x86_64-linux";
 
-      username = "editme";
-      gitUser = "editme";
-      gitEmail = "editme";
-      host = "editme";
+      username = "edtime";
+      gitUser = "edtime";
+      gitEmail = "editime";
+      host = "edtime";
 
       # you need to change this with passwd when you boot
       # root will have the same password
-      defaultPassword = "editme";
+      defaultPassword = "izumi";
 
       pkgs = import nixpkgs {
         inherit system;

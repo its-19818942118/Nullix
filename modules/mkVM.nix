@@ -12,8 +12,8 @@ nixosSystem.extendModules {
         virtualisation.libvirtd.enable = true;
         virtualisation.vmVariant = {
           virtualisation = {
-            memorySize = 8192;
-            cores = 4;
+            memorySize = 2192;
+            cores = 2;
             diskSize = 20480;
             qemu = {
               options = [
