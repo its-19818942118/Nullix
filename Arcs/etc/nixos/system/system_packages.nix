@@ -18,7 +18,7 @@ in
     ]
     ++ map (pkgName: pkgs.${pkgName}) packages; # The packages from sytem_packages.lst are added here
 }
-{
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-}
+  {
+    # Allow unfree packages
+    nixpkgs.config.allowUnfree = true;
+  }

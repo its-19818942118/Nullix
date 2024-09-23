@@ -90,9 +90,7 @@
     enable = true;
     wlr.enable = true;
     config.common.default = "*";
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   # Security
@@ -113,7 +111,7 @@
         Restart = "on-failure";
         RestartSec = 1;
         TimeoutStopSec = 10;
-       };
+      };
     };
   };
 

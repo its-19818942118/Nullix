@@ -12,117 +12,219 @@
   # $ nix search nixpkgs wget
   environment.systemPackages = with pkgs; [
 
-  ###> Core System packages Start
-   ## Authentication
-    sudo doas polkit polkit_gnome libsForQt5.polkit-qt
+    ###> Core System packages Start
+    ## Authentication
+    sudo
+    doas
+    polkit
+    polkit_gnome
+    libsForQt5.polkit-qt
     libsForQt5.polkit-kde-agent
 
-   ## XDG dependencies
-    xdg-utils xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+    ## XDG dependencies
+    xdg-utils
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
 
-   ## WM/Compositor
+    ## WM/Compositor
     hyprland
 
     # Hyprland Ecosystem
-    hyprpicker hyprpaper hypridle
-    hyprlock #hyprshade
+    hyprpicker
+    hyprpaper
+    hypridle
+    hyprlock # hyprshade
     hyprlandPlugins.hyprexpo
 
     # Wayland/Xorg dependencies
-    xwayland xorg.libX11 xorg.libXcursor
+    xwayland
+    xorg.libX11
+    xorg.libXcursor
 
-   ## Libraries/Langs/...
-    lld gcc glibc libgcc libgccjit clang udev
-    llvmPackages.bintools python3 pipx jq
-    libnotify playerctl
+    ## Libraries/Langs/...
+    lld
+    gcc
+    glibc
+    libgcc
+    libgccjit
+    clang
+    udev
+    llvmPackages.bintools
+    python3
+    pipx
+    jq
+    libnotify
+    playerctl
 
-   ## Shells
+    ## Shells
     #zsh fish bash
 
-   ## Utilities
-    util-linux coreutils coreutils-full ffmpeg fuse3 grim
-    slurp brightnessctl light pkg-config bluez bluez-tools
-    grimblast blueman parallel imagemagick swappy
+    ## Utilities
+    util-linux
+    coreutils
+    coreutils-full
+    ffmpeg
+    fuse3
+    grim
+    slurp
+    brightnessctl
+    light
+    pkg-config
+    bluez
+    bluez-tools
+    grimblast
+    blueman
+    parallel
+    imagemagick
+    swappy
 
-   ## Sound control/mixer libs
-    pipewire pulseaudio jack2 alsaLib wireplumber
-    pulsemixer pavucontrol pwvucontrol pamixer pamix
+    ## Sound control/mixer libs
+    pipewire
+    pulseaudio
+    jack2
+    alsaLib
+    wireplumber
+    pulsemixer
+    pavucontrol
+    pwvucontrol
+    pamixer
+    pamix
 
-   ## Terminal emulators
-    foot kitty
+    ## Terminal emulators
+    foot
+    kitty
 
     # Terminal editors
-    vim neovim nano # emacs #"emacs is a gui editor by default but you can use in terminal using flags"
+    vim
+    neovim
+    nano # emacs #"emacs is a gui editor by default but you can use in terminal using flags"
 
     # Terminal utils
-    starship tree gnugrep ripgrep-all tlrc
-    procps espeak bat gnumake eza fzf
-    toybox killall clolcat shellcheck
+    starship
+    tree
+    gnugrep
+    ripgrep-all
+    tlrc
+    procps
+    espeak
+    bat
+    gnumake
+    eza
+    fzf
+    toybox
+    killall
+    clolcat
+    shellcheck
 
     # Terminal toys
     #ani-cli cowsay cava jp2a
     #cbonsai krabby cmatrix
 
-   ## Compression utils
-    zip gzip ripunzip xz p7zip _7zz gnutar
+    ## Compression utils
+    zip
+    gzip
+    ripunzip
+    xz
+    p7zip
+    _7zz
+    gnutar
 
-   ## Networking/Misc....
-    gh git lazygit curl curlFull wget wget2 nmap
+    ## Networking/Misc....
+    gh
+    git
+    lazygit
+    curl
+    curlFull
+    wget
+    wget2
+    nmap
 
-  ###> Core System packages End
+    ###> Core System packages End
 
-  ####> Core Packages Start
-   ### MikaNix Essentials
-    networkmanagerapplet networkmanager
-    dolphin rofi-wayland nwg-look wlogout
-    wl-clipboard waybar waybar-mpris ark
-    yad envsubst cliphist btop dunst #ags
+    ####> Core Packages Start
+    ### MikaNix Essentials
+    networkmanagerapplet
+    networkmanager
+    dolphin
+    rofi-wayland
+    nwg-look
+    wlogout
+    wl-clipboard
+    waybar
+    waybar-mpris
+    ark
+    yad
+    envsubst
+    cliphist
+    btop
+    dunst # ags
 
     ## GTK dependencies
-     gtk2 gtk3 gtk4
+    gtk2
+    gtk3
+    gtk4
 
     ## QT Dependencies
-     qt6.qmake libsForQt5.qt5.qtwayland qt5ct
-     qtcreator qt5.qtwayland qt6.qtwayland
-     gsettings-qt
+    qt6.qmake
+    libsForQt5.qt5.qtwayland
+    qt5ct
+    qtcreator
+    qt5.qtwayland
+    qt6.qtwayland
+    gsettings-qt
 
-     # QT libs
-      libsForQt5.qtgraphicaleffects libsForQt5.qt5ct
-      libsForQt5.qt5.qtquickcontrols libsForQt5.qt5.qtquickcontrols2
+    # QT libs
+    libsForQt5.qtgraphicaleffects
+    libsForQt5.qt5ct
+    libsForQt5.qt5.qtquickcontrols
+    libsForQt5.qt5.qtquickcontrols2
 
     ## Default Theme
-     papirus-icon-theme bibata-cursors tela-circle-icon-theme
+    papirus-icon-theme
+    bibata-cursors
+    tela-circle-icon-theme
 
     ## Media/Audio
-     # Media Player
-      mpd-mpris mpv vlc
+    # Media Player
+    mpd-mpris
+    mpv
+    vlc
 
-     # Audio Tools
-     #helvum audacious sox
+    # Audio Tools
+    #helvum audacious sox
 
-     # Streaming
-     youtube-music spotube #spotify
+    # Streaming
+    youtube-music
+    spotube # spotify
 
-     # Downloading
-     #yt-dlp spotdl
+    # Downloading
+    #yt-dlp spotdl
 
     ## Messenger
-     discord #telegram-desktop discordo
+    discord # telegram-desktop discordo
 
     ## Utilities
-     gthumb fastfetch #owofetch
-     vscode udiskie obs-studio
-     chromium #firefox brave
-     #trash-cli libinput-gestures
+    gthumb
+    fastfetch # owofetch
+    vscode
+    udiskie
+    obs-studio
+    chromium # firefox brave
+    #trash-cli libinput-gestures
 
   ];
 
   # Font stuff:
   fonts.fontDir.enable = true;
   fonts.packages = with pkgs; [
-    noto-fonts noto-fonts-emoji noto-fonts-cjk
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
-    symbola noto-fonts-color-emoji material-icons
-    font-awesome atkinson-hyperlegible
+    noto-fonts
+    noto-fonts-emoji
+    noto-fonts-cjk
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    symbola
+    noto-fonts-color-emoji
+    material-icons
+    font-awesome
+    atkinson-hyperlegible
   ];
 }

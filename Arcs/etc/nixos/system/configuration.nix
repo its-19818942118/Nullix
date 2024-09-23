@@ -3,21 +3,29 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 { config, pkgs, ... }:
 let
-  inherit (import ../variables.nix) username hostname timezone locale keymap fullname stateVersion;
+  inherit (import ../variables.nix)
+    username
+    hostname
+    timezone
+    locale
+    keymap
+    fullname
+    stateVersion
+    ;
 in
 {
-  imports =
-    [ # Include the results of the hardware scan...
-      ./hardware-configuration.nix
-      # Include NVIDIA configuration
-      ./nvidia.nix
-      # Include stylix
-      ./stylix.nix
-      # Include packages to install/build.
-      ./packages.nix
-      # Include services
-      ./services.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan...
+    ./hardware-configuration.nix
+    # Include NVIDIA configuration
+    ./nvidia.nix
+    # Include stylix
+    ./stylix.nix
+    # Include packages to install/build.
+    ./packages.nix
+    # Include services
+    ./services.nix
+  ];
 
   # Optimise nix store
   nix.settings.auto-optimise-store = true;
@@ -29,12 +37,8 @@ in
 
   # Cachix
   nix.settings = {
-    substituters = [
-      "https://cache.nixos.org"
-    ];
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    ];
+    substituters = [ "https://cache.nixos.org" ];
+    trusted-public-keys = [ "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=" ];
     extra-substituters = [
       "https://hyprland.cachix.org"
       "https://nix-community.cachix.org"
@@ -92,7 +96,10 @@ in
   console.keyMap = "${keymap}";
 
   # enable nix commmands and nix flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
