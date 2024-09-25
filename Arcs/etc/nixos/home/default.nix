@@ -20,8 +20,9 @@ in
   };
   home.file.".config/nvim/init.vim".text = ''
     
-        set number
-        syntax on
+        
+            set number
+            syntax on
   '';
   programs.git = {
     enable = true;

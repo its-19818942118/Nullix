@@ -13,9 +13,7 @@
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
-  imports = [
-    ./modules/nullix/nullix.nix
-  ];
+  imports = [ ./modules/nullix/nullix.nix ];
 
   modules.nullix = {
     enable = true;

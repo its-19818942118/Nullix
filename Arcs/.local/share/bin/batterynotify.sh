@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 undock=false
-scrDir=$(dirname "$(realpath "$0")")
+scrDir="$(dirname "$(realpath "$0")")"
 source $scrDir/globalcontrol.sh
-batterynotify_conf="${wormwitchConfDir}/wormwitch.conf" # Shared with wormwitch configuration
+batterynotify_conf="${lycrConfDir}/lycr.conf" # Shared with lycr configuration
 config_info() {
 cat <<  EOF
 

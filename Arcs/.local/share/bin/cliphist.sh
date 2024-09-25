@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Set variables
-scrDir=$(dirname "$(realpath "$0")")
+scrDir="$(dirname "$(realpath "$0")")"
 source "$scrDir/globalcontrol.sh"
 roconf="${confDir}/rofi/clipboard.rasi"
 favoritesFile="${HOME}/.cliphist_favorites"

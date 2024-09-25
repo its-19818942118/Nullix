@@ -3,7 +3,7 @@
 
 #// lock instance
 
-lockFile="/tmp/wormwitch$(id -u)$(basename ${0}).lock"
+lockFile="/tmp/lycr$(id -u)$(basename ${0}).lock"
 [ -e "${lockFile}" ] && echo "An instance of the script is already running..." && exit 1
 touch "${lockFile}"
 trap 'rm -f ${lockFile}' EXIT
@@ -44,7 +44,7 @@ Wall_Change()
 
 scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/globalcontrol.sh"
-wallSet="${wormwitchThemeDir}/wall.set"
+wallSet="${lycrThemeDir}/wall.set"
 wallCur="${cacheDir}/wall.set"
 wallSqr="${cacheDir}/wall.sqre"
 wallTmb="${cacheDir}/wall.thmb"
@@ -55,8 +55,8 @@ wallQad="${cacheDir}/wall.quad"
 #// check wall
 
 setIndex=0
-[ ! -d "${wormwitchThemeDir}" ] && echo "ERROR: \"${wormwitchThemeDir}\" does not exist" && exit 0
-wallPathArray=("${wormwitchThemeDir}")
+[ ! -d "${lycrThemeDir}" ] && echo "ERROR: \"${lycrThemeDir}\" does not exist" && exit 0
+wallPathArray=("${lycrThemeDir}")
 wallPathArray+=("${wallAddCustomPath[@]}")
 get_hashmap "${wallPathArray[@]}"
 [ ! -e "$(readlink -f "${wallSet}")" ] && echo "fixig link :: ${wallSet}" && ln -fs "${wallList[setIndex]}" "${wallSet}"

@@ -32,8 +32,8 @@ r_override="window{width:100%;} listview{columns:${col_count};spacing:5em;} elem
 
 #// launch rofi menu
 
-currentWall="$(basename "$(readlink "${wormwitchThemeDir}/wall.set")")"
-wallPathArray=("${wormwitchThemeDir}")
+currentWall="$(basename "$(readlink "${lycrThemeDir}/wall.set")")"
+wallPathArray=("${lycrThemeDir}")
 wallPathArray+=("${wallAddCustomPath[@]}")
 get_hashmap "${wallPathArray[@]}"
 rofiSel=$(parallel --link echo -en "\$(basename "{1}")"'\\x00icon\\x1f'"${thmbDir}"'/'"{2}"'.sqre\\n' ::: "${wallList[@]}" ::: "${wallHash[@]}" | rofi -dmenu -theme-str "${r_scale}" -theme-str "${r_override}" -config "${rofiConf}" -select "${currentWall}")

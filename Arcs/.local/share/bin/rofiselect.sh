@@ -7,7 +7,7 @@ scrDir="$(dirname "$(realpath "$0")")"
 source "${scrDir}/globalcontrol.sh"
 rofiConf="${confDir}/rofi/selector.rasi"
 rofiStyleDir="${confDir}/rofi/styles"
-rofiAssetDir="$HOME/.local/share/wormwitch/assets/rofi"
+rofiAssetDir="$HOME/.local/share/lycr/assets/rofi"
 
 
 #// set rofi scaling

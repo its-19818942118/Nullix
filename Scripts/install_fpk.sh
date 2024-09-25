@@ -2,7 +2,7 @@
 
 # Define the base and script directories
 baseDir=$(dirname "$(realpath "$0")")
-scrDir=$(dirname "$(realpath "$0")")
+scrDir="$(dirname "$(realpath "$0")")"
 
 # Source global functions
 source "${scrDir}/global_fn.sh"

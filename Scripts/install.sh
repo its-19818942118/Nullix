@@ -94,41 +94,45 @@ EOF
     #----------------------#
     # prepare package list #
     #----------------------#
-    shift $((OPTIND - 1))
-    cust_pkg=$1
-    cp "${scrDir}/custom_hypr.lst" "${scrDir}/install_pkg.lst"
+    if [[ $ID_LIKE == "arch" ]]; then
+        shift $((OPTIND - 1))
+        cust_pkg=$1
+        cp "${scrDir}/custom_hypr.lst" "${scrDir}/install_pkg.lst"
 
-    if [ -f "${cust_pkg}" ] && [ -n "${cust_pkg}" ]; then
-        cat "${cust_pkg}" >>"${scrDir}/install_pkg.lst"
+        if [ -f "${cust_pkg}" ] && [ -n "${cust_pkg}" ]; then
+            cat "${cust_pkg}" >>"${scrDir}/install_pkg.lst"
+        fi
+
+        #--------------------------------#
+        # add nvidia drivers to the list #
+        #--------------------------------#
+        if nvidia_detect; then
+            cat /usr/lib/modules/*/pkgbase | while read krnl; do
+                echo "${krnl}-headers" >>"${scrDir}/install_pkg.lst"
+            done
+            nvidia_detect --drivers >>"${scrDir}/install_pkg.lst"
+        fi
+
+        nvidia_detect --verbose
     fi
-
-    #--------------------------------#
-    # add nvidia drivers to the list #
-    #--------------------------------#
-    if nvidia_detect; then
-        cat /usr/lib/modules/*/pkgbase | while read krnl; do
-            echo "${krnl}-headers" >>"${scrDir}/install_pkg.lst"
-        done
-        nvidia_detect --drivers >>"${scrDir}/install_pkg.lst"
-    fi
-
-    nvidia_detect --verbose
 
     #----------------#
     # get user prefs #
     #----------------#
-    if ! chk_list "aurhlpr" "${aurList[@]}"; then # install selected aur helper
-        echo -e "Available aur helpers:\n[1] yay\n[2] paru"
-        prompt "Enter option number"
+    if [[ $ID_LIKE == "arch" ]]; then
+        if ! chk_list "aurhlpr" "${aurList[@]}"; then # install selected aur helper
+            echo -e "Available aur helpers:\n[1] yay\n[2] paru"
+            prompt "Enter option number"
 
-        case "${promptIn}" in
-        1) export getAur="yay" ;;
-        2) export getAur="paru" ;;
-        *)
-            echo -e "...Invalid option selected..."
-            exit 1
-            ;;
-        esac
+            case "${promptIn}" in
+            1) export getAur="yay" ;;
+            2) export getAur="paru" ;;
+            *)
+                echo -e "...Invalid option selected..."
+                exit 1
+                ;;
+            esac
+        fi
     fi
 
     # install and setup selected notification daemon/center or skip if none was chosen
@@ -159,8 +163,10 @@ EOF
     #--------------------------------#
     # install packages from the list #
     #--------------------------------#
-    "${scrDir}/install_pkg.sh" "${scrDir}/install_pkg.lst"
-    rm "${scrDir}/install_pkg.lst"
+    if [[ $ID_LIKE == "arch" ]]; then
+        "${scrDir}/install_pkg.sh" "${scrDir}/install_pkg.lst"
+        rm "${scrDir}/install_pkg.lst"
+    fi
 fi
 
 #---------------------------#
@@ -183,7 +189,7 @@ EOF
     while IFS='"' read -r null1 themeName null2 themeRepo; do
         themeNameQ+=("${themeName//\"/}")
         themeRepoQ+=("${themeRepo//\"/}")
-        themePath="${confDir}/wormwitch/themes/${themeName}"
+        themePath="${confDir}/lycr/themes/${themeName}"
         [ -d "${themePath}" ] || mkdir -p "${themePath}"
         [ -f "${themePath}/.sort" ] || echo "${#themeNameQ[@]}" >"${themePath}/.sort"
     done <"${scrDir}/themepatcher.lst"
