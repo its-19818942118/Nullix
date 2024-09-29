@@ -2,6 +2,7 @@
   nixosSystem,
   username,
   defaultPassword,
+  enableHardwareAcceleration ? true,
   ...
 }:
 nixosSystem.extendModules {
@@ -16,10 +17,16 @@ nixosSystem.extendModules {
             cores = 2;
             diskSize = 20480;
             qemu = {
-              options = [
-                "-device virtio-vga-gl"
-                "-display gtk,gl=on"
-              ];
+              options =
+                if enableHardwareAcceleration then
+                  [
+                    "-device virtio-vga-gl"
+                    "-display gtk,gl=on"
+                  ]
+                else
+                  [
+                    "-vga qxl"
+                  ];
             };
           };
           services.xserver = {
@@ -27,7 +34,7 @@ nixosSystem.extendModules {
               enable = true;
               user = username;
             };
-            videoDrivers = [ "virtio" ];
+            videoDrivers = if enableHardwareAcceleration then [ "virtio" ] else [ "qxl" ];
           };
         };
         users.users.${username} = {
