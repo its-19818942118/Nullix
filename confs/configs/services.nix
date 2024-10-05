@@ -1,17 +1,16 @@
-
 {
-  
+
   lib,
   host,
   pkgs,
   config,
   username,
   ...
-  
+
 }:
 
 {
-  
+
   # ~ ===== System Services ===== ~ #
   services = {
     libinput.enable = true;
@@ -30,7 +29,7 @@
     dbus.enable = true;
     xserver = {
       enable = false;
-      videoDrivers = [ "amdgpu" ];
+      videoDrivers = [ "nvidia" ];
     };
     openssh.enable = true;
     displayManager = {
@@ -72,5 +71,5 @@
       546
     ];
   };
-  
+
 }

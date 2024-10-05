@@ -41,7 +41,7 @@ This repository contains a NixOS configuration for setting up a desktop environm
    - `hardware-configuration.nix`: Hardware-specific settings (auto-generated)
 
 5. Build and switch to the new configuration:
-   ```
+   ```nix
    sudo nixos-rebuild switch --flake .#nullix
    ```
 
@@ -49,7 +49,7 @@ This repository contains a NixOS configuration for setting up a desktop environm
 
 To create a VM with this configuration:
 
-   ```
+   ```nix
    nix run .
    ```
 
@@ -70,4 +70,3 @@ To create a VM with this configuration:
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-

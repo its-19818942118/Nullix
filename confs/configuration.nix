@@ -1,23 +1,22 @@
-
 {
-  
+
   lib,
   host,
   pkgs,
   config,
   username,
   ...
-  
+
 }:
 
 {
 
   imports = [
-    
+
     # ~ ==== Import Packages ==== ~ #
     ./pkgs/user-pkgs.nix
     ./pkgs/system-pkgs.nix
-    
+
     # ~ ==== Import Configurations ==== ~ #
     ./configs/users.nix
     ./configs/fonts.nix
@@ -28,14 +27,15 @@
     ./configs/environment.nix
     ./configs/filesystems.nix
     ./configs/system-configuration.nix
-    
+
     # ~ ==== Import Hardware Configurations ==== ~ #
     ./hardware/hardware-configuration.nix
     ./hardware/user-hardware-configuration.nix
-    
+    # ./hardware/nvidia.nix
+
   ];
 
-  # # ===== Boot Configuration =====
+  # ===== Boot Configuration =====
   # boot.loader.systemd-boot.enable = true;
   # boot.kernelPackages = pkgs.linuxPackages_zen;
 
@@ -67,7 +67,7 @@
   # ===== Filesystems =====
   # USER EDITABLE ADD FILESYSTEMS HERE
 
-  # # ===== Security =====
+  # ===== Security =====
   # security = {
   #   polkit.enable = true;
   #   sudo = {

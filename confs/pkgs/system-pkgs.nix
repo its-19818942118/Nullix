@@ -1,13 +1,13 @@
 {
-  
+
   pkgs,
   config,
   ...
-  
+
 }:
 
 {
-  
+
   # ===== System Packages =====
   environment.systemPackages = with pkgs; [
     # Core Packages
@@ -145,5 +145,5 @@
     grim
     grimblast
   ];
-  
+
 }
