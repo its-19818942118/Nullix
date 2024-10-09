@@ -6,10 +6,17 @@
   lib,
   ...
 }:
+
 {
 
   imports = [
+    
+    ./users.nix
+    ./bootloader.nix
+    ./filesystems.nix
     ./hardware-configuration.nix
+    ./user_hardware_configuration.nix
+    
   ];
 
   # ===== Boot Configuration =====

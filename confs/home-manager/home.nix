@@ -1,10 +1,10 @@
 {
-  config,
   lib,
   pkgs,
-  username,
+  config,
   gitUser,
   gitEmail,
+  username,
   ...
 }:
 
@@ -14,21 +14,28 @@
   home.homeDirectory = "/home/${username}";
 
   imports = [
-    ./modules/nullix/nullix.nix
+
+    ../../modules/nullix/nullix.nix
+
   ];
 
   modules.nullix = {
+
     enable = true;
+
   };
 
   wayland.windowManager.hyprland = {
+
     enable = true;
     xwayland.enable = true;
+
   };
 
   # ===== Home Packages =====
   home.packages = with pkgs; [
-    # Hyprdots dependencies
+
+    # Nullix dependencies
     dconf
     git
     gum
@@ -54,32 +61,52 @@
     libinput-gestures
 
     #! fixes pokemon-colorscripts, good example module
-    (callPackage ./modules/pokemon-colorscripts.nix { })
+    (
+
+      callPackage ../../modules/pkgs/pokemon-colorscripts.nix { }
+
+    )
+
   ];
 
   programs = {
+
     home-manager.enable = true;
     git = {
+
       enable = true;
       userName = "${gitUser}";
       userEmail = "${gitEmail}";
+
     };
+
     waybar = {
+
       enable = true;
+
     };
+
     neovim = {
+
       enable = true;
       defaultEditor = true;
+
     };
+
   };
 
   fonts.fontconfig.enable = true;
   xdg = {
+
     userDirs = {
+
       enable = true;
       createDirectories = true;
+
     };
+
   };
 
   home.stateVersion = "24.11";
+
 }
