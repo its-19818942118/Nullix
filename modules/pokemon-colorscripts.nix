@@ -23,15 +23,17 @@ stdenv.mkDerivation {
   ];
 
   installPhase = ''
-    mkdir -p $out/opt/pokemon-colorscripts
-    mkdir -p $out/bin
-
-    cp -r colorscripts $out/opt/pokemon-colorscripts
-    cp pokemon-colorscripts.py $out/opt/pokemon-colorscripts
-    cp pokemon.json $out/opt/pokemon-colorscripts
-
-    ln -s $out/opt/pokemon-colorscripts/pokemon-colorscripts.py $out/bin/pokemon-colorscripts
-    chmod +x $out/bin/pokemon-colorscripts
+    
+        
+            mkdir -p $out/opt/pokemon-colorscripts
+            mkdir -p $out/bin
+        
+            cp -r colorscripts $out/opt/pokemon-colorscripts
+            cp pokemon-colorscripts.py $out/opt/pokemon-colorscripts
+            cp pokemon.json $out/opt/pokemon-colorscripts
+        
+            ln -s $out/opt/pokemon-colorscripts/pokemon-colorscripts.py $out/bin/pokemon-colorscripts
+            chmod +x $out/bin/pokemon-colorscripts
   '';
 
   meta = with lib; {

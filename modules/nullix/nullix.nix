@@ -12,19 +12,19 @@ let
 in
 
 {
-    options.modules.nullix = {
-      enable = mkEnableOption "nullix";
-    };
-    config = mkIf cfg.enable {
-      home.file = {
-        ".config/hypr" = {
-          source = ./dotfiles/hypr;
-	  recursive = true;
-	};
-	".local/" = {
-          source = ./dotfiles/.local;
-	  recursive = true;
-	};
+  options.modules.nullix = {
+    enable = mkEnableOption "nullix";
+  };
+  config = mkIf cfg.enable {
+    home.file = {
+      ".config/hypr" = {
+        source = ./dotfiles/hypr;
+        recursive = true;
+      };
+      ".local/" = {
+        source = ./dotfiles/.local;
+        recursive = true;
       };
     };
-  }
+  };
+}

@@ -6,7 +6,7 @@ if [ ! -f /etc/arch-release ] ; then
 fi
 
 # source variables
-scrDir=$(dirname "$(realpath "$0")")
+scrDir="$(dirname "$(realpath "$0")")"
 source "$scrDir/globalcontrol.sh"
 get_aurhlpr
 export -f pkg_installed
