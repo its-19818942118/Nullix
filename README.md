@@ -1,82 +1,73 @@
-# Installing Python Poetry
+# Nullix
 
-This guide covers the installation of Poetry, a dependency management and packaging tool for Python, on various Linux distributions.
+This repository contains a NixOS configuration for setting up a desktop environment using dotfiles for Hyprland
 
-## Table of Contents
+## Features
 
-- [Installing Python Poetry](#installing-python-poetry)
-  - [Table of Contents](#table-of-contents)
-  - [Arch Linux](#arch-linux)
-  - [NixOS](#nixos)
-  - [Debian-based Distributions](#debian-based-distributions)
-  - [Verifying the Installation](#verifying-the-installation)
-  - [Additional Resources](#additional-resources)
-  - [Installing CLI tool](#installing-cli-tool)
-  - [Running CLI tool](#running-cli-tool)
+- NixOS configuration with Hyprland as the primary window manager
+- Home-manager integration for user-specific configurations
+- Support for both regular installation and VM creation
+- Customizable user, git, and host settings
 
-## Arch Linux
+## Prerequisites
 
-On Arch Linux, you can use the `pacman` package manager:
+- NixOS installed on your system
+- Basic understanding of Nix and NixOS configuration
+- git (`nix-shell -p git`)
 
-```sh
-sudo pacman -S python-poetry
-```
+## Getting Started
 
-## NixOS
-
-For NixOS, use the `nix-env` command:
-
-```sh
-nix-env -iA nixpkgs.poetry
-```
-
-## Debian-based Distributions
-
-This includes Ubuntu and other Debian derivatives.
-
-1. Install using the official script:
-
-   ```sh
-   curl -sSL https://install.python-poetry.org | python3 -
+1. Clone this repository:
    ```
-2. Add Poetry to your PATH by appending this line to your shell configuration file (e.g., `~/.bashrc`, `~/.zshrc`):
-
-   ```sh
-   export PATH="$HOME/.local/bin:$PATH"
-   ```
-3. Reload your shell configuration:
-
-   ```sh
-   source ~/.bashrc  # or source ~/.zshrc
+   git clone https://github.com/its-19818942118/Nullix.git
    ```
 
-## Verifying the Installation
+2. Edit the `flake.nix` file to set your username, git information, and host name:
+   ```nix
+   username = "your-username";
+   gitUser = "Your Name";
+   gitEmail = "your.email@example.com";
+   host = "your-hostname";
+   ```
 
-To confirm that Poetry has been installed correctly, run:
+3. Update the `defaultPassword` in `flake.nix` (you should change this after first boot using passwd):
+   ```nix
+   defaultPassword = "your-secure-password";
+   ```
 
-```sh
-poetry --version
-```
+4. Customize the configuration files as needed:
+   - `configuration.nix`: System-wide settings
+   - `home.nix`: User-specific configurations
+   - `hardware-configuration.nix`: Hardware-specific settings (auto-generated)
 
-This should display the version of Poetry that has been installed.
+5. Build and switch to the new configuration:
+   ```
+   sudo nixos-rebuild switch --flake .#nullix
+   ```
 
-## Additional Resources
+## VM Creation
 
-- [Official Poetry Documentation](https://python-poetry.org/docs/)
-- [Poetry GitHub Repository](https://github.com/python-poetry/poetry)
+To create a VM with this configuration:
 
-## Installing CLI tool
+   ```
+   nix run .
+   ```
 
-```sh
-poetry install
-```
+## Customization
 
-## Running CLI tool
+- Add or remove packages in `configuration.nix` and `home.nix`
+- Modify Hyprland and other application configs in the respective files
+- Add custom modules in the `modules/` directory
 
-```sh
-nullix [COMMAND]
-# or
-poetry run nullix [COMMAND]
-# or with any python version eg:
-python -m nullix.distro.arch
-```
+
+## TODO:
+ 
+- [ ] base nixos config
+- [ ] import dotfiles
+- [ ] set home.file for managed dotfiles
+- [ ] custom params for home manager
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+

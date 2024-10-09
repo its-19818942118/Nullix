@@ -1,7 +1,0 @@
-name: nullix
-
-path: /home/nullix/
-
-git:
-  command: git clone
-  repo: https://github.com/nullix-dev/nullix.git
