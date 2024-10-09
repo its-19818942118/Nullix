@@ -144,6 +144,7 @@
     wl-clipboard
     grim
     grimblast
+
   ];
 
 }

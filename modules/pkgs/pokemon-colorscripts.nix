@@ -44,5 +44,5 @@ stdenv.mkDerivation {
     platforms = platforms.all;
     mainProgram = "pokemon-colorscripts";
   };
-  
+
 }

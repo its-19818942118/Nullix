@@ -8,13 +8,18 @@
 }:
 
 {
+
   # Enable OpenGL
   hardware.opengl = {
+  
     enable = true;
     extraPackages = with pkgs; [
+
       vaapiVdpau
       libvdpau-va-gl
+
     ];
+
   };
 
   # Load nvidia driver for Xorg and Wayland
@@ -50,5 +55,7 @@
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.beta;
+
   };
+
 }
