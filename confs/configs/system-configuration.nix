@@ -10,7 +10,7 @@
 {
 
   # ~ ===== System Configuration ===== ~ #
-  time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "de_DE.UTF-8";
+  time.timeZone = "editme"; # Europe/Berlin for example
+  i18n.defaultLocale = "editme"; # en_US.UTF-8 for example
 
 }

@@ -9,10 +9,15 @@
 
 {
 
+  # ~ ===== Hardware (NVIDIA) Configuration ===== ~ #
+
   # Enable OpenGL
-  hardware.opengl = {
-  
+  hardware.graphics = {
+
     enable = true;
+    enable32Bit = true;
+
+    # Enable VA-API support
     extraPackages = with pkgs; [
 
       vaapiVdpau

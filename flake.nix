@@ -46,7 +46,7 @@
 
       };
 
-      mkVM = import ./modules/vm/mkVM.nix;
+      mkVM = import ./modules/vm/mkVM.nix { enableHardwareAcceleration = false };
 
       # Common configuration function
       mkCommonConfig =
