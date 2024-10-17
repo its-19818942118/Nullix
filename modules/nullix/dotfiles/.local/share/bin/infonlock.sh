@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # check if the battery directory exists
-if [ -d "/sys/class/power_supply/BAT0" ]; then
-#if [ -d "/sys/class/power_supply/BAT0" ] || [ -d "/sys/class/power_supply/BAT1" ] || [ -d "/sys/class/power_supply/BAT2" ]; then
+if [ -d "/sys/class/power_supply/BAT0" ] || [ -d "/sys/class/power_supply/BAT1" ] || [ -d "/sys/class/power_supply/BAT2" ]; then # improve this so those ain't hardcoded and it just searches for all BAT* @fkf
   # get the current battery percentage
   battery_percentage=$(cat /sys/class/power_supply/BAT0/capacity)
 

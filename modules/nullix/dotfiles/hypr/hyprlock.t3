@@ -1,5 +1,7 @@
-# █ █ █▄█ █▀█ █▀█ █   █▀█ █▀▀ █▄▀
-# █▀█  █  █▀▀ █▀▄ █▄▄ █▄█ █▄▄ █ █
+
+# ╭──────────╮ #
+# │ Hyprlock │ #
+# ╰──────────╯ #
 
 source = ~/.config/hypr/themes/hyprecosystem_colors.conf # for custom color
 $wallpaper =
