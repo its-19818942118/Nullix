@@ -1,24 +1,22 @@
 {
-
   config,
   pkgs,
   username,
   host,
   lib,
   ...
-
 }:
 
 {
 
   imports = [
-
+    
     ./users.nix
     ./bootloader.nix
     ./filesystems.nix
     ./hardware-configuration.nix
     ./user_hardware_configuration.nix
-
+    
   ];
 
   # ===== Boot Configuration =====
@@ -355,7 +353,6 @@
   environment = {
     sessionVariables.NIXOS_OZONE_WL = "1";
     shellInit = ''
-
       if [ -d $HOME/.nix-profile/share/applications ]; then
         XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
       fi

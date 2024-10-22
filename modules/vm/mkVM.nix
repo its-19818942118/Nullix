@@ -1,13 +1,10 @@
 {
-
   nixosSystem,
   username,
   defaultPassword,
   enableHardwareAcceleration ? true,
   ...
-
 }:
-
 nixosSystem.extendModules {
   modules = [
     (
@@ -27,7 +24,9 @@ nixosSystem.extendModules {
                     "-display gtk,gl=on"
                   ]
                 else
-                  [ "-vga qxl" ];
+                  [
+                    "-vga qxl"
+                  ];
             };
           };
           services.xserver = {

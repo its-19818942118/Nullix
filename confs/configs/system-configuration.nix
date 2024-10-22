@@ -1,16 +1,17 @@
-{
 
+{
+  
   lib,
   pkgs,
   config,
   ...
-
+  
 }:
 
 {
-
+  
   # ~ ===== System Configuration ===== ~ #
-  time.timeZone = "editme"; # Europe/Berlin for example
-  i18n.defaultLocale = "editme"; # en_US.UTF-8 for example
-
+  time.timeZone = "America/Vancouver";
+  i18n.defaultLocale = "en_CA.UTF-8";
+  
 }

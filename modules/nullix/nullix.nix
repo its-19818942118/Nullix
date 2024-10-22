@@ -1,10 +1,8 @@
 {
-
   config,
   lib,
   pkgs,
   ...
-
 }:
 
 with lib;
@@ -14,37 +12,37 @@ let
 in
 
 {
-
+  
   options.modules.nullix = {
     enable = mkEnableOption "nullix";
   };
-
+  
   config = mkIf cfg.enable {
-
+    
     home.file = {
-
+      
       ".config/hypr" = {
         source = ./dotfiles/hypr;
         recursive = true;
       };
-
+      
       ".local/" = {
         source = ./dotfiles/.local;
         recursive = true;
       };
-
+      
       ".config/rofi" = {
         source = ./dotfiles/rofi;
         recursive = true;
       };
-
+      
       ".config/dunst" = {
         source = ./dotfiles/dunst;
         recursive = true;
       };
-
+      
     };
-
+    
   };
-
+  
 }

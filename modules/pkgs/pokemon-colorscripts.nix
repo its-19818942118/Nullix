@@ -1,11 +1,9 @@
 {
-
   lib,
   stdenv,
   fetchFromGitLab,
   bash,
   python3,
-
 }:
 
 stdenv.mkDerivation {
@@ -25,7 +23,6 @@ stdenv.mkDerivation {
   ];
 
   installPhase = ''
-
     mkdir -p $out/opt/pokemon-colorscripts
     mkdir -p $out/bin
 
@@ -44,5 +41,4 @@ stdenv.mkDerivation {
     platforms = platforms.all;
     mainProgram = "pokemon-colorscripts";
   };
-
 }
