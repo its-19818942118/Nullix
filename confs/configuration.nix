@@ -1,23 +1,22 @@
-
 {
-  
+
   lib,
   host,
   pkgs,
   config,
   username,
   ...
-  
+
 }:
 
 {
 
   imports = [
-    
+
     # ~ ==== Import Packages ==== ~ #
     ./pkgs/user-pkgs.nix
     ./pkgs/system-pkgs.nix
-    
+
     # ~ ==== Import Configurations ==== ~ #
     ./configs/users.nix
     ./configs/fonts.nix
@@ -28,14 +27,19 @@
     ./configs/environment.nix
     ./configs/filesystems.nix
     ./configs/system-configuration.nix
-    
+
     # ~ ==== Import Hardware Configurations ==== ~ #
+    ./hardware/bootloader.nix
     ./hardware/hardware-configuration.nix
     ./hardware/user-hardware-configuration.nix
-    
+    # ./hardware/nvidia.nix
+
   ];
 
-  # # ===== Boot Configuration =====
+  # ~ ===== System Version ===== ~ #
+  system.stateVersion = "24.11"; # Don't change this
+
+  # # ===== Boot Configuration ===== #
   # boot.loader.systemd-boot.enable = true;
   # boot.kernelPackages = pkgs.linuxPackages_zen;
 
@@ -52,7 +56,7 @@
   #   };
   # };
 
-  # # ===== Hardware Configuration =====
+  # # ===== Hardware Configuration ===== #
   # hardware = {
   #   graphics = {
   #     enable = true;
@@ -64,10 +68,10 @@
   #   };
   # };
 
-  # ===== Filesystems =====
+  # ===== Filesystems ===== #
   # USER EDITABLE ADD FILESYSTEMS HERE
 
-  # # ===== Security =====
+  # # ===== Security ===== #
   # security = {
   #   polkit.enable = true;
   #   sudo = {
@@ -94,7 +98,7 @@
   #   };
   # };
 
-  # # ===== System Services =====
+  # # ===== System Services ===== #
   # services = {
   #   libinput.enable = true;
   #   spice-vdagentd.enable = true;
@@ -155,11 +159,11 @@
   #   ];
   # };
 
-  # # ===== System Configuration =====
+  # # ===== System Configuration ===== #
   # time.timeZone = "America/Vancouver";
   # i18n.defaultLocale = "en_CA.UTF-8";
 
-  # # ===== User Configuration =====
+  # # ===== User Configuration ===== #
   # users.users.${username} = {
   #   isNormalUser = true;
   #   extraGroups = [
@@ -170,7 +174,7 @@
   # };
   # users.defaultUserShell = pkgs.zsh;
 
-  # # ===== Nix Configuration =====
+  # # ===== Nix Configuration ===== #
   # nix.settings = {
   #   auto-optimise-store = true;
   #   experimental-features = [
@@ -189,7 +193,7 @@
   #   ];
   # };
 
-  # # ===== System Packages =====
+  # # ===== System Packages ===== #
   # environment.systemPackages = with pkgs; [
   #   # Core Packages
   #   lld
@@ -219,7 +223,7 @@
   #   home-manager
   #   mesa
 
-  #   # sddm
+  #   # SDDM
   #   kdePackages.sddm
   #   (catppuccin-sddm.override { flavor = "mocha"; })
 
@@ -254,7 +258,7 @@
   #   xorg.libX11
   #   xorg.libXcursor
 
-  #   # Other Hyprdots dependencies
+  #   # Other Nullix dependencies
   #   hyprland
   #   waybar
   #   xwayland
@@ -327,7 +331,7 @@
   #   grimblast
   # ];
 
-  # # ===== Program Configurations =====
+  # # ===== Program Configurations ===== #
   # programs = {
   #   git.enable = true;
   #   gnupg.agent = {
@@ -351,7 +355,7 @@
 
   # };
 
-  # # ===== Font Configuration =====
+  # # ===== Font Configuration ===== #
   # fonts = {
   #   fontDir.enable = true;
   #   packages = with pkgs; [
@@ -366,7 +370,7 @@
   #   ];
   # };
 
-  # # ===== Environment Configuration =====
+  # # ===== Environment Configuration ===== #
   # environment = {
   #   sessionVariables.NIXOS_OZONE_WL = "1";
   #   shellInit = ''
@@ -377,6 +381,4 @@
 
   # };
 
-  # ===== System Version =====
-  system.stateVersion = "24.11"; # Don't change this
 }

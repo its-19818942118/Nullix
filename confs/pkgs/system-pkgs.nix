@@ -1,13 +1,13 @@
 {
-  
+
   pkgs,
   config,
   ...
-  
+
 }:
 
 {
-  
+
   # ===== System Packages =====
   environment.systemPackages = with pkgs; [
     # Core Packages
@@ -144,6 +144,7 @@
     wl-clipboard
     grim
     grimblast
+
   ];
-  
+
 }

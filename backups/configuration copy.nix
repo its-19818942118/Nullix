@@ -1,17 +1,17 @@
 {
+
   config,
   pkgs,
   username,
   host,
   lib,
   ...
+
 }:
 
 {
 
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   # ===== Boot Configuration =====
   boot.loader.systemd-boot.enable = true;
@@ -347,6 +347,7 @@
   environment = {
     sessionVariables.NIXOS_OZONE_WL = "1";
     shellInit = ''
+
       if [ -d $HOME/.nix-profile/share/applications ]; then
         XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
       fi

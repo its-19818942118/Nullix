@@ -18,22 +18,25 @@ This repository contains a NixOS configuration for setting up a desktop environm
 ## Getting Started
 
 1. Clone this repository:
-   ```
+
+```bash
    git clone https://github.com/its-19818942118/Nullix.git
-   ```
+```
 
 2. Edit the `flake.nix` file to set your username, git information, and host name:
-   ```nix
+
+```nix
    username = "your-username";
    gitUser = "Your Name";
    gitEmail = "your.email@example.com";
    host = "your-hostname";
-   ```
+```
 
 3. Update the `defaultPassword` in `flake.nix` (you should change this after first boot using passwd):
-   ```nix
+
+```nix
    defaultPassword = "your-secure-password";
-   ```
+```
 
 4. Customize the configuration files as needed:
    - `configuration.nix`: System-wide settings
@@ -41,17 +44,18 @@ This repository contains a NixOS configuration for setting up a desktop environm
    - `hardware-configuration.nix`: Hardware-specific settings (auto-generated)
 
 5. Build and switch to the new configuration:
-   ```
+
+```nix
    sudo nixos-rebuild switch --flake .#nullix
-   ```
+```
 
 ## VM Creation
 
 To create a VM with this configuration:
 
-   ```
+```nix
    nix run .
-   ```
+```
 
 ## Customization
 
@@ -59,9 +63,8 @@ To create a VM with this configuration:
 - Modify Hyprland and other application configs in the respective files
 - Add custom modules in the `modules/` directory
 
+## TODO
 
-## TODO:
- 
 - [ ] base nixos config
 - [ ] import dotfiles
 - [ ] set home.file for managed dotfiles
@@ -70,4 +73,3 @@ To create a VM with this configuration:
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
