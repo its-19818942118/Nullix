@@ -42,7 +42,7 @@
 
         inherit system;
         config.allowUnfree = true;
-        config.allowUnfreePredicate = _: true;
+        config.allowUnfreePredicate = true;
 
       };
 
