@@ -1,0 +1,5 @@
+ninja_dyndep_version = 1.0
+build CMakeFiles/main.dir/src/lib/config.cpp.o: dyndep
+
+build CMakeFiles/main.dir/src/scripts/wallselect.cpp.o: dyndep
+

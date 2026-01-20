@@ -1,0 +1,32 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "Clang",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "/home/karmveer/.coding/Nullix/build",
+	"dir-cur-src" : "/home/karmveer/.coding/Nullix",
+	"dir-top-bld" : "/home/karmveer/.coding/Nullix/build",
+	"dir-top-src" : "/home/karmveer/.coding/Nullix",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : [],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "/home/karmveer/.coding/Nullix/build/CMakeFiles/main.dir",
+	"sources" : 
+	{
+		"CMakeFiles/main.dir/src/lib/config.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/karmveer/.coding/Nullix/src/lib/config.cpp"
+		},
+		"CMakeFiles/main.dir/src/scripts/wallselect.cpp.o" : 
+		{
+			"language" : "CXX",
+			"source" : "/home/karmveer/.coding/Nullix/src/scripts/wallselect.cpp"
+		}
+	}
+}
