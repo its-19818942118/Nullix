@@ -1,3 +1,0 @@
-/home/karmveer/.coding/Nullix/build/CMakeFiles/main.dir
-/home/karmveer/.coding/Nullix/build/CMakeFiles/edit_cache.dir
-/home/karmveer/.coding/Nullix/build/CMakeFiles/rebuild_cache.dir

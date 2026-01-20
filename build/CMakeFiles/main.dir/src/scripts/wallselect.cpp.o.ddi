@@ -1,9 +1,0 @@
-{
-  "revision": 0,
-  "rules": [
-    {
-      "primary-output": "CMakeFiles/main.dir/src/scripts/wallselect.cpp.o"
-    }
-  ],
-  "version": 1
-}
