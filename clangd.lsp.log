@@ -1,0 +1,1189 @@
+Content-Length: 6058
+
+{"jsonrpc":"2.0","id":0,"method":"initialize","params":{"processId":86405,"clientInfo":{"name":"Visual Studio Code - Insiders","version":"1.109.0-insider"},"locale":"en","rootPath":"/home/izumi/.code/scrap/nullix-new","rootUri":"file:///home/izumi/.code/scrap/nullix-new","capabilities":{"workspace":{"applyEdit":true,"workspaceEdit":{"documentChanges":true,"resourceOperations":["create","rename","delete"],"failureHandling":"textOnlyTransactional","normalizesLineEndings":true,"changeAnnotationSupport":{"groupsOnLabel":true}},"configuration":true,"didChangeWatchedFiles":{"dynamicRegistration":true,"relativePatternSupport":true},"symbol":{"dynamicRegistration":true,"symbolKind":{"valueSet":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]},"tagSupport":{"valueSet":[1]},"resolveSupport":{"properties":["location.range"]}},"codeLens":{"refreshSupport":true},"executeCommand":{"dynamicRegistration":true},"didChangeConfiguration":{"dynamicRegistration":true},"workspaceFolders":true,"foldingRange":{"refreshSupport":true},"semanticTokens":{"refreshSupport":true},"fileOperations":{"dynamicRegistration":true,"didCreate":true,"didRename":true,"didDelete":true,"willCreate":true,"willRename":true,"willDelete":true},"inlineValue":{"refreshSupport":true},"inlayHint":{"refreshSupport":true},"diagnostics":{"refreshSupport":true}},"textDocument":{"publishDiagnostics":{"relatedInformation":true,"versionSupport":false,"tagSupport":{"valueSet":[1,2]},"codeDescriptionSupport":true,"dataSupport":true},"synchronization":{"dynamicRegistration":true,"willSave":true,"willSaveWaitUntil":true,"didSave":true},"completion":{"dynamicRegistration":true,"contextSupport":true,"completionItem":{"snippetSupport":true,"commitCharactersSupport":true,"documentationFormat":["markdown","plaintext"],"deprecatedSupport":true,"preselectSupport":true,"tagSupport":{"valueSet":[1]},"insertReplaceSupport":true,"resolveSupport":{"properties":["documentation","detail","additionalTextEdits"]},"insertTextModeSupport":{"valueSet":[1,2]},"labelDetailsSupport":true},"insertTextMode":2,"completionItemKind":{"valueSet":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]},"completionList":{"itemDefaults":["commitCharacters","editRange","insertTextFormat","insertTextMode","data"]},"editsNearCursor":true},"hover":{"dynamicRegistration":true,"contentFormat":["markdown","plaintext"]},"signatureHelp":{"dynamicRegistration":true,"signatureInformation":{"documentationFormat":["markdown","plaintext"],"parameterInformation":{"labelOffsetSupport":true},"activeParameterSupport":true},"contextSupport":true},"definition":{"dynamicRegistration":true,"linkSupport":true},"references":{"dynamicRegistration":true},"documentHighlight":{"dynamicRegistration":true},"documentSymbol":{"dynamicRegistration":true,"symbolKind":{"valueSet":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]},"hierarchicalDocumentSymbolSupport":true,"tagSupport":{"valueSet":[1]},"labelSupport":true},"codeAction":{"dynamicRegistration":true,"isPreferredSupport":true,"disabledSupport":true,"dataSupport":true,"resolveSupport":{"properties":["edit"]},"codeActionLiteralSupport":{"codeActionKind":{"valueSet":["","quickfix","refactor","refactor.extract","refactor.inline","refactor.rewrite","source","source.organizeImports"]}},"honorsChangeAnnotations":true},"codeLens":{"dynamicRegistration":true},"formatting":{"dynamicRegistration":true},"rangeFormatting":{"dynamicRegistration":true,"rangesSupport":true},"onTypeFormatting":{"dynamicRegistration":true},"rename":{"dynamicRegistration":true,"prepareSupport":true,"prepareSupportDefaultBehavior":1,"honorsChangeAnnotations":true},"documentLink":{"dynamicRegistration":true,"tooltipSupport":true},"typeDefinition":{"dynamicRegistration":true,"linkSupport":true},"implementation":{"dynamicRegistration":true,"linkSupport":true},"colorProvider":{"dynamicRegistration":true},"foldingRange":{"dynamicRegistration":true,"rangeLimit":5000,"lineFoldingOnly":true,"foldingRangeKind":{"valueSet":["comment","imports","region"]},"foldingRange":{"collapsedText":false}},"declaration":{"dynamicRegistration":true,"linkSupport":true},"selectionRange":{"dynamicRegistration":true},"callHierarchy":{"dynamicRegistration":true},"semanticTokens":{"dynamicRegistration":true,"tokenTypes":["namespace","type","class","enum","interface","struct","typeParameter","parameter","variable","property","enumMember","event","function","method","macro","keyword","modifier","comment","string","number","regexp","operator","decorator"],"tokenModifiers":["declaration","definition","readonly","static","deprecated","abstract","async","modification","documentation","defaultLibrary"],"formats":["relative"],"requests":{"range":true,"full":{"delta":true}},"multilineTokenSupport":false,"overlappingTokenSupport":false,"serverCancelSupport":true,"augmentsSyntaxTokens":true},"linkedEditingRange":{"dynamicRegistration":true},"typeHierarchy":{"dynamicRegistration":true},"inlineValue":{"dynamicRegistration":true},"inlayHint":{"dynamicRegistration":true,"resolveSupport":{"properties":["tooltip","textEdits","label.tooltip","label.location","label.command"]}},"diagnostic":{"dynamicRegistration":true,"relatedDocumentSupport":false},"inactiveRegionsCapabilities":{"inactiveRegions":true}},"window":{"showMessage":{"messageActionItem":{"additionalPropertiesSupport":true}},"showDocument":{"support":true},"workDoneProgress":true},"general":{"staleRequestSupport":{"cancel":true,"retryOnContentModified":["textDocument/semanticTokens/full","textDocument/semanticTokens/range","textDocument/semanticTokens/full/delta"]},"regularExpressions":{"engine":"ECMAScript","version":"ES2020"},"markdown":{"parser":"marked","version":"1.1.0"},"positionEncodings":["utf-16"]},"notebookDocument":{"synchronization":{"dynamicRegistration":true,"executionSummarySupport":true}}},"initializationOptions":{"clangdFileStatus":true,"fallbackFlags":[]},"trace":"off","workspaceFolders":[{"uri":"file:///home/izumi/.code/scrap/nullix-new","name":"nullix-new"}]}}Content-Length: 52
+
+{"jsonrpc":"2.0","method":"initialized","params":{}}Content-Length: 3144
+
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/diagnostics/diagnostics.hpp","languageId":"cpp","version":1,"text":"/* #pragma once */\n\n#ifndef DIAGNOSTICS_HPP_\n    #define DIAGNOSTICS_HPP_\n    \n    #ifdef DIAGNOSTICS_H\n        #error \"Fatal: 'diagnostics.h' is already included.\"\n        #error \"Conflict: 'diagnostics.h' detected.\"\n        #pragma message \"Use only 'Diagnostics.hpp'.\"\n    #endif /* DIAGNOSTICS_H */\n    \n    #define DIAGNOSTICS_H /* Hijack the 'diagnostics.h macro namespace */\n    \n    #define STRINGIFY_(...) #__VA_ARGS__\n    #define DIAGNOSTICS_STRINGIFY_(...) STRINGIFY_(__VA_ARGS__)\n    \n    #ifdef __clang__\n        #define _compiler__ clang\n        #define _compiler_id__ 0b11LL\n    #elifdef __GNUC__\n        #define _compiler__ GCC\n        #define _compiler_id__ 0b01\n    #else\n        #define _compiler_id__ 0b00LL\n        #error \"Fatal: unknown compiler\"\n    #endif /* __clang__ || __GNUC__ */\n    \n    #if _compiler_id__ > 0b00LL\n        #define PRAGMA_DIAGNOSTICS_(...) \\\n            _Pragma \\\n            ( \\\n                DIAGNOSTICS_STRINGIFY_ \\\n                ( \\\n                    _compiler__ diagnostic __VA_ARGS__ \\\n                ) \\\n            )\n        #undef _\n        \n        #define POP_(...) PRAGMA_DIAGNOSTICS_(__VA_ARGS__)\n        #define PUSH_(...) PRAGMA_DIAGNOSTICS_(__VA_ARGS__)\n        #define ERROR_(...) PRAGMA_DIAGNOSTICS_(error __VA_ARGS__)\n        #define IGNORE_(...) PRAGMA_DIAGNOSTICS_(ignored __VA_ARGS__)\n        #define WARNING_(...) PRAGMA_DIAGNOSTICS_(warning __VA_ARGS__)\n        \n        #define DIAGNOSTICS_POP POP_(pop)\n        #define DIAGNOSTICS_PUSH PUSH_(push)\n        \n        #define DIAGNOSTICS_ERROR(...) ERROR_(__VA_ARGS__)\n        #define DIAGNOSTICS_IGNORE(...) IGNORE_(__VA_ARGS__)\n        #define DIAGNOSTICS_IGNORED(...) IGNORE_(__VA_ARGS__)\n        #define DIAGNOSTICS_WARNING(...) WARNING_(__VA_ARGS__)\n    #else\n        #define DIAGNOSTICS_POP\n        #define DIAGNOSTICS_PUSH\n        \n        #define DIAGNOSTICS_ERROR(...)\n        #define DIAGNOSTICS_IGNORE(...)\n        #define DIAGNOSTICS_IGNORED(...)\n        #define DIAGNOSTICS_WARNING(...)\n    #endif\n    \n    DIAGNOSTICS_PUSH\n    DIAGNOSTICS_IGNORE(\"-Weverything\")\n        #pragma GCC poison _\n        #pragma GCC poison POP_\n        #pragma GCC poison PUSH_\n        #pragma GCC poison ERROR_\n        #pragma GCC poison IGNORE_\n        #pragma GCC poison WARNING_\n        \n        #pragma GCC poison _compiler__\n        #pragma GCC poison _compiler_id__\n        \n        // #pragma GCC poison STRINGIFY_\n        // #pragma GCC poison DIAGNOSTICS_STRINGIFY_\n        \n        /* poison the 'diagnostics.h' macro namespace */\n        #pragma GCC poison DIAGNOSTICS_H /* DO NOT USE DIAGNOSTICS.H */\n    DIAGNOSTICS_POP\n    \n    DIAGNOSTICS_PUSH\n    DIAGNOSTICS_WARNING(\"-W#warnings\")\n        #warning \"Warn: Header 'diagnostics.h' has been supressed\"\n    DIAGNOSTICS_POP\n#endif /* DIAGNOSTICS_HPP_ */\n"}}}Content-Length: 2068
+
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp","languageId":"cpp","version":1,"text":"#pragma once\n\n#include <cstddef>\n#include <cstring>\n#include <expected>\n#include <string>\n#include <unordered_map>\n#include <vector>\n\n\nclass Config {\n    public:\n        enum class errType{\n            invalidKey,\n            invalidValue,\n            missingAssignment,\n            fileNotOpen,\n            syntaxErr,\n            envNotSet,\n        };\n        enum class valueType{\n            String,\n            Int,\n            Bool,\n        };\n\n        struct errMsg{\n            errType et ;\n            std::string msg;\n            size_t line;\n        };\n\n        struct Line{\n            std::string raw;\n            std::string key;\n            std::string value;\n            std::string trailing;\n        };\n\n        static void hyprNotify(int icon, int timeoutMs,const std::string& color, const std::string& msg);\n\n        static std::expected<Config, Config::errMsg> load();\n        static std::unordered_map<std::string , Config::valueType>& getValidOptionsMap();\n\n        bool needsQuotes(const std::string& value) const;\n        void save();\n        std::string getStr(const std::string& key) ;\n        int getInt(const std::string& key) ;\n        bool getBool(const std::string&key);\n        void set(const std::string& key, const std::string& value);\n        void setInt(const std::string& key, int value);\n        void setBool(const std::string& key, bool value);\n        bool has(const std::string& key) const;\n        void printValues();\n        void changeOrder(const std::string& key ,const std::string& newValue );\n\n\n    private:\n        std::string baseConfigPath = \"/.config/nullix/nullix.conf\";\n        static std::unordered_map<std::string, Config::valueType> validOptionsMap;\n        std::unordered_map<std::string , std::string> values;\n        std::vector<Line> order;\n\n};\n"}}}Content-Length: 171
+
+{"jsonrpc":"2.0","id":1,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":2,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":0}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":0,"result":null}Content-Length: 169
+
+{"jsonrpc":"2.0","id":3,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"}}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":1,"result":null}Content-Length: 241
+
+{"jsonrpc":"2.0","id":4,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"},"range":{"start":{"line":0,"character":0},"end":{"line":64,"character":0}}}}Content-Length: 176
+
+{"jsonrpc":"2.0","id":5,"method":"textDocument/semanticTokens/full","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":6,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":7,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"}}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":2,"result":null}Content-Length: 286
+
+{"jsonrpc":"2.0","id":8,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"},"range":{"start":{"line":2,"character":0},"end":{"line":2,"character":0}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 205
+
+{"jsonrpc":"2.0","id":9,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"},"previousResultId":"1"}}Content-Length: 159
+
+{"jsonrpc":"2.0","id":10,"method":"textDocument/switchSourceHeader","params":{"uri":"file:///home/izumi/.code/scrap/nullix-new/include/lib_nullix/config.hpp"}}Content-Length: 14831
+
+{"jsonrpc":"2.0","method":"textDocument/didOpen","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","languageId":"cpp","version":1,"text":"#include \"config.hpp\"\n#include <algorithm>\n#include <cctype>\n#include <cstddef>\n#include <cstdio>\n#include <cstdlib>\n#include <expected>\n#include <format>\n#include <fstream>\n#include <iostream>\n#include <string>\n#include <unordered_map>\n#include <unistd.h>\n#include <sys/types.h>\n\n\n\nstd::unordered_map<std::string, Config::valueType>& Config::getValidOptionsMap() {\n    #pragma clang diagnostic push\n    #pragma clang diagnostic ignored \"-Wexit-time-destructors\"\n    static std::unordered_map<std::string, Config::valueType> OptionsSet{\n        {\"wallpaper.directory\", Config::valueType::String},\n        {\"wallpaper.backend\",   Config::valueType::String},\n        {\"volume.step\",         Config::valueType::Int},\n        {\"brightness.step\",     Config::valueType::Int},\n        {\"theme.active\",        Config::valueType::String}\n    };\n    #pragma clang diagnostic pop\n    return OptionsSet;\n}\n\nvoid Config::hyprNotify(\n    int icon,\n    int timeoutMs,\n    const std::string& color,\n    const std::string& msg\n) {\n    pid_t pid = fork();\n\n    if (pid == 0) {\n        // child\n        std::string iconStr = std::to_string(icon);\n        std::string timeStr = std::to_string(timeoutMs);\n\n        execlp(\n            \"hyprctl\",\n            \"hyprctl\",\n            \"notify\",\n            iconStr.c_str(),\n            timeStr.c_str(),\n            color.c_str(),\n            msg.c_str(),\n            nullptr\n        );\n\n        // only reached if execvp fails\n        _exit(127);\n    }\n\n    // parent does nothing\n}\n\n\nstd::expected<Config, Config::errMsg> Config::load(){\n    Config cfg;\n    std::string base = \"/.config/nullix/nullix.conf\";\n    const char* HOME = std::getenv(\"HOME\");\n    if (!HOME) {\n        std::string errorMsg = std::format(\"Home not set.\");\n        // hyprNotify(3, 5000, \"0\", errorMsg);\n        return std::unexpected(errMsg{\n            .et = errType::envNotSet,\n            .msg = errorMsg,\n            .line = 0\n        });\n\n    }\n    std::string filePath = std::string(HOME) + base ;\n    // std::string filePath = getNullixFile();\n    std::ifstream file(filePath);\n\n    if (!file.is_open()) {\n        std::string errorMsg = std::format(\"Config not found: {}\", filePath);\n        // hyprNotify(1, 3000, \"0\", errorMsg);\n        return std::unexpected(errMsg{.et = errType::fileNotOpen, .msg = errorMsg, .line = 0});\n    }\n\n\n\n    size_t ln = 0;\n    std::string line;\n\n    while (std::getline(file, line)) {\n        ln++;\n        if(line.empty()){\n            cfg.order.emplace_back(Line{\n                .raw = \"\",\n                .key = \"\",\n                .value = \"\",\n                .trailing = \"\",\n            });\n            continue;\n        }\n\n\n\n        // trim lambda for trimming whitespaces from left and right of line\n\n        auto trim = [](std::string& s){\n            s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch) {return !std::isspace(ch);}));\n            size_t pos = s.rfind(';');\n            if (pos != std::string::npos) {\n                s.erase(pos + 1);\n            }\n            else {\n                s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch) {return !std::isspace(ch);}).base() , s.end());\n            }\n        };\n\n\n\n        size_t lineEnd = line.find(';');\n        std::string trailing = \"\";\n\n        if (lineEnd != std::string::npos) {\n            trailing = line.substr(lineEnd);\n        }\n\n        trim(line);\n\n        // if comment then skip\n        if (line.starts_with('#')) {\n            // cfg.order[ln] = {\"\",\"\"};\n\n            cfg.order.emplace_back(Line{\n                .raw = line,\n                .key = \"comment\",\n                .value = \"\",\n                .trailing = trailing,\n            });\n            continue;\n        }\n\n\n        // finding all required tokens for valid syntax\n        size_t openBracket = line.find('[');\n        size_t closeBracket = line.find(']');\n        size_t epos = line.find('=');\n        size_t comment = line.find('#');\n\n        // getting all the valid syntax options\n        auto validOptions = Config::getValidOptionsMap();\n\n        // checking lots of condition for proper syntax parsing\n        if\n            (\n                (openBracket != std::string::npos) &&\n                (closeBracket != std::string::npos) &&\n                (openBracket < closeBracket) &&\n                (openBracket + 1 != closeBracket) &&\n                (lineEnd != std::string::npos && epos != std::string::npos ) &&\n                (comment == std::string::npos || comment > lineEnd)\n            )\n        {\n\n            std::string option = line.substr(openBracket + 1 , closeBracket - openBracket - 1);\n            trim(option);\n            if (!validOptions.contains(option)) {\n                std::string errorMsg = std::format(\"[Err] in file : {} [invalid key] at line : {}\",filePath,ln);\n                // hyprNotify(2, 5000, \"0\", errorMsg);\n\n                return std::unexpected(errMsg{\n                    .et = errType::invalidKey,\n                    .msg = errorMsg,\n                    .line = ln\n                });\n\n            }\n            else {\n                auto value_t = validOptions.at(option);\n                switch (value_t) {\n                    case Config::valueType::String :{\n                        size_t openingQuote = line.find('\"' , epos);\n                        size_t closingQuote = line.rfind('\"');\n                        if\n                            (\n                                openingQuote != std::string::npos &&\n                                closingQuote != std::string::npos &&\n                                epos < openingQuote &&\n                                lineEnd > closingQuote &&\n                                openingQuote < closingQuote\n                            )\n                        {\n                            std::string value = line.substr( openingQuote + 1, closingQuote - openingQuote - 1);\n                            cfg.values[option] = value;\n                            cfg.order.emplace_back(Line{\n                                .raw = line,\n                                .key = option,\n                                .value = value,\n                                .trailing = trailing,\n                            });\n\n                        }\n                        else {\n                            std::string errorMsg = std::format(\"[Err] in file : {} [invalid value] at line : {}\",filePath,ln);\n                            // hyprNotify(2, 5000, \"0\", errorMsg);\n\n                            return std::unexpected(errMsg{\n                                .et = errType::invalidValue,\n                                .msg = errorMsg,\n                                .line = ln\n                            });\n                        }\n                        break;\n                    }\n                    case Config::valueType::Int :{\n                        std::string subLine = line.substr(epos + 1 , lineEnd - epos - 1);\n                        trim(subLine);\n                        if\n                        (\n                            subLine.find('\"') != std::string::npos||\n                            subLine.rfind('\"') != std::string::npos\n\n                        )\n                        {\n\n                            std::string errorMsg = std::format(\"[Err] in file : {} [invalid value] at line : {}\",filePath,ln);\n                            // hyprNotify(2, 5000, \"0\", errorMsg);\n\n                            return std::unexpected(errMsg{\n                                .et = errType::invalidValue,\n                                .msg = errorMsg,\n                                .line = ln\n                            });\n\n                        }\n                        std::string errorMsg = std::format(\"[Err] in file : {} [invalid key] at line : {}\",filePath,ln);\n\n                        try {\n                            std::stoi(subLine);\n                        } catch (...) {\n                            return std::unexpected(errMsg{.et = errType::invalidValue,.msg = errorMsg,.line = ln});\n                        }\n\n                        cfg.values[option] = subLine;\n                        cfg.order.emplace_back(Line{\n                            .raw = line,\n                            .key = option,\n                            .value = subLine,\n                            .trailing = trailing,\n                        });\n\n                        break;\n                    }\n\n                    case Config::valueType::Bool :{\n                        std::string subLine = line.substr(epos + 1 , lineEnd - epos - 1);\n                        trim(subLine);\n                        for (char& c : subLine) {\n                            c = static_cast<char>(std::tolower(static_cast<unsigned char>(c)));\n                        }\n                        if\n                        (\n                            subLine.find('\"') != std::string::npos||\n                            subLine.rfind('\"') != std::string::npos ||\n                            ( subLine != \"true\" && subLine != \"false\")\n\n                        )\n                        {\n                            std::string errorMsg = std::format(\"[Err] in file : {} [invalid value] at line : {}\",filePath,ln);\n                            // hyprNotify(2, 5000, \"0\", errorMsg);\n\n                                return std::unexpected(errMsg{\n                                    .et = errType::invalidValue,\n                                    .msg = errorMsg,\n                                    .line = ln\n                                });\n                        }\n\n                        cfg.values[option] = subLine;\n\n                        cfg.order.emplace_back(Line{\n                            .raw = line,\n                            .key = option,\n                            .value = subLine,\n                            .trailing = trailing,\n                        });\n\n\n                        break;\n                    }\n                }\n\n            }\n\n        }\n        else {\n            std::string errorMsg = std::format(\"[Err] in file : {} [invalid syntax] at line : {}\",filePath,ln);\n            // hyprNotify(2, 5000, \"0\", errorMsg);\n            return std::unexpected(errMsg{\n                .et = errType::syntaxErr,\n                .msg = errorMsg,\n                .line = ln\n            });\n        }\n\n\n\n    }\n    // std::string msg = std::format(\"nullix.conf validated successfully. \");\n    // hyprNotify(5 ,2000, \"0\", msg);\n    return std::expected<Config, Config::errMsg>(cfg);\n}\n\n\nvoid Config::printValues(){\n    for (const auto& entry : values) {\n        std::cout << entry.first << \":\" << entry.second << std::endl;\n    }\n}\n\nvoid Config::changeOrder(const std::string& key ,const std::string& newValue){\n    for (auto & i : this->order) {\n        if (i.key == key) {\n            i.value = newValue;\n        }\n    }\n}\nvoid Config::save() {\n\n    std::string base = \"/.config/nullix/nullix.conf\";\n    const char* HOME = std::getenv(\"HOME\");\n    if (!HOME) {\n        return ;\n    }\n    std::string path = HOME + base;\n    std::ofstream file(path);\n\n    for (const auto& l : this->order) {\n        if(l.key.empty() ){\n            file << \"\\n\";\n            continue;\n        }\n        if (l.key == \"comment\") {\n            file << std::format(\"{}\\n\", l.raw);\n            continue;\n        }\n        if (needsQuotes(l.value)) {\n            file << std::format(\"[{}] = \\\"{}\\\"{}\\n\", l.key, l.value , l.trailing);\n        } else {\n            file << std::format(\"[{}] = {}{}\\n\", l.key, l.value , l.trailing);  // NO quotes!\n        }\n    }\n}\n\nbool Config::needsQuotes(const std::string& value) const {\n    if (value.empty()) return true;\n\n    // Numbers, booleans → NO quotes\n    if (std::all_of(value.begin(), value.end(), ::isdigit) ||\n        value == \"true\" || value == \"false\" ||\n        value == \"on\" || value == \"off\" ||\n        value == \"yes\" || value == \"no\") {\n        return false;\n    }\n\n\n    return true;  // Default: quote strings\n}\n\nvoid Config::set(const std::string& key, const std::string& value) {\n    auto validMap = getValidOptionsMap();\n    if (value.empty()) {\n\n        std::string errorMsg = std::format(\"Invalid Value: {}\", value);\n        hyprNotify(3, 2000, \"0\",errorMsg);\n        return;\n    }\n    if (!validMap.contains(key)) {\n        std::string errorMsg = std::format(\"Invalid key: {}\", key);\n        hyprNotify(3, 2000, \"0\",errorMsg);\n        return;\n    }\n    if (!values.contains(key)) {\n\n        values[key] = value;\n        order.emplace_back(Line{\n            .raw = std::format(\"[{}] = {}\", key , value),\n            .key = key,\n            .value = value,\n            .trailing = \";\",\n        });\n\n    }\n    else {\n        values[key]  = value;\n        changeOrder(key ,value);\n    }\n}\n\nvoid Config::setInt(const std::string& key, int value) {\n    set(key, std::to_string(value));\n}\n\nvoid Config::setBool(const std::string& key, bool value) {\n    set(key, value ? \"true\" : \"false\");\n}\n\nbool Config::has(const std::string& key) const {\n    return values.contains(key);\n}\n\nstd::string Config::getStr(const std::string& key) {\n    auto it =values.find(key);\n    if (it != values.end()) {\n        return it->second;\n    }\n    return \"\";\n}\nint Config::getInt(const std::string& key) {\n    auto it = values.find(key);\n    if (it != values.end()) {\n        try { return std::stoi(it->second); }\n        catch (...) {\n            hyprNotify(3, 2000, \"#ffaa00\", std::format(\"Invalid key: {}\", key));\n        }\n    }\n    return 0;\n}\nbool Config::getBool(const std::string& key){\n    auto it = values.find(key);\n    if (it != values.end()) {\n        if (it->second == \"true\") {\n            return true;\n        }\n        else if (it->second == \"false\") {\n            return false;\n        }\n        else {\n            hyprNotify(3, 2000, \"0\", std::format(\"Invalid value: {}\",it->second));\n        }\n    }\n    else {\n        hyprNotify(3, 2000, \"0\", std::format(\"Invalid key: {}\",key));\n    }\n    return false;\n}\n"}}}Content-Length: 283
+
+{"jsonrpc":"2.0","id":11,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":0}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 168
+
+{"jsonrpc":"2.0","id":12,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 173
+
+{"jsonrpc":"2.0","id":13,"method":"textDocument/semanticTokens/full","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":14,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":15,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":16,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":17,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":3,"result":null}Content-Length: 283
+
+{"jsonrpc":"2.0","id":18,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":0}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 202
+
+{"jsonrpc":"2.0","id":19,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"1"}}Content-Length: 603
+
+{"jsonrpc":"2.0","id":20,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":0},"end":{"line":1,"character":0}},"context":{"diagnostics":[{"range":{"start":{"line":1,"character":0},"end":{"line":1,"character":20}},"message":"Included header algorithm is not used directly (fixes available)","code":"unused-includes","codeDescription":{"href":"https://clangd.llvm.org/guides/include-cleaner"},"severity":2,"tags":[1],"relatedInformation":[],"source":"clangd"}],"triggerKind":2}}}Content-Length: 283
+
+{"jsonrpc":"2.0","id":21,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":0}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 207
+
+{"jsonrpc":"2.0","id":22,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":0,"character":8}}}Content-Length: 283
+
+{"jsonrpc":"2.0","id":23,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":8},"end":{"line":0,"character":8}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 480
+
+{"jsonrpc":"2.0","id":24,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":9},"end":{"line":0,"character":9}},"context":{"diagnostics":[{"range":{"start":{"line":0,"character":9},"end":{"line":0,"character":21}},"message":"'config.hpp' file not found","code":"pp_file_not_found","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 208
+
+{"jsonrpc":"2.0","id":25,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":0,"character":10}}}Content-Length: 482
+
+{"jsonrpc":"2.0","id":26,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":10},"end":{"line":0,"character":10}},"context":{"diagnostics":[{"range":{"start":{"line":0,"character":9},"end":{"line":0,"character":21}},"message":"'config.hpp' file not found","code":"pp_file_not_found","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 291
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":2},"contentChanges":[{"range":{"start":{"line":0,"character":10},"end":{"line":0,"character":10}},"rangeLength":0,"text":"l"}]}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":27,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 291
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":3},"contentChanges":[{"range":{"start":{"line":0,"character":11},"end":{"line":0,"character":11}},"rangeLength":0,"text":"i"}]}}Content-Length: 202
+
+{"jsonrpc":"2.0","id":28,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"2"}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":4,"result":null}Content-Length: 202
+
+{"jsonrpc":"2.0","id":29,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"3"}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":30,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":31,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 291
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":4},"contentChanges":[{"range":{"start":{"line":0,"character":12},"end":{"line":0,"character":12}},"rangeLength":0,"text":"b"}]}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":32,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":33,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":34,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":5,"result":null}Content-Length: 202
+
+{"jsonrpc":"2.0","id":35,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"4"}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":36,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 291
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":5},"contentChanges":[{"range":{"start":{"line":0,"character":13},"end":{"line":0,"character":13}},"rangeLength":0,"text":"n"}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":37,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":6,"result":null}Content-Length: 202
+
+{"jsonrpc":"2.0","id":38,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"5"}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":39,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":40,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 168
+
+{"jsonrpc":"2.0","id":41,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 290
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":6},"contentChanges":[{"range":{"start":{"line":0,"character":13},"end":{"line":0,"character":14}},"rangeLength":1,"text":""}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":42,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":7,"result":null}Content-Length: 202
+
+{"jsonrpc":"2.0","id":43,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"6"}}Content-Length: 291
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":7},"contentChanges":[{"range":{"start":{"line":0,"character":13},"end":{"line":0,"character":13}},"rangeLength":0,"text":"_"}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":44,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":45,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 291
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":8},"contentChanges":[{"range":{"start":{"line":0,"character":14},"end":{"line":0,"character":14}},"rangeLength":0,"text":"n"}]}}Content-Length: 202
+
+{"jsonrpc":"2.0","id":46,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"7"}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":47,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":8,"result":null}Content-Length: 202
+
+{"jsonrpc":"2.0","id":48,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"8"}}Content-Length: 291
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":9},"contentChanges":[{"range":{"start":{"line":0,"character":15},"end":{"line":0,"character":15}},"rangeLength":0,"text":"u"}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":49,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":10},"contentChanges":[{"range":{"start":{"line":0,"character":16},"end":{"line":0,"character":16}},"rangeLength":0,"text":"l"}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":50,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 38
+
+{"jsonrpc":"2.0","id":9,"result":null}Content-Length: 202
+
+{"jsonrpc":"2.0","id":51,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"9"}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":11},"contentChanges":[{"range":{"start":{"line":0,"character":17},"end":{"line":0,"character":17}},"rangeLength":0,"text":"l"}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":52,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":12},"contentChanges":[{"range":{"start":{"line":0,"character":18},"end":{"line":0,"character":18}},"rangeLength":0,"text":"i"}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":53,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":13},"contentChanges":[{"range":{"start":{"line":0,"character":19},"end":{"line":0,"character":19}},"rangeLength":0,"text":"x"}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":54,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 203
+
+{"jsonrpc":"2.0","id":55,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"10"}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":10,"result":null}Content-Length: 166
+
+{"jsonrpc":"2.0","id":56,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 168
+
+{"jsonrpc":"2.0","id":57,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":58,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 492
+
+{"jsonrpc":"2.0","id":59,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":20},"end":{"line":0,"character":20}},"context":{"diagnostics":[{"range":{"start":{"line":0,"character":9},"end":{"line":0,"character":31}},"message":"'lib_nullixconfig.hpp' file not found","code":"pp_file_not_found","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 203
+
+{"jsonrpc":"2.0","id":60,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"11"}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":11,"result":null}Content-Length: 203
+
+{"jsonrpc":"2.0","id":61,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"12"}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":14},"contentChanges":[{"range":{"start":{"line":0,"character":20},"end":{"line":0,"character":20}},"rangeLength":0,"text":"/"}]}}Content-Length: 252
+
+{"jsonrpc":"2.0","id":62,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":0,"character":21},"context":{"triggerKind":2,"triggerCharacter":"/"}}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":63,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":64,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 203
+
+{"jsonrpc":"2.0","id":65,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"13"}}Content-Length: 168
+
+{"jsonrpc":"2.0","id":66,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":67,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 285
+
+{"jsonrpc":"2.0","id":68,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":21},"end":{"line":0,"character":21}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":12,"result":null}Content-Length: 203
+
+{"jsonrpc":"2.0","id":69,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"14"}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":70,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":71,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 285
+
+{"jsonrpc":"2.0","id":72,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":21},"end":{"line":0,"character":21}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":13,"result":null}Content-Length: 203
+
+{"jsonrpc":"2.0","id":73,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"15"}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":14,"result":null}Content-Length: 203
+
+{"jsonrpc":"2.0","id":74,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"16"}}Content-Length: 285
+
+{"jsonrpc":"2.0","id":75,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":21},"end":{"line":0,"character":21}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":76,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":180,"character":16}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":77,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":90,"character":0},"end":{"line":252,"character":0}}}}Content-Length: 495
+
+{"jsonrpc":"2.0","id":78,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":180,"character":16},"end":{"line":180,"character":16}},"context":{"diagnostics":[{"range":{"start":{"line":180,"character":16},"end":{"line":180,"character":22}},"message":"'switch' missing 'default' label","code":"-Wswitch-default","severity":2,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":79,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":90,"character":0},"end":{"line":256,"character":80}}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":80,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":180,"character":16}}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":81,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":90,"character":0},"end":{"line":256,"character":80}}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":82,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":180,"character":16}}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":83,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":84,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":18,"character":5},"end":{"line":18,"character":11}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 209
+
+{"jsonrpc":"2.0","id":85,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":18,"character":11}}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":86,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 209
+
+{"jsonrpc":"2.0","id":87,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":18,"character":11}}}Content-Length: 287
+
+{"jsonrpc":"2.0","id":88,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":18,"character":11},"end":{"line":18,"character":11}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 285
+
+{"jsonrpc":"2.0","id":89,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":18,"character":0},"end":{"line":20,"character":0}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":15},"contentChanges":[{"range":{"start":{"line":18,"character":0},"end":{"line":20,"character":0}},"rangeLength":97,"text":""}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":90,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":91,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 203
+
+{"jsonrpc":"2.0","id":92,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"17"}}Content-Length: 168
+
+{"jsonrpc":"2.0","id":93,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":94,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":95,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":96,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 392
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":16},"contentChanges":[{"range":{"start":{"line":18,"character":0},"end":{"line":18,"character":0}},"rangeLength":0,"text":"    #pragma clang diagnostic push\n    #pragma clang diagnostic ignored \"-Wexit-time-destructors\"\n"}]}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":97,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 166
+
+{"jsonrpc":"2.0","id":98,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 508
+
+{"jsonrpc":"2.0","id":99,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":18,"character":0},"end":{"line":20,"character":0}},"context":{"diagnostics":[{"range":{"start":{"line":18,"character":62},"end":{"line":18,"character":72}},"message":"Declaration requires an exit-time destructor","code":"-Wexit-time-destructors","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":100,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"18"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":101,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":102,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":15,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":103,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"19"}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":104,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 209
+
+{"jsonrpc":"2.0","id":105,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":17,"character":0}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":106,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":107,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":17,"character":0},"end":{"line":17,"character":0}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":108,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":18,"character":11}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":16,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":109,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"20"}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":110,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":18,"character":17}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":110}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":111,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":18,"character":28}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":112,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":19,"character":28}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":113,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":19,"character":36}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":114,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":19,"character":39}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":115,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":39},"end":{"line":19,"character":39}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":116,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":37},"end":{"line":19,"character":37}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":117,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":18,"character":33}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":118,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":18,"character":33},"end":{"line":18,"character":33}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":119,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":120,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":121,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":20},"end":{"line":1,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":122,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":32},"end":{"line":0,"character":32}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 293
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":17},"contentChanges":[{"range":{"start":{"line":0,"character":32},"end":{"line":0,"character":32}},"rangeLength":0,"text":"\n"}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":123,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":124,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":125,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"21"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":126,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":127,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 290
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":18},"contentChanges":[{"range":{"start":{"line":1,"character":0},"end":{"line":1,"character":0}},"rangeLength":0,"text":"#"}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":128,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":17,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":129,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"22"}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":130,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 284
+
+{"jsonrpc":"2.0","id":131,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":1},"end":{"line":1,"character":1}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 290
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":19},"contentChanges":[{"range":{"start":{"line":1,"character":1},"end":{"line":1,"character":1}},"rangeLength":0,"text":"i"}]}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":131}}Content-Length: 229
+
+{"jsonrpc":"2.0","id":132,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":2},"context":{"triggerKind":1}}}Content-Length: 290
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":20},"contentChanges":[{"range":{"start":{"line":1,"character":2},"end":{"line":1,"character":2}},"rangeLength":0,"text":"n"}]}}Content-Length: 229
+
+{"jsonrpc":"2.0","id":133,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":3},"context":{"triggerKind":3}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":134,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 290
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":21},"contentChanges":[{"range":{"start":{"line":1,"character":3},"end":{"line":1,"character":3}},"rangeLength":0,"text":"c"}]}}Content-Length: 229
+
+{"jsonrpc":"2.0","id":135,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":4},"context":{"triggerKind":3}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":18,"result":null}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":128}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":136,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":137,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 284
+
+{"jsonrpc":"2.0","id":138,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":4},"end":{"line":1,"character":4}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":139,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":140,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 290
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":22},"contentChanges":[{"range":{"start":{"line":1,"character":4},"end":{"line":1,"character":4}},"rangeLength":0,"text":"l"}]}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":138}}Content-Length: 229
+
+{"jsonrpc":"2.0","id":141,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":5},"context":{"triggerKind":3}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":136}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":142,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 290
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":23},"contentChanges":[{"range":{"start":{"line":1,"character":5},"end":{"line":1,"character":5}},"rangeLength":0,"text":"u"}]}}Content-Length: 229
+
+{"jsonrpc":"2.0","id":143,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":6},"context":{"triggerKind":3}}}Content-Length: 290
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":24},"contentChanges":[{"range":{"start":{"line":1,"character":6},"end":{"line":1,"character":6}},"rangeLength":0,"text":"d"}]}}Content-Length: 229
+
+{"jsonrpc":"2.0","id":144,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":7},"context":{"triggerKind":3}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":142}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":145,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":146,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 290
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":25},"contentChanges":[{"range":{"start":{"line":1,"character":7},"end":{"line":1,"character":7}},"rangeLength":0,"text":"e"}]}}Content-Length: 229
+
+{"jsonrpc":"2.0","id":147,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":8},"context":{"triggerKind":3}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":145}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":148,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":149,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 284
+
+{"jsonrpc":"2.0","id":150,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":8},"end":{"line":1,"character":8}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":139}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":151,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":152,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 284
+
+{"jsonrpc":"2.0","id":153,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":8},"end":{"line":1,"character":8}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":150}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":154,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"23"}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":148}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":155,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 301
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":26},"contentChanges":[{"range":{"start":{"line":1,"character":1},"end":{"line":1,"character":8}},"rangeLength":7,"text":"include \"\""}]}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":153}}Content-Length: 254
+
+{"jsonrpc":"2.0","id":156,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":10},"context":{"triggerKind":2,"triggerCharacter":"\""}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":155}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":157,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":158,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":27},"contentChanges":[{"range":{"start":{"line":1,"character":10},"end":{"line":1,"character":10}},"rangeLength":0,"text":"d"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":159,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":11},"context":{"triggerKind":1}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":28},"contentChanges":[{"range":{"start":{"line":1,"character":11},"end":{"line":1,"character":11}},"rangeLength":0,"text":"i"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":160,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":12},"context":{"triggerKind":1}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":29},"contentChanges":[{"range":{"start":{"line":1,"character":12},"end":{"line":1,"character":12}},"rangeLength":0,"text":"a"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":161,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":13},"context":{"triggerKind":1}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":157}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":162,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":30},"contentChanges":[{"range":{"start":{"line":1,"character":13},"end":{"line":1,"character":13}},"rangeLength":0,"text":"g"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":163,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":14},"context":{"triggerKind":1}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":162}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":164,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":165,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":166,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":14},"end":{"line":1,"character":14}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":19,"result":null}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":151}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":167,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":168,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":169,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":14},"context":{"triggerKind":1}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":170,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 477
+
+{"jsonrpc":"2.0","id":171,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":14},"end":{"line":1,"character":14}},"context":{"diagnostics":[{"range":{"start":{"line":1,"character":9},"end":{"line":1,"character":15}},"message":"'diag' file not found","code":"pp_file_not_found","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":172,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":20,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":173,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"24"}}Content-Length: 477
+
+{"jsonrpc":"2.0","id":174,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":14},"end":{"line":1,"character":14}},"context":{"diagnostics":[{"range":{"start":{"line":1,"character":9},"end":{"line":1,"character":15}},"message":"'diag' file not found","code":"pp_file_not_found","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 303
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":31},"contentChanges":[{"range":{"start":{"line":1,"character":10},"end":{"line":1,"character":15}},"rangeLength":5,"text":"diagnostics/"}]}}Content-Length: 253
+
+{"jsonrpc":"2.0","id":175,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":22},"context":{"triggerKind":2,"triggerCharacter":"/"}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":176,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":177,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":178,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":22},"end":{"line":1,"character":22}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":21,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":179,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"25"}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":180,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":181,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":22},"context":{"triggerKind":1}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":182,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":183,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":1,"character":22},"end":{"line":1,"character":22}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":184,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":185,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":22,"result":null}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 308
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":32},"contentChanges":[{"range":{"start":{"line":1,"character":22},"end":{"line":1,"character":22}},"rangeLength":0,"text":"diagnostics.hpp\""}]}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":186,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"26"}}Content-Length: 254
+
+{"jsonrpc":"2.0","id":187,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":1,"character":38},"context":{"triggerKind":2,"triggerCharacter":"\""}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":188,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":189,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":190,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":191,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":192,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":2,"character":20},"end":{"line":2,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":193,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":23,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":194,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"27"}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":195,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":24,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":196,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"28"}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":25,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":197,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"29"}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":198,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":18,"character":38}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":199,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":19,"character":33}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":200,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":33},"end":{"line":19,"character":33}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":33},"contentChanges":[{"range":{"start":{"line":19,"character":0},"end":{"line":20,"character":0}},"rangeLength":34,"text":""}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":201,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":202,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":203,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"30"}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":204,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 299
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":34},"contentChanges":[{"range":{"start":{"line":18,"character":82},"end":{"line":18,"character":82}},"rangeLength":0,"text":"\n    "}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":205,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":206,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":207,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"31"}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":208,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":209,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":210,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":211,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":35},"contentChanges":[{"range":{"start":{"line":19,"character":4},"end":{"line":19,"character":4}},"rangeLength":0,"text":"D"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":212,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":19,"character":5},"context":{"triggerKind":1}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":26,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":213,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"32"}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":214,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":215,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":216,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":5},"end":{"line":19,"character":5}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":217,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":218,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":36},"contentChanges":[{"range":{"start":{"line":19,"character":5},"end":{"line":19,"character":5}},"rangeLength":0,"text":"I"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":219,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":19,"character":6},"context":{"triggerKind":3}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":37},"contentChanges":[{"range":{"start":{"line":19,"character":6},"end":{"line":19,"character":6}},"rangeLength":0,"text":"A"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":220,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":19,"character":7},"context":{"triggerKind":3}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":221,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"33"}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":222,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":223,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":224,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":7},"end":{"line":19,"character":7}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":38},"contentChanges":[{"range":{"start":{"line":19,"character":7},"end":{"line":19,"character":7}},"rangeLength":0,"text":"G"}]}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":224}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":225,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":19,"character":8},"context":{"triggerKind":1}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":226,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":227,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":228,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":8},"end":{"line":19,"character":8}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":229,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"34"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":230,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":231,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 480
+
+{"jsonrpc":"2.0","id":232,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":8},"end":{"line":19,"character":8}},"context":{"diagnostics":[{"range":{"start":{"line":19,"character":4},"end":{"line":19,"character":8}},"message":"Unknown type name 'DIAG'","code":"unknown_typename","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":233,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":234,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":27,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":235,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"35"}}Content-Length: 480
+
+{"jsonrpc":"2.0","id":236,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":8},"end":{"line":19,"character":8}},"context":{"diagnostics":[{"range":{"start":{"line":19,"character":4},"end":{"line":19,"character":8}},"message":"Unknown type name 'DIAG'","code":"unknown_typename","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 307
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":39},"contentChanges":[{"range":{"start":{"line":19,"character":4},"end":{"line":19,"character":8}},"rangeLength":4,"text":"DIAGNOSTICS_PUSH"}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":237,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":238,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":239,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":20},"end":{"line":19,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":240,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"36"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":241,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":242,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":243,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":19,"character":20},"end":{"line":19,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":244,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 313
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":40},"contentChanges":[{"range":{"start":{"line":19,"character":0},"end":{"line":19,"character":0}},"rangeLength":0,"text":"    DIAGNOSTICS_PUSH\n"}]}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":245,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":21}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":246,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":247,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":20},"end":{"line":20,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":248,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"37"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":249,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":250,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":251,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":20},"end":{"line":20,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 464
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":41},"contentChanges":[{"range":{"start":{"line":20,"character":20},"end":{"line":21,"character":62}},"rangeLength":63,"text":""},{"range":{"start":{"line":20,"character":0},"end":{"line":20,"character":0}},"rangeLength":0,"text":"    #pragma clang diagnostic ignored \"-Wexit-time-destructors\"\n"}]}}Content-Length: 585
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":42},"contentChanges":[{"range":{"start":{"line":21,"character":20},"end":{"line":22,"character":73}},"rangeLength":74,"text":""},{"range":{"start":{"line":21,"character":0},"end":{"line":21,"character":4}},"rangeLength":4,"text":"        "},{"range":{"start":{"line":21,"character":0},"end":{"line":21,"character":0}},"rangeLength":0,"text":"    static std::unordered_map<std::string, Config::valueType> OptionsSet{\n"}]}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":252,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":21}}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":253,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"38"}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":254,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 461
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":43},"contentChanges":[{"range":{"start":{"line":22,"character":24},"end":{"line":23,"character":59}},"rangeLength":60,"text":""},{"range":{"start":{"line":22,"character":0},"end":{"line":22,"character":0}},"rangeLength":0,"text":"        {\"wallpaper.directory\", Config::valueType::String},\n"}]}}Content-Length: 461
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":44},"contentChanges":[{"range":{"start":{"line":23,"character":24},"end":{"line":24,"character":59}},"rangeLength":60,"text":""},{"range":{"start":{"line":23,"character":0},"end":{"line":23,"character":0}},"rangeLength":0,"text":"        {\"wallpaper.backend\",   Config::valueType::String},\n"}]}}Content-Length: 458
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":45},"contentChanges":[{"range":{"start":{"line":24,"character":24},"end":{"line":25,"character":56}},"rangeLength":57,"text":""},{"range":{"start":{"line":24,"character":0},"end":{"line":24,"character":0}},"rangeLength":0,"text":"        {\"volume.step\",         Config::valueType::Int},\n"}]}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":255,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"39"}}Content-Length: 458
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":46},"contentChanges":[{"range":{"start":{"line":25,"character":24},"end":{"line":26,"character":56}},"rangeLength":57,"text":""},{"range":{"start":{"line":25,"character":0},"end":{"line":25,"character":0}},"rangeLength":0,"text":"        {\"brightness.step\",     Config::valueType::Int},\n"}]}}Content-Length: 460
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":47},"contentChanges":[{"range":{"start":{"line":26,"character":24},"end":{"line":27,"character":58}},"rangeLength":59,"text":""},{"range":{"start":{"line":26,"character":0},"end":{"line":26,"character":0}},"rangeLength":0,"text":"        {\"theme.active\",        Config::valueType::String}\n"}]}}Content-Length: 512
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":48},"contentChanges":[{"range":{"start":{"line":27,"character":24},"end":{"line":28,"character":6}},"rangeLength":7,"text":""},{"range":{"start":{"line":27,"character":0},"end":{"line":27,"character":8}},"rangeLength":8,"text":"    "},{"range":{"start":{"line":27,"character":0},"end":{"line":27,"character":0}},"rangeLength":0,"text":"    };\n"}]}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":256,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"40"}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":257,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":21}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":258,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":259,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":28,"character":20},"end":{"line":28,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":260,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":261,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":262,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":28,"character":20},"end":{"line":28,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":263,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":21}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":264,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":265,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":28,"character":16}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":266,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":28,"character":16},"end":{"line":28,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":28,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":267,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"41"}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":268,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":28,"character":16},"end":{"line":28,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 294
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":49},"contentChanges":[{"range":{"start":{"line":28,"character":16},"end":{"line":28,"character":20}},"rangeLength":4,"text":"P"}]}}Content-Length: 231
+
+{"jsonrpc":"2.0","id":269,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":28,"character":17},"context":{"triggerKind":1}}}Content-Length: 294
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":50},"contentChanges":[{"range":{"start":{"line":28,"character":17},"end":{"line":28,"character":17}},"rangeLength":0,"text":"O"}]}}Content-Length: 231
+
+{"jsonrpc":"2.0","id":270,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":28,"character":18},"context":{"triggerKind":3}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":271,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"42"}}Content-Length: 294
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":51},"contentChanges":[{"range":{"start":{"line":28,"character":18},"end":{"line":28,"character":18}},"rangeLength":0,"text":"P"}]}}Content-Length: 231
+
+{"jsonrpc":"2.0","id":272,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":28,"character":19},"context":{"triggerKind":1}}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":273,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":21}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":274,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":275,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"43"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":276,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":277,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":278,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":28,"character":19},"end":{"line":28,"character":19}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":279,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":28,"character":19},"end":{"line":28,"character":19}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":280,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":21}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":281,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":29,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":282,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"44"}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":283,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":28,"character":19},"end":{"line":28,"character":19}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":284,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":29,"character":19}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":285,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":104,"character":9}}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":286,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":29,"character":19},"end":{"line":29,"character":19}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":287,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 286
+
+{"jsonrpc":"2.0","id":288,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":29,"character":0},"end":{"line":30,"character":0}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":52},"contentChanges":[{"range":{"start":{"line":29,"character":0},"end":{"line":30,"character":0}},"rangeLength":33,"text":""}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":289,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":290,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":291,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"45"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":292,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":293,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":294,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":295,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":296,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":11}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":30,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":297,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"46"}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":298,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":17}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":298}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":299,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":28}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":300,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":36}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":301,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":39}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":302,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":44}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":303,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":44},"end":{"line":20,"character":44}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":304,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":49}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":305,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":61}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":306,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":62},"end":{"line":20,"character":62}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":307,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":39},"end":{"line":20,"character":62}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":308,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":37},"end":{"line":20,"character":62}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 401
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":53},"contentChanges":[{"range":{"start":{"line":20,"character":62},"end":{"line":20,"character":62}},"rangeLength":0,"text":")"},{"range":{"start":{"line":20,"character":37},"end":{"line":20,"character":37}},"rangeLength":0,"text":"("}]}}Content-Length: 255
+
+{"jsonrpc":"2.0","id":309,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":63},"context":{"triggerKind":2,"triggerCharacter":"\""}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":310,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 277
+
+{"jsonrpc":"2.0","id":311,"method":"textDocument/signatureHelp","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":63},"context":{"isRetrigger":false,"triggerCharacter":"(","triggerKind":2}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":312,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":313,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":38},"end":{"line":20,"character":63}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":314,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"47"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":315,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":316,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":317,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":62}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":318,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":51}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":319,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":320,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":51},"end":{"line":20,"character":51}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":321,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":46}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":322,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":323,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":40}}}Content-Length: 511
+
+{"jsonrpc":"2.0","id":324,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":37},"end":{"line":20,"character":37}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":37},"end":{"line":20,"character":38}},"message":"Expected string literal in pragma diagnostic","code":"expected_string_literal","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":325,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":36}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":31,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":326,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"48"}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":327,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":36},"end":{"line":20,"character":36}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":328,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":36},"end":{"line":20,"character":36}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 511
+
+{"jsonrpc":"2.0","id":329,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":37},"end":{"line":20,"character":37}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":37},"end":{"line":20,"character":38}},"message":"Expected string literal in pragma diagnostic","code":"expected_string_literal","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 511
+
+{"jsonrpc":"2.0","id":330,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":12},"end":{"line":20,"character":37}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":37},"end":{"line":20,"character":38}},"message":"Expected string literal in pragma diagnostic","code":"expected_string_literal","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 510
+
+{"jsonrpc":"2.0","id":331,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":5},"end":{"line":20,"character":37}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":37},"end":{"line":20,"character":38}},"message":"Expected string literal in pragma diagnostic","code":"expected_string_literal","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 510
+
+{"jsonrpc":"2.0","id":332,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":37}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":37},"end":{"line":20,"character":38}},"message":"Expected string literal in pragma diagnostic","code":"expected_string_literal","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 294
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":54},"contentChanges":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":37}},"rangeLength":33,"text":"D"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":333,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":5},"context":{"triggerKind":1}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":334,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":55},"contentChanges":[{"range":{"start":{"line":20,"character":5},"end":{"line":20,"character":5}},"rangeLength":0,"text":"I"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":335,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":6},"context":{"triggerKind":3}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":334}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":336,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":56},"contentChanges":[{"range":{"start":{"line":20,"character":6},"end":{"line":20,"character":6}},"rangeLength":0,"text":"A"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":337,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":7},"context":{"triggerKind":3}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":338,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"49"}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":336}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":339,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":340,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":341,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":342,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 492
+
+{"jsonrpc":"2.0","id":343,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":7},"end":{"line":20,"character":7}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":7}},"message":"Use of undeclared identifier 'DIA'","code":"undeclared_var_use","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":344,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":345,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":32,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":346,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"50"}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":57},"contentChanges":[{"range":{"start":{"line":20,"character":7},"end":{"line":20,"character":7}},"rangeLength":0,"text":"N"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":347,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":8},"context":{"triggerKind":3}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":348,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":58},"contentChanges":[{"range":{"start":{"line":20,"character":8},"end":{"line":20,"character":8}},"rangeLength":0,"text":"O"}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":349,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":9},"context":{"triggerKind":1}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":59},"contentChanges":[{"range":{"start":{"line":20,"character":9},"end":{"line":20,"character":9}},"rangeLength":0,"text":"S"}]}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":350,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"51"}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":351,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":352,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":353,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":354,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 498
+
+{"jsonrpc":"2.0","id":355,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":10},"end":{"line":20,"character":10}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":10}},"message":"Use of undeclared identifier 'DIANOS'","code":"undeclared_var_use","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 292
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":60},"contentChanges":[{"range":{"start":{"line":20,"character":9},"end":{"line":20,"character":10}},"rangeLength":1,"text":""}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":356,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 291
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":61},"contentChanges":[{"range":{"start":{"line":20,"character":8},"end":{"line":20,"character":9}},"rangeLength":1,"text":""}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":357,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":8},"context":{"triggerKind":1}}}Content-Length: 291
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":62},"contentChanges":[{"range":{"start":{"line":20,"character":7},"end":{"line":20,"character":8}},"rangeLength":1,"text":""}]}}Content-Length: 230
+
+{"jsonrpc":"2.0","id":358,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":7},"context":{"triggerKind":1}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":359,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"52"}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":360,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":361,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":362,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":363,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 492
+
+{"jsonrpc":"2.0","id":364,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":7},"end":{"line":20,"character":7}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":7}},"message":"Use of undeclared identifier 'DIA'","code":"undeclared_var_use","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":365,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 307
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":63},"contentChanges":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":7}},"rangeLength":3,"text":"DIAGNOSTICS_PUSH"}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":366,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":367,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":368,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":20},"end":{"line":20,"character":20}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":369,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"53"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":370,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":371,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 293
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":64},"contentChanges":[{"range":{"start":{"line":20,"character":19},"end":{"line":20,"character":20}},"rangeLength":1,"text":""}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":372,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":373,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 293
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":65},"contentChanges":[{"range":{"start":{"line":20,"character":18},"end":{"line":20,"character":19}},"rangeLength":1,"text":""}]}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":374,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"54"}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":375,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 293
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":66},"contentChanges":[{"range":{"start":{"line":20,"character":17},"end":{"line":20,"character":18}},"rangeLength":1,"text":""}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":376,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 293
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":67},"contentChanges":[{"range":{"start":{"line":20,"character":16},"end":{"line":20,"character":17}},"rangeLength":1,"text":""}]}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/cancelRequest","params":{"id":376}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":377,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":378,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"55"}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":379,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 293
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":68},"contentChanges":[{"range":{"start":{"line":20,"character":15},"end":{"line":20,"character":16}},"rangeLength":1,"text":""}]}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":380,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":381,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":382,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 504
+
+{"jsonrpc":"2.0","id":383,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":15},"end":{"line":20,"character":15}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":16}},"message":"Use of undeclared identifier 'DIAGNOSTICS_'","code":"undeclared_var_use","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":384,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"56"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":385,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":386,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 503
+
+{"jsonrpc":"2.0","id":387,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":15},"end":{"line":20,"character":15}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":15}},"message":"Use of undeclared identifier 'DIAGNOSTICS'","code":"undeclared_var_use","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 294
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":69},"contentChanges":[{"range":{"start":{"line":20,"character":15},"end":{"line":20,"character":15}},"rangeLength":0,"text":"_"}]}}Content-Length: 231
+
+{"jsonrpc":"2.0","id":388,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":16},"context":{"triggerKind":1}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":389,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":390,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":391,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":16},"end":{"line":20,"character":16}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":392,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"57"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":393,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":394,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 504
+
+{"jsonrpc":"2.0","id":395,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":16},"end":{"line":20,"character":16}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":16}},"message":"Use of undeclared identifier 'DIAGNOSTICS_'","code":"undeclared_var_use","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":396,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":397,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 294
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":70},"contentChanges":[{"range":{"start":{"line":20,"character":16},"end":{"line":20,"character":16}},"rangeLength":0,"text":"W"}]}}Content-Length: 231
+
+{"jsonrpc":"2.0","id":398,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":17},"context":{"triggerKind":3}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":399,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":400,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 294
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":71},"contentChanges":[{"range":{"start":{"line":20,"character":17},"end":{"line":20,"character":17}},"rangeLength":0,"text":"A"}]}}Content-Length: 231
+
+{"jsonrpc":"2.0","id":401,"method":"textDocument/completion","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":20,"character":18},"context":{"triggerKind":1}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":402,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"58"}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":403,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":404,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":405,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":406,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 506
+
+{"jsonrpc":"2.0","id":407,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":18},"end":{"line":20,"character":18}},"context":{"diagnostics":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":18}},"message":"Use of undeclared identifier 'DIAGNOSTICS_WA'","code":"undeclared_var_use","severity":1,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":33,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":408,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"59"}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":409,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":410,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 312
+
+{"jsonrpc":"2.0","method":"textDocument/didChange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp","version":72},"contentChanges":[{"range":{"start":{"line":20,"character":4},"end":{"line":20,"character":18}},"rangeLength":14,"text":"DIAGNOSTICS_WARNING"}]}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":411,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":412,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":413,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":23},"end":{"line":20,"character":23}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 204
+
+{"jsonrpc":"2.0","id":414,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"60"}}Content-Length: 169
+
+{"jsonrpc":"2.0","id":415,"method":"textDocument/documentSymbol","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":416,"method":"textDocument/foldingRange","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":417,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":23},"end":{"line":20,"character":23}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":418,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":34,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":419,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"61"}}Content-Length: 167
+
+{"jsonrpc":"2.0","id":420,"method":"textDocument/documentLink","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 153
+
+{"jsonrpc":"2.0","method":"textDocument/didSave","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":421,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":23},"end":{"line":20,"character":23}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 39
+
+{"jsonrpc":"2.0","id":35,"result":null}Content-Length: 204
+
+{"jsonrpc":"2.0","id":422,"method":"textDocument/semanticTokens/full/delta","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"previousResultId":"62"}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":423,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":20,"character":23},"end":{"line":20,"character":23}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":424,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":21,"character":62}}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":425,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":101,"character":15}}}}Content-Length: 511
+
+{"jsonrpc":"2.0","id":426,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":21,"character":62},"end":{"line":21,"character":62}},"context":{"diagnostics":[{"range":{"start":{"line":21,"character":62},"end":{"line":21,"character":72}},"message":"Declaration requires an exit-time destructor","code":"-Wexit-time-destructors","severity":2,"relatedInformation":[],"source":"clang"}],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":427,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":105,"character":0}}}}Content-Length: 210
+
+{"jsonrpc":"2.0","id":428,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":56,"character":39}}}Content-Length: 241
+
+{"jsonrpc":"2.0","id":429,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":163,"character":13}}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":430,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":90,"character":18},"end":{"line":90,"character":18}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 211
+
+{"jsonrpc":"2.0","id":431,"method":"textDocument/documentHighlight","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"position":{"line":191,"character":59}}}Content-Length: 242
+
+{"jsonrpc":"2.0","id":432,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":96,"character":0},"end":{"line":260,"character":58}}}}Content-Length: 290
+
+{"jsonrpc":"2.0","id":433,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":191,"character":59},"end":{"line":191,"character":59}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 242
+
+{"jsonrpc":"2.0","id":434,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":195,"character":0},"end":{"line":356,"character":9}}}}Content-Length: 242
+
+{"jsonrpc":"2.0","id":435,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":255,"character":0},"end":{"line":424,"character":5}}}}Content-Length: 242
+
+{"jsonrpc":"2.0","id":436,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":289,"character":0},"end":{"line":448,"character":0}}}}Content-Length: 242
+
+{"jsonrpc":"2.0","id":437,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":322,"character":0},"end":{"line":448,"character":0}}}}Content-Length: 288
+
+{"jsonrpc":"2.0","id":438,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":419,"character":1},"end":{"line":419,"character":1}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 242
+
+{"jsonrpc":"2.0","id":439,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":353,"character":0},"end":{"line":448,"character":0}}}}Content-Length: 242
+
+{"jsonrpc":"2.0","id":440,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":340,"character":0},"end":{"line":448,"character":0}}}}Content-Length: 242
+
+{"jsonrpc":"2.0","id":441,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":325,"character":0},"end":{"line":448,"character":0}}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":442,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 284
+
+{"jsonrpc":"2.0","id":443,"method":"textDocument/codeAction","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":0,"character":0}},"context":{"diagnostics":[],"triggerKind":2}}}Content-Length: 240
+
+{"jsonrpc":"2.0","id":444,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":103,"character":9}}}}Content-Length: 239
+
+{"jsonrpc":"2.0","id":445,"method":"textDocument/inlayHint","params":{"textDocument":{"uri":"file:///home/izumi/.code/scrap/nullix-new/src/lib_nullix/config.cpp"},"range":{"start":{"line":0,"character":0},"end":{"line":63,"character":0}}}}Content-Length: 64
+
+{"jsonrpc":"2.0","method":"$/setTrace","params":{"value":"off"}}

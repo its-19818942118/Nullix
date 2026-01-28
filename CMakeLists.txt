@@ -24,9 +24,9 @@ target_compile_options ( main PRIVATE
         -Wno-c++98-compat
         -Wno-c++98-compat-pedantic
         -fsafe-buffer-usage-suggestions
-        -Wno-padded
-        -Wno-switch-default
-        -static
+        -Wno-error=-padded
+        -Wno-error=switch-default
+        # -static
     >
 
     $<$<CXX_COMPILER_ID:GCC,GNU>:
@@ -44,13 +44,13 @@ target_sources ( main PRIVATE
     # src/scripts/main.cpp
     # src/shell.cpp
     # src/configParser.cpp
-    src/lib/config.cpp
-    src/lib/config.hpp
+    src/lib_nullix//config.cpp
     # src/main.cpp
     # src/scripts/wallselect.cpp
     src/main.cpp
 )
 
 target_include_directories ( main PUBLIC
+    include/
 )
 target_link_libraries( main PRIVATE fmt::fmt)

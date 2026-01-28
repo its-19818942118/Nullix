@@ -1,4 +1,5 @@
-#include "config.hpp"
+#include "lib_nullix/config.hpp"
+#include "diagnostics/diagnostics.hpp"
 #include <algorithm>
 #include <cctype>
 #include <cstddef>
@@ -16,8 +17,8 @@
 
 
 std::unordered_map<std::string, Config::valueType>& Config::getValidOptionsMap() {
-    #pragma clang diagnostic push
-    #pragma clang diagnostic ignored "-Wexit-time-destructors"
+    DIAGNOSTICS_PUSH
+    DIAGNOSTICS_WARNING("-Wexit-time-destructors")
     static std::unordered_map<std::string, Config::valueType> OptionsSet{
         {"wallpaper.directory", Config::valueType::String},
         {"wallpaper.backend",   Config::valueType::String},
@@ -25,7 +26,7 @@ std::unordered_map<std::string, Config::valueType>& Config::getValidOptionsMap()
         {"brightness.step",     Config::valueType::Int},
         {"theme.active",        Config::valueType::String}
     };
-    #pragma clang diagnostic pop
+    DIAGNOSTICS_POP
     return OptionsSet;
 }
 
