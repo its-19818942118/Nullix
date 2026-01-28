@@ -30,6 +30,13 @@ class Config {
             size_t line;
         };
 
+        struct Line{
+            std::string raw;
+            std::string key;
+            std::string value;
+            std::string trailing;
+        };
+
         static void hyprNotify(int icon, int timeoutMs,const std::string& color, const std::string& msg);
 
         static std::expected<Config, Config::errMsg> load();
@@ -45,11 +52,13 @@ class Config {
         void setBool(const std::string& key, bool value);
         bool has(const std::string& key) const;
         void printValues();
+        void changeOrder(const std::string& key ,const std::string& newValue );
+
 
     private:
-
+        std::string baseConfigPath = "/.config/nullix/nullix.conf";
         static std::unordered_map<std::string, Config::valueType> validOptionsMap;
         std::unordered_map<std::string , std::string> values;
-        std::vector<std::pair<std::string, std::string>> order;
+        std::vector<Line> order;
 
 };

@@ -13,16 +13,14 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <new>
-// #include <print>
-// #include <vector>
-// #include <unordered_set>
+
 
 std::unordered_map<std::string , Config::valueType>& Config::getValidOptionsMap(){
     static auto* OptionsSet = new std::unordered_map<std::string , Config::valueType> {
         {"wallpaper.directory" , Config::valueType::String} ,
         {"wallpaper.backend", Config::valueType::String},
         {"volume.step", Config::valueType::Int},
-        {"brightness.step" , Config::valueType::Bool},
+        {"brightness.step" , Config::valueType::Int},
         {"theme.active" , Config::valueType::String}
     };
     return *OptionsSet;
@@ -75,6 +73,7 @@ std::expected<Config, Config::errMsg> Config::load(){
 
     }
     std::string filePath = std::string(HOME) + base ;
+    // std::string filePath = getNullixFile();
     std::ifstream file(filePath);
 
     if (!file.is_open()) {
@@ -91,8 +90,15 @@ std::expected<Config, Config::errMsg> Config::load(){
     while (std::getline(file, line)) {
         ln++;
         if(line.empty()){
+            cfg.order.emplace_back(Line{
+                .raw = "",
+                .key = "",
+                .value = "",
+                .trailing = "",
+            });
             continue;
         }
+
 
 
         // trim lambda for trimming whitespaces from left and right of line
@@ -108,11 +114,27 @@ std::expected<Config, Config::errMsg> Config::load(){
             }
         };
 
-        trim(line);
 
+
+        size_t lineEnd = line.find(';');
+        std::string trailing = "";
+
+        if (lineEnd != std::string::npos) {
+            trailing = line.substr(lineEnd);
+        }
+
+        trim(line);
 
         // if comment then skip
         if (line.starts_with('#')) {
+            // cfg.order[ln] = {"",""};
+
+            cfg.order.emplace_back(Line{
+                .raw = line,
+                .key = "comment",
+                .value = "",
+                .trailing = trailing,
+            });
             continue;
         }
 
@@ -121,7 +143,6 @@ std::expected<Config, Config::errMsg> Config::load(){
         size_t openBracket = line.find('[');
         size_t closeBracket = line.find(']');
         size_t epos = line.find('=');
-        size_t lineEnd = line.find(';');
         size_t comment = line.find('#');
 
         // getting all the valid syntax options
@@ -153,8 +174,8 @@ std::expected<Config, Config::errMsg> Config::load(){
 
             }
             else {
-                auto value = validOptions.at(option);
-                switch (value) {
+                auto value_t = validOptions.at(option);
+                switch (value_t) {
                     case Config::valueType::String :{
                         size_t openingQuote = line.find('"' , epos);
                         size_t closingQuote = line.rfind('"');
@@ -167,8 +188,15 @@ std::expected<Config, Config::errMsg> Config::load(){
                                 openingQuote < closingQuote
                             )
                         {
-                            std::string tempValue = line.substr( openingQuote + 1, closingQuote - openingQuote - 1);
-                            cfg.values[option] = tempValue;
+                            std::string value = line.substr( openingQuote + 1, closingQuote - openingQuote - 1);
+                            cfg.values[option] = value;
+                            cfg.order.emplace_back(Line{
+                                .raw = line,
+                                .key = option,
+                                .value = value,
+                                .trailing = trailing,
+                            });
+
                         }
                         else {
                             std::string errorMsg = std::format("[Err] in file : {} [invalid value] at line : {}",filePath,ln);
@@ -212,6 +240,13 @@ std::expected<Config, Config::errMsg> Config::load(){
                         }
 
                         cfg.values[option] = subLine;
+                        cfg.order.emplace_back(Line{
+                            .raw = line,
+                            .key = option,
+                            .value = subLine,
+                            .trailing = trailing,
+                        });
+
                         break;
                     }
 
@@ -241,6 +276,14 @@ std::expected<Config, Config::errMsg> Config::load(){
 
                         cfg.values[option] = subLine;
 
+                        cfg.order.emplace_back(Line{
+                            .raw = line,
+                            .key = option,
+                            .value = subLine,
+                            .trailing = trailing,
+                        });
+
+
                         break;
                     }
                 }
@@ -264,6 +307,93 @@ std::expected<Config, Config::errMsg> Config::load(){
     std::string msg = std::format("nullix.conf validated successfully. ");
     // hyprNotify(5 ,2000, "0", msg);
     return std::expected<Config, Config::errMsg>(cfg);
+}
+
+
+void Config::printValues(){
+    for (const auto& entry : values) {
+        std::cout << entry.first << ":" << entry.second << std::endl;
+    }
+}
+
+void Config::changeOrder(const std::string& key ,const std::string& newValue){
+    for (auto & i : this->order) {
+        if (i.key == key) {
+            i.value = newValue;
+        }
+    }
+}
+void Config::save() {
+
+    std::string base = "/.config/nullix/nullix.conf";
+    const char* HOME = std::getenv("HOME");
+    if (!HOME) {
+        return ;
+    }
+    std::string path = HOME + base;
+    std::ofstream file(path);
+
+    for (const auto& l : this->order) {
+        if(l.key.empty() ){
+            file << "\n";
+            continue;
+        }
+        if (l.key == "comment") {
+            file << std::format("{}\n", l.raw);
+            continue;
+        }
+        if (needsQuotes(l.value)) {
+            file << std::format("[{}] = \"{}\"{}\n", l.key, l.value , l.trailing);
+        } else {
+            file << std::format("[{}] = {}{}\n", l.key, l.value , l.trailing);  // NO quotes!
+        }
+    }
+}
+
+bool Config::needsQuotes(const std::string& value) const {
+    if (value.empty()) return true;
+
+    // Numbers, booleans → NO quotes
+    if (std::all_of(value.begin(), value.end(), ::isdigit) ||
+        value == "true" || value == "false" ||
+        value == "on" || value == "off" ||
+        value == "yes" || value == "no") {
+        return false;
+    }
+
+
+    return true;  // Default: quote strings
+}
+
+void Config::set(const std::string& key, const std::string& value) {
+    auto validMap = getValidOptionsMap();
+    if (!validMap.contains(key)) {
+        std::string errorMsg = std::format("Invalid key: {}", key);
+        hyprNotify(3, 2000, "0",errorMsg);
+        return;
+    }
+    if (!values.contains(key)) {
+
+        values[key] = value;
+        order.emplace_back(key,value);
+
+    }
+    else {
+        values[key]  = value;
+        changeOrder(key ,value);
+    }
+}
+
+void Config::setInt(const std::string& key, int value) {
+    set(key, std::to_string(value));
+}
+
+void Config::setBool(const std::string& key, bool value) {
+    set(key, value ? "true" : "false");
+}
+
+bool Config::has(const std::string& key) const {
+    return values.contains(key);
 }
 
 std::string Config::getStr(const std::string& key) {
@@ -300,65 +430,4 @@ bool Config::getBool(const std::string& key){
         hyprNotify(3, 2000, "0", std::format("Invalid key: {}",key));
     }
     return false;
-}
-
-void Config::printValues(){
-    for (const auto& entry : values) {
-        std::cout << entry.first << ":" << entry.second << std::endl;
-    }
-}
-
-// void Config::save() {
-
-//     std::string base = "/.config/nullix/nullix.conf";
-//     std::string HOME = std::getenv("HOME");
-//     std::string path = HOME + base;
-//     std::ofstream file(path);
-//     file << "# Nullix Configuration (Single Source of Truth)\n\n";
-
-//     for (const auto& [key, value] : values) {
-//         // SMART QUOTING LOGIC:
-//         if (needsQuotes(value)) {
-//             file << std::format("[{}] = \"{}\";\n", key, value);
-//         } else {
-//             file << std::format("[{}] = {};\n", key, value);  // NO quotes!
-//         }
-//     }
-// }
-
-// bool Config::needsQuotes(const std::string& value) const {
-//     if (value.empty()) return true;
-
-//     // Numbers, booleans → NO quotes
-//     if (std::all_of(value.begin(), value.end(), ::isdigit) ||
-//         value == "true" || value == "false" ||
-//         value == "on" || value == "off" ||
-//         value == "yes" || value == "no") {
-//         return false;
-//     }
-
-
-//     return true;  // Default: quote strings
-// }
-
-void Config::set(const std::string& key, const std::string& value) {
-    auto validMap = getValidOptionsMap();
-    if (!validMap.contains(key)) {
-        std::string errorMsg = std::format("Invalid key: {}", key);
-        hyprNotify(3, 2000, "0",errorMsg);
-        return;
-    }
-    values[key] = value;
-}
-
-void Config::setInt(const std::string& key, int value) {
-    set(key, std::to_string(value));
-}
-
-void Config::setBool(const std::string& key, bool value) {
-    set(key, value ? "true" : "false");
-}
-
-bool Config::has(const std::string& key) const {
-    return values.contains(key);
 }
