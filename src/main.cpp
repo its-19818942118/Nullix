@@ -6,7 +6,7 @@
 int main() {
     auto cfgResult = Config::load();
 
-    if (!cfgResult) {
+    if (!cfgResult.has_value()) {
         fmt::println("Config error: {}", cfgResult.error().msg);
         return 1;
     }
@@ -15,13 +15,9 @@ int main() {
     cfg.printValues();
     fmt::println( "\n");
 
-    // cfg.set("theme.active", "rose");
-    // cfg.save();
-    // cfg.printValues();
-    // fmt::println( "\n");
-
-    cfg.set("brightness.step", "1");
     cfg.set("theme.active", "nord");
+    cfg.set("brightness.step", "100");
+
     cfg.save();
 
 
