@@ -12,19 +12,22 @@
 #include <unordered_map>
 #include <unistd.h>
 #include <sys/types.h>
-#include <new>
 
 
-std::unordered_map<std::string , Config::valueType>& Config::getValidOptionsMap(){
-    static auto* OptionsSet = new std::unordered_map<std::string , Config::valueType> {
-        {"wallpaper.directory" , Config::valueType::String} ,
-        {"wallpaper.backend", Config::valueType::String},
-        {"volume.step", Config::valueType::Int},
-        {"brightness.step" , Config::valueType::Int},
-        {"theme.active" , Config::valueType::String}
+
+std::unordered_map<std::string, Config::valueType>& Config::getValidOptionsMap() {
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wexit-time-destructors"
+    static std::unordered_map<std::string, Config::valueType> OptionsSet{
+        {"wallpaper.directory", Config::valueType::String},
+        {"wallpaper.backend",   Config::valueType::String},
+        {"volume.step",         Config::valueType::Int},
+        {"brightness.step",     Config::valueType::Int},
+        {"theme.active",        Config::valueType::String}
     };
-    return *OptionsSet;
-};
+    #pragma clang diagnostic pop
+    return OptionsSet;
+}
 
 void Config::hyprNotify(
     int icon,
@@ -304,7 +307,7 @@ std::expected<Config, Config::errMsg> Config::load(){
 
 
     }
-    std::string msg = std::format("nullix.conf validated successfully. ");
+    // std::string msg = std::format("nullix.conf validated successfully. ");
     // hyprNotify(5 ,2000, "0", msg);
     return std::expected<Config, Config::errMsg>(cfg);
 }
@@ -367,6 +370,12 @@ bool Config::needsQuotes(const std::string& value) const {
 
 void Config::set(const std::string& key, const std::string& value) {
     auto validMap = getValidOptionsMap();
+    if (value.empty()) {
+
+        std::string errorMsg = std::format("Invalid Value: {}", value);
+        hyprNotify(3, 2000, "0",errorMsg);
+        return;
+    }
     if (!validMap.contains(key)) {
         std::string errorMsg = std::format("Invalid key: {}", key);
         hyprNotify(3, 2000, "0",errorMsg);
@@ -375,7 +384,12 @@ void Config::set(const std::string& key, const std::string& value) {
     if (!values.contains(key)) {
 
         values[key] = value;
-        order.emplace_back(key,value);
+        order.emplace_back(Line{
+            .raw = std::format("[{}] = {}", key , value),
+            .key = key,
+            .value = value,
+            .trailing = ";",
+        });
 
     }
     else {
@@ -411,7 +425,7 @@ int Config::getInt(const std::string& key) {
             hyprNotify(3, 2000, "#ffaa00", std::format("Invalid key: {}", key));
         }
     }
-    return 5;
+    return 0;
 }
 bool Config::getBool(const std::string& key){
     auto it = values.find(key);
