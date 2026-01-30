@@ -1,8 +1,8 @@
-#include "lib/config.hpp"
+#include "lib_nullix/config.hpp"
 #include <expected>
 #include <fmt/base.h>
 #include <fmt/format.h>
-
+using namespace std::string_view_literals;
 int main() {
     auto cfgResult = Config::load();
 
@@ -15,8 +15,8 @@ int main() {
     cfg.printValues();
     fmt::println( "\n");
 
-    cfg.set("theme.active", "nord");
-    cfg.set("brightness.step", "100");
+    cfg.set("theme.active"sv, "catpuccin"sv);
+    cfg.set("brightness.step"sv, "1"sv);
 
     cfg.save();
 

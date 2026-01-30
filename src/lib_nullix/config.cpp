@@ -6,15 +6,18 @@
 #include <cstdio>
 #include <cstdlib>
 #include <expected>
+#include <filesystem>
 #include <format>
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <string_view>
 #include <unordered_map>
 #include <unistd.h>
 #include <sys/types.h>
 
-
+using namespace std::string_literals;
+using namespace std::string_view_literals;
 
 std::unordered_map<std::string, Config::valueType>& Config::getValidOptionsMap() {
     DIAGNOSTICS_PUSH
@@ -58,31 +61,44 @@ void Config::hyprNotify(
         _exit(127);
     }
 
-    // parent does nothing
 }
 
-
-std::expected<Config, Config::errMsg> Config::load(){
-    Config cfg;
-    std::string base = "/.config/nullix/nullix.conf";
+std::expected<std::string, bool> Config::getHOME(){
     const char* HOME = std::getenv("HOME");
     if (!HOME) {
-        std::string errorMsg = std::format("Home not set.");
-        // hyprNotify(3, 5000, "0", errorMsg);
+        return std::unexpected(bool{false});
+
+    }
+    return std::string(HOME);
+}
+
+std::expected<std::filesystem::path, bool> Config::getNullixConfigPath(){
+    auto homeResult = Config::getHOME();
+    if (!homeResult.has_value()) {
+        return std::unexpected(bool{false});
+    }
+    return std::filesystem::path(std::string(*homeResult + Config::baseConfigPath));
+}
+std::expected<Config, Config::errMsg> Config::load(){
+    Config cfg;
+
+    auto pathResult = getNullixConfigPath();
+
+    if (!pathResult.has_value()) {
+        std::string errorMsg = "Home not set.";
+
         return std::unexpected(errMsg{
             .et = errType::envNotSet,
             .msg = errorMsg,
             .line = 0
         });
-
     }
-    std::string filePath = std::string(HOME) + base ;
-    // std::string filePath = getNullixFile();
+    std::string filePath = *pathResult ;
     std::ifstream file(filePath);
 
     if (!file.is_open()) {
         std::string errorMsg = std::format("Config not found: {}", filePath);
-        // hyprNotify(1, 3000, "0", errorMsg);
+
         return std::unexpected(errMsg{.et = errType::fileNotOpen, .msg = errorMsg, .line = 0});
     }
 
@@ -131,7 +147,6 @@ std::expected<Config, Config::errMsg> Config::load(){
 
         // if comment then skip
         if (line.starts_with('#')) {
-            // cfg.order[ln] = {"",""};
 
             cfg.order.emplace_back(Line{
                 .raw = line,
@@ -168,7 +183,7 @@ std::expected<Config, Config::errMsg> Config::load(){
             trim(option);
             if (!validOptions.contains(option)) {
                 std::string errorMsg = std::format("[Err] in file : {} [invalid key] at line : {}",filePath,ln);
-                // hyprNotify(2, 5000, "0", errorMsg);
+
 
                 return std::unexpected(errMsg{
                     .et = errType::invalidKey,
@@ -204,7 +219,7 @@ std::expected<Config, Config::errMsg> Config::load(){
                         }
                         else {
                             std::string errorMsg = std::format("[Err] in file : {} [invalid value] at line : {}",filePath,ln);
-                            // hyprNotify(2, 5000, "0", errorMsg);
+
 
                             return std::unexpected(errMsg{
                                 .et = errType::invalidValue,
@@ -226,7 +241,7 @@ std::expected<Config, Config::errMsg> Config::load(){
                         {
 
                             std::string errorMsg = std::format("[Err] in file : {} [invalid value] at line : {}",filePath,ln);
-                            // hyprNotify(2, 5000, "0", errorMsg);
+
 
                             return std::unexpected(errMsg{
                                 .et = errType::invalidValue,
@@ -290,6 +305,7 @@ std::expected<Config, Config::errMsg> Config::load(){
 
                         break;
                     }
+
                 }
 
             }
@@ -297,7 +313,7 @@ std::expected<Config, Config::errMsg> Config::load(){
         }
         else {
             std::string errorMsg = std::format("[Err] in file : {} [invalid syntax] at line : {}",filePath,ln);
-            // hyprNotify(2, 5000, "0", errorMsg);
+
             return std::unexpected(errMsg{
                 .et = errType::syntaxErr,
                 .msg = errorMsg,
@@ -308,19 +324,21 @@ std::expected<Config, Config::errMsg> Config::load(){
 
 
     }
-    // std::string msg = std::format("nullix.conf validated successfully. ");
-    // hyprNotify(5 ,2000, "0", msg);
+
     return std::expected<Config, Config::errMsg>(cfg);
 }
 
 
 void Config::printValues(){
-    for (const auto& entry : values) {
-        std::cout << entry.first << ":" << entry.second << std::endl;
+    for (const auto& entry : order) {
+        if (entry.key == "comment") {
+            continue;
+        }
+        std::cout << entry.key << " = " << entry.value << std::endl;
     }
 }
 
-void Config::changeOrder(const std::string& key ,const std::string& newValue){
+void Config::changeOrder(const std::string_view key ,const std::string_view newValue){
     for (auto & i : this->order) {
         if (i.key == key) {
             i.value = newValue;
@@ -329,13 +347,13 @@ void Config::changeOrder(const std::string& key ,const std::string& newValue){
 }
 void Config::save() {
 
-    std::string base = "/.config/nullix/nullix.conf";
-    const char* HOME = std::getenv("HOME");
-    if (!HOME) {
-        return ;
+    auto pathResult = getNullixConfigPath();
+
+    if (!pathResult.has_value()) {
+        return;
     }
-    std::string path = HOME + base;
-    std::ofstream file(path);
+    std::string filePath = *pathResult ;
+    std::ofstream file(filePath);
 
     for (const auto& l : this->order) {
         if(l.key.empty() ){
@@ -354,14 +372,12 @@ void Config::save() {
     }
 }
 
-bool Config::needsQuotes(const std::string& value) const {
+bool Config::needsQuotes(const std::string_view value) const {
     if (value.empty()) return true;
 
     // Numbers, booleans → NO quotes
     if (std::all_of(value.begin(), value.end(), ::isdigit) ||
-        value == "true" || value == "false" ||
-        value == "on" || value == "off" ||
-        value == "yes" || value == "no") {
+        value == "true" || value == "false") {
         return false;
     }
 
@@ -369,41 +385,46 @@ bool Config::needsQuotes(const std::string& value) const {
     return true;  // Default: quote strings
 }
 
-void Config::set(const std::string& key, const std::string& value) {
+void Config::set(std::string_view key, std::string_view value) {
+    std::string keyStr{key};
+    std::string valueStr{value};
+
     auto validMap = getValidOptionsMap();
-    if (value.empty()) {
+    if (valueStr.empty()) {
 
         std::string errorMsg = std::format("Invalid Value: {}", value);
         hyprNotify(3, 2000, "0",errorMsg);
         return;
     }
-    if (!validMap.contains(key)) {
+    if (!validMap.contains(keyStr)) {
         std::string errorMsg = std::format("Invalid key: {}", key);
         hyprNotify(3, 2000, "0",errorMsg);
         return;
     }
-    if (!values.contains(key)) {
 
-        values[key] = value;
+
+    if (!values.contains(keyStr)) {
+
+        values[keyStr] = valueStr;
         order.emplace_back(Line{
             .raw = std::format("[{}] = {}", key , value),
-            .key = key,
-            .value = value,
+            .key = keyStr,
+            .value = valueStr,
             .trailing = ";",
         });
 
     }
     else {
-        values[key]  = value;
+        values[keyStr]  = valueStr;
         changeOrder(key ,value);
     }
 }
 
-void Config::setInt(const std::string& key, int value) {
+void Config::setInt(const std::string_view key, int value) {
     set(key, std::to_string(value));
 }
 
-void Config::setBool(const std::string& key, bool value) {
+void Config::setBool(const std::string_view key, bool value) {
     set(key, value ? "true" : "false");
 }
 
@@ -411,25 +432,28 @@ bool Config::has(const std::string& key) const {
     return values.contains(key);
 }
 
-std::string Config::getStr(const std::string& key) {
-    auto it =values.find(key);
+std::string Config::getStr(const std::string_view key) {
+    std::string keyStr{key};
+    auto it =values.find(keyStr);
     if (it != values.end()) {
         return it->second;
     }
     return "";
 }
-int Config::getInt(const std::string& key) {
-    auto it = values.find(key);
+int Config::getInt(const std::string_view key) {
+    std::string keyStr{key};
+    auto it = values.find(keyStr);
     if (it != values.end()) {
         try { return std::stoi(it->second); }
         catch (...) {
-            hyprNotify(3, 2000, "#ffaa00", std::format("Invalid key: {}", key));
+            return 0;
         }
     }
     return 0;
 }
-bool Config::getBool(const std::string& key){
-    auto it = values.find(key);
+bool Config::getBool(const std::string_view key){
+    std::string keyStr{key};
+    auto it = values.find(keyStr);
     if (it != values.end()) {
         if (it->second == "true") {
             return true;
@@ -437,12 +461,8 @@ bool Config::getBool(const std::string& key){
         else if (it->second == "false") {
             return false;
         }
-        else {
-            hyprNotify(3, 2000, "0", std::format("Invalid value: {}",it->second));
-        }
+
     }
-    else {
-        hyprNotify(3, 2000, "0", std::format("Invalid key: {}",key));
-    }
+
     return false;
 }
