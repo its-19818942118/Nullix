@@ -329,7 +329,7 @@ std::expected<Config, Config::errMsg> Config::load(){
 }
 
 
-void Config::printValues(){
+void Config::printValues() const{
     for (const auto& entry : order) {
         if (entry.key == "comment") {
             continue;
@@ -432,7 +432,7 @@ bool Config::has(const std::string& key) const {
     return values.contains(key);
 }
 
-std::string Config::getStr(const std::string_view key) {
+std::string Config::getStr(const std::string_view key) const {
     std::string keyStr{key};
     auto it =values.find(keyStr);
     if (it != values.end()) {
@@ -440,7 +440,7 @@ std::string Config::getStr(const std::string_view key) {
     }
     return "";
 }
-int Config::getInt(const std::string_view key) {
+int Config::getInt(const std::string_view key) const {
     std::string keyStr{key};
     auto it = values.find(keyStr);
     if (it != values.end()) {
@@ -451,7 +451,7 @@ int Config::getInt(const std::string_view key) {
     }
     return 0;
 }
-bool Config::getBool(const std::string_view key){
+bool Config::getBool(const std::string_view key) const {
     std::string keyStr{key};
     auto it = values.find(keyStr);
     if (it != values.end()) {

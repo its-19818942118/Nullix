@@ -37,32 +37,33 @@ class Config {
             std::string trailing;
         };
 
-        static std::expected<Config, Config::errMsg> load();
+        auto static load() -> std::expected<Config, Config::errMsg>;
         static std::unordered_map<std::string , Config::valueType>& getValidOptionsMap();
 
-        static void hyprNotify(int icon, int timeoutMs,const std::string& color, const std::string& msg);
+        auto static hyprNotify(int icon, int timeoutMs,const std::string& color, const std::string& msg) -> void;
         void save();
 
-        std::string getStr(const std::string_view key) ;
-        int getInt(const std::string_view key) ;
-        bool getBool(const std::string_view key);
+        auto getStr(const std::string_view key) const -> std::string ;
+        auto getInt(const std::string_view key) const -> int ;
+        auto getBool(const std::string_view key) const -> bool;
 
-        void set(const std::string_view key, const std::string_view value);
-        void setInt(const std::string_view key, int value);
-        void setBool(const std::string_view key, bool value);
-        bool has(const std::string& key) const;
+        auto set(const std::string_view key, const std::string_view value) -> void;
+        auto setInt(const std::string_view key, int value) -> void;
+        auto setBool(const std::string_view key, bool value) -> void;
+        auto has(const std::string& key) const -> bool;
 
-        void printValues();
-
+        auto printValues() const -> void;
 
         private:
-        static std::expected<std::string, bool> getHOME();
-        static std::expected<std::filesystem::path, bool> getNullixConfigPath();
+
         static constexpr const char* baseConfigPath = "/.config/nullix/nullix.conf";
         static std::unordered_map<std::string, Config::valueType> validOptionsMap;
         std::unordered_map<std::string , std::string> values;
         std::vector<Line> order;
-        void changeOrder(std::string_view key ,std::string_view newValue );
-        bool needsQuotes(const std::string_view value) const;
+        
+        auto changeOrder(std::string_view key ,std::string_view newValue ) -> void;
+        auto needsQuotes(const std::string_view value) const -> bool;
+        auto static  getHOME() -> std::expected<std::string, bool>;
+        auto static getNullixConfigPath() -> std::expected<std::filesystem::path, bool>;
 
 };
