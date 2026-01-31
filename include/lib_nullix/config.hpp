@@ -8,6 +8,10 @@
 #include <vector>
 #include <filesystem>
 
+namespace nullix{
+
+
+
 class Config {
     public:
         enum class errType{
@@ -38,14 +42,15 @@ class Config {
         };
 
         auto static load() -> std::expected<Config, Config::errMsg>;
-        static std::unordered_map<std::string , Config::valueType>& getValidOptionsMap();
+        auto static getValidOptionsMap() ->  std::unordered_map<std::string , Config::valueType>&;
 
         auto static hyprNotify(int icon, int timeoutMs,const std::string& color, const std::string& msg) -> void;
-        void save();
+        auto save() -> void;
 
         auto getStr(const std::string_view key) const -> std::string ;
         auto getInt(const std::string_view key) const -> int ;
         auto getBool(const std::string_view key) const -> bool;
+        auto getOrder() const -> std::vector<Line>;
 
         auto set(const std::string_view key, const std::string_view value) -> void;
         auto setInt(const std::string_view key, int value) -> void;
@@ -60,10 +65,11 @@ class Config {
         static std::unordered_map<std::string, Config::valueType> validOptionsMap;
         std::unordered_map<std::string , std::string> values;
         std::vector<Line> order;
-        
+
         auto changeOrder(std::string_view key ,std::string_view newValue ) -> void;
         auto needsQuotes(const std::string_view value) const -> bool;
         auto static  getHOME() -> std::expected<std::string, bool>;
         auto static getNullixConfigPath() -> std::expected<std::filesystem::path, bool>;
 
 };
+}

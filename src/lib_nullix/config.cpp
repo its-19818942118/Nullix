@@ -15,9 +15,11 @@
 #include <unordered_map>
 #include <unistd.h>
 #include <sys/types.h>
+#include <vector>
 
 using namespace std::string_literals;
 using namespace std::string_view_literals;
+using namespace nullix;
 
 auto Config::getValidOptionsMap() -> std::unordered_map<std::string, Config::valueType>& {
     DIAGNOSTICS_PUSH
@@ -466,4 +468,8 @@ auto Config::getBool(const std::string_view key) const -> bool {
     }
 
     return false;
+}
+
+auto Config::getOrder() const -> std::vector<Line>{
+    return this->order;
 }

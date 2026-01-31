@@ -40,6 +40,7 @@ target_compile_options ( main PRIVATE
 
 target_sources ( main PRIVATE
     src/lib_nullix/config.cpp
+    src/lib_nullix/wallpaperManager.cpp
     # src/scripts/wallselect.cpp
     src/main.cpp
 )
