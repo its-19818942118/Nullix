@@ -19,7 +19,7 @@
 using namespace std::string_literals;
 using namespace std::string_view_literals;
 
-std::unordered_map<std::string, Config::valueType>& Config::getValidOptionsMap() {
+auto Config::getValidOptionsMap() -> std::unordered_map<std::string, Config::valueType>& {
     DIAGNOSTICS_PUSH
     DIAGNOSTICS_WARNING("-Wexit-time-destructors")
     static std::unordered_map<std::string, Config::valueType> OptionsSet{
@@ -33,12 +33,12 @@ std::unordered_map<std::string, Config::valueType>& Config::getValidOptionsMap()
     return OptionsSet;
 }
 
-void Config::hyprNotify(
+auto Config::hyprNotify(
     int icon,
     int timeoutMs,
     const std::string& color,
     const std::string& msg
-) {
+) -> void {
     pid_t pid = fork();
 
     if (pid == 0) {
@@ -63,7 +63,7 @@ void Config::hyprNotify(
 
 }
 
-std::expected<std::string, bool> Config::getHOME(){
+auto Config::getHOME() -> std::expected<std::string, bool>{
     const char* HOME = std::getenv("HOME");
     if (!HOME) {
         return std::unexpected(bool{false});
@@ -72,14 +72,15 @@ std::expected<std::string, bool> Config::getHOME(){
     return std::string(HOME);
 }
 
-std::expected<std::filesystem::path, bool> Config::getNullixConfigPath(){
+auto Config::getNullixConfigPath() -> std::expected<std::filesystem::path, bool>{
     auto homeResult = Config::getHOME();
     if (!homeResult.has_value()) {
         return std::unexpected(bool{false});
     }
     return std::filesystem::path(std::string(*homeResult + Config::baseConfigPath));
 }
-std::expected<Config, Config::errMsg> Config::load(){
+
+auto Config::load() -> std::expected<Config, Config::errMsg>{
     Config cfg;
 
     auto pathResult = getNullixConfigPath();
@@ -329,7 +330,7 @@ std::expected<Config, Config::errMsg> Config::load(){
 }
 
 
-void Config::printValues() const{
+auto Config::printValues() const -> void{
     for (const auto& entry : order) {
         if (entry.key == "comment") {
             continue;
@@ -338,14 +339,14 @@ void Config::printValues() const{
     }
 }
 
-void Config::changeOrder(const std::string_view key ,const std::string_view newValue){
+auto Config::changeOrder(const std::string_view key ,const std::string_view newValue) -> void{
     for (auto & i : this->order) {
         if (i.key == key) {
             i.value = newValue;
         }
     }
 }
-void Config::save() {
+auto Config::save() -> void{
 
     auto pathResult = getNullixConfigPath();
 
@@ -372,7 +373,7 @@ void Config::save() {
     }
 }
 
-bool Config::needsQuotes(const std::string_view value) const {
+auto Config::needsQuotes(const std::string_view value) const -> bool {
     if (value.empty()) return true;
 
     // Numbers, booleans → NO quotes
@@ -385,7 +386,7 @@ bool Config::needsQuotes(const std::string_view value) const {
     return true;  // Default: quote strings
 }
 
-void Config::set(std::string_view key, std::string_view value) {
+auto Config::set(std::string_view key, std::string_view value) -> void{
     std::string keyStr{key};
     std::string valueStr{value};
 
@@ -420,19 +421,19 @@ void Config::set(std::string_view key, std::string_view value) {
     }
 }
 
-void Config::setInt(const std::string_view key, int value) {
+auto Config::setInt(const std::string_view key, int value) -> void {
     set(key, std::to_string(value));
 }
 
-void Config::setBool(const std::string_view key, bool value) {
+auto Config::setBool(const std::string_view key, bool value) -> void {
     set(key, value ? "true" : "false");
 }
 
-bool Config::has(const std::string& key) const {
+auto Config::has(const std::string& key) const -> bool {
     return values.contains(key);
 }
 
-std::string Config::getStr(const std::string_view key) const {
+auto Config::getStr(const std::string_view key) const -> std::string {
     std::string keyStr{key};
     auto it =values.find(keyStr);
     if (it != values.end()) {
@@ -440,7 +441,7 @@ std::string Config::getStr(const std::string_view key) const {
     }
     return "";
 }
-int Config::getInt(const std::string_view key) const {
+auto Config::getInt(const std::string_view key) const -> int {
     std::string keyStr{key};
     auto it = values.find(keyStr);
     if (it != values.end()) {
@@ -451,7 +452,7 @@ int Config::getInt(const std::string_view key) const {
     }
     return 0;
 }
-bool Config::getBool(const std::string_view key) const {
+auto Config::getBool(const std::string_view key) const -> bool {
     std::string keyStr{key};
     auto it = values.find(keyStr);
     if (it != values.end()) {
