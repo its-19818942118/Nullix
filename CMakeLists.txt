@@ -8,7 +8,7 @@ project ( HyprScripts++
 
 add_executable ( main )
 
-find_package(fmt)
+# find_package(fmt)
 
 target_compile_features ( main PRIVATE
     cxx_std_26
@@ -18,24 +18,35 @@ target_compile_features ( main PRIVATE
 #     -stdlib=libc++
 # )
 
-target_compile_options ( main PRIVATE
+target_compile_options( main PRIVATE
+    
+    -Werror
+    
     $<$<CXX_COMPILER_ID:Clang>:
+        -Wall
+        -Wextra
+        -Wpedantic
         -Weverything
         -Wno-c++98-compat
         -Wno-c++98-compat-pedantic
-        -fsafe-buffer-usage-suggestions
+        
         -Wno-error=padded
         -Wno-error=switch-default
-        # -static
+        
+        -fsafe-buffer-usage-suggestions
     >
 
     $<$<CXX_COMPILER_ID:GCC,GNU>:
         -Wall
+        -Wextra
+        -Wpedantic
     >
+    
+)
 
-    $<$<CXX_COMPILER_ID:Clang,GCC,GNU>:
-        -Werror
-    >
+target_link_options ( main PRIVATE
+    -static
+    -s
 )
 
 target_sources ( main PRIVATE
@@ -48,4 +59,5 @@ target_sources ( main PRIVATE
 target_include_directories ( main PUBLIC
     include/
 )
-target_link_libraries( main PRIVATE fmt::fmt)
+
+# target_link_libraries( main PRIVATE fmt::fmt-header-only)
