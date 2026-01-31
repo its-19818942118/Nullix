@@ -1,25 +1,21 @@
-#include "lib/config.hpp"
+#include "lib_nullix/config.hpp"
+#include "lib_nullix/wallpaperManager.hpp"
 #include <expected>
 #include <fmt/base.h>
 #include <fmt/format.h>
-
+using namespace std::string_view_literals;
 int main() {
-    auto cfgResult = Config::load();
+    auto cfgResult = nullix::Config::load();
 
     if (!cfgResult.has_value()) {
         fmt::println("Config error: {}", cfgResult.error().msg);
         return 1;
     }
 
-    Config& cfg = *cfgResult;
-    cfg.printValues();
-    fmt::println( "\n");
+    nullix::Config& cfg = *cfgResult;
 
-    cfg.set("theme.active", "nord");
-    cfg.set("brightness.step", "100");
-
-    cfg.save();
-
+    nullix::WallpaperManager wm(cfg);
+    fmt::println("{}", wm.getWallpaperSettings());
 
     return 0;
 }

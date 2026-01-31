@@ -3,9 +3,10 @@
 #include <filesystem>
 #include <format>
 #include <print>
-#include "../lib/config.hpp"
+#include "lib_nullix/config.hpp"
 
 namespace fs = std::filesystem;
+using namespace nullix;
 int main(){
 
     // nullix wallpaper options

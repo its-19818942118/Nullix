@@ -1,4 +1,4 @@
-cmake_minimum_required ( VERSION 4.2.1 )
+cmake_minimum_required ( VERSION 3.22 )
 
 project ( HyprScripts++
     VERSION 0.1.0
@@ -24,7 +24,7 @@ target_compile_options ( main PRIVATE
         -Wno-c++98-compat
         -Wno-c++98-compat-pedantic
         -fsafe-buffer-usage-suggestions
-        -Wno-error=-padded
+        -Wno-error=padded
         -Wno-error=switch-default
         # -static
     >
@@ -39,13 +39,8 @@ target_compile_options ( main PRIVATE
 )
 
 target_sources ( main PRIVATE
-    # src/main.cpp
-    # src/argParser.cpp
-    # src/scripts/main.cpp
-    # src/shell.cpp
-    # src/configParser.cpp
-    src/lib_nullix//config.cpp
-    # src/main.cpp
+    src/lib_nullix/config.cpp
+    src/lib_nullix/wallpaperManager.cpp
     # src/scripts/wallselect.cpp
     src/main.cpp
 )
