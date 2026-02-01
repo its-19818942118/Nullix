@@ -16,6 +16,6 @@ namespace nullix {
             auto setWallpaperBackend(std::string_view value) -> void;
 
         private:
-            Config cfg;
+            Config& cfg;
     };
 }

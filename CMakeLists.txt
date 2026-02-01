@@ -19,9 +19,9 @@ target_compile_features ( main PRIVATE
 # )
 
 target_compile_options( main PRIVATE
-    
+
     -Werror
-    
+
     $<$<CXX_COMPILER_ID:Clang>:
         -Wall
         -Wextra
@@ -29,10 +29,11 @@ target_compile_options( main PRIVATE
         -Weverything
         -Wno-c++98-compat
         -Wno-c++98-compat-pedantic
-        
+
         -Wno-error=padded
         -Wno-error=switch-default
-        
+        -Wno-error=unsafe-buffer-usage
+
         -fsafe-buffer-usage-suggestions
     >
 
@@ -41,7 +42,7 @@ target_compile_options( main PRIVATE
         -Wextra
         -Wpedantic
     >
-    
+
 )
 
 target_link_options ( main PRIVATE
@@ -52,6 +53,7 @@ target_link_options ( main PRIVATE
 target_sources ( main PRIVATE
     src/lib_nullix/config.cpp
     src/lib_nullix/wallpaperManager.cpp
+    src/lib_nullix/volumeManager.cpp
     # src/scripts/wallselect.cpp
     src/main.cpp
 )

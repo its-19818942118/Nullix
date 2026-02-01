@@ -2,10 +2,12 @@
 #include "lib_nullix/wallpaperManager.hpp"
 #include <expected>
 #include <print>
-// #include <fmt/base.h>
-// #include <fmt/format.h>
+
+
 using namespace std::string_view_literals;
-int main() {
+int main([[maybe_unused]]int argc , [[maybe_unused]]char** argv) {
+
+
     auto cfgResult = nullix::Config::load();
 
     if (!cfgResult.has_value()) {
@@ -13,11 +15,8 @@ int main() {
         return 1;
     }
 
-    nullix::Config& cfg = *cfgResult;
-
-    nullix::WallpaperManager wm(cfg);
-    std::println("{}", wm.getWallpaperSettings());
-
+    [[maybe_unused]] nullix::Config& cfg = *cfgResult;
+    
     return 0;
 }
 

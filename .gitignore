@@ -4,3 +4,5 @@
 **/.cache/**
 
 compile_commands.json
+include/lib_nullix/volumeManager.hpp
+src/lib_nullix/volumeManager.cpp

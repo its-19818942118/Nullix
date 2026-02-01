@@ -4,6 +4,7 @@
 #include <cstring>
 #include <expected>
 #include <string>
+#include <string_view>
 #include <unordered_map>
 #include <vector>
 #include <filesystem>
@@ -47,12 +48,13 @@ class Config {
         auto static hyprNotify(int icon, int timeoutMs,const std::string& color, const std::string& msg) -> void;
         auto save() -> void;
 
+
         auto getStr(const std::string_view key) const -> std::string ;
         auto getInt(const std::string_view key) const -> int ;
         auto getBool(const std::string_view key) const -> bool;
         auto getOrder() const -> std::vector<Line>;
 
-        auto set(const std::string_view key, const std::string_view value) -> void;
+        auto setOption(const std::string_view key, const std::string_view value) -> void;
         auto setInt(const std::string_view key, int value) -> void;
         auto setBool(const std::string_view key, bool value) -> void;
         auto has(const std::string& key) const -> bool;

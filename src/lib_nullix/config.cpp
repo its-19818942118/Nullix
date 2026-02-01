@@ -28,8 +28,9 @@ auto Config::getValidOptionsMap() -> std::unordered_map<std::string, Config::val
         {"wallpaper.directory", Config::valueType::String},
         {"wallpaper.backend",   Config::valueType::String},
         {"volume.step",         Config::valueType::Int},
+        {"volume.maxvolume",    Config::valueType::Int},
         {"brightness.step",     Config::valueType::Int},
-        {"theme.active",        Config::valueType::String}
+        {"theme.active",        Config::valueType::String},
     };
     DIAGNOSTICS_POP
     return OptionsSet;
@@ -337,6 +338,9 @@ auto Config::printValues() const -> void{
         if (entry.key == "comment") {
             continue;
         }
+        if (entry.key.empty()) {
+            continue;
+        }
         std::cout << entry.key << " = " << entry.value << std::endl;
     }
 }
@@ -345,6 +349,7 @@ auto Config::changeOrder(const std::string_view key ,const std::string_view newV
     for (auto & i : this->order) {
         if (i.key == key) {
             i.value = newValue;
+            i.raw = std::format("[{}] = {}{}", key, newValue, i.trailing);
         }
     }
 }
@@ -353,13 +358,17 @@ auto Config::save() -> void{
     auto pathResult = getNullixConfigPath();
 
     if (!pathResult.has_value()) {
+        hyprNotify(3, 4000, "0", "file not open");
         return;
     }
     std::string filePath = *pathResult ;
     std::ofstream file(filePath);
 
+    if (!file.is_open()) {
+        hyprNotify(3, 4000, "0", "file not open");
+    }
     for (const auto& l : this->order) {
-        if(l.key.empty() ){
+        if(l.key.empty() && l.value.empty()){
             file << "\n";
             continue;
         }
@@ -373,6 +382,11 @@ auto Config::save() -> void{
             file << std::format("[{}] = {}{}\n", l.key, l.value , l.trailing);  // NO quotes!
         }
     }
+
+    if (!file.good()) {
+        hyprNotify(3, 4000, "0", std::format("Failed to write config file: {}", filePath));
+    }
+
 }
 
 auto Config::needsQuotes(const std::string_view value) const -> bool {
@@ -388,8 +402,8 @@ auto Config::needsQuotes(const std::string_view value) const -> bool {
     return true;  // Default: quote strings
 }
 
-auto Config::set(std::string_view key, std::string_view value) -> void{
-    std::string keyStr{key};
+auto Config::setOption(std::string_view option, std::string_view value) -> void{
+    std::string optionStr{option};
     std::string valueStr{value};
 
     auto validMap = getValidOptionsMap();
@@ -399,53 +413,53 @@ auto Config::set(std::string_view key, std::string_view value) -> void{
         hyprNotify(3, 2000, "0",errorMsg);
         return;
     }
-    if (!validMap.contains(keyStr)) {
-        std::string errorMsg = std::format("Invalid key: {}", key);
+    if (!validMap.contains(optionStr)) {
+        std::string errorMsg = std::format("Invalid option: {}", option);
         hyprNotify(3, 2000, "0",errorMsg);
         return;
     }
 
 
-    if (!values.contains(keyStr)) {
+    if (!values.contains(optionStr)) {
 
-        values[keyStr] = valueStr;
+        values[optionStr] = valueStr;
         order.emplace_back(Line{
-            .raw = std::format("[{}] = {}", key , value),
-            .key = keyStr,
+            .raw = std::format("[{}] = {}", option , value),
+            .key = optionStr,
             .value = valueStr,
             .trailing = ";",
         });
 
     }
     else {
-        values[keyStr]  = valueStr;
-        changeOrder(key ,value);
+        values[optionStr]  = valueStr;
+        changeOrder(option ,value);
     }
 }
 
-auto Config::setInt(const std::string_view key, int value) -> void {
-    set(key, std::to_string(value));
+auto Config::setInt(const std::string_view option, int value) -> void {
+    setOption(option, std::to_string(value));
 }
 
-auto Config::setBool(const std::string_view key, bool value) -> void {
-    set(key, value ? "true" : "false");
+auto Config::setBool(const std::string_view option, bool value) -> void {
+    setOption(option, value ? "true" : "false");
 }
 
-auto Config::has(const std::string& key) const -> bool {
-    return values.contains(key);
+auto Config::has(const std::string& option) const -> bool {
+    return values.contains(option);
 }
 
-auto Config::getStr(const std::string_view key) const -> std::string {
-    std::string keyStr{key};
-    auto it =values.find(keyStr);
+auto Config::getStr(const std::string_view option) const -> std::string {
+    std::string optionStr{option};
+    auto it =values.find(optionStr);
     if (it != values.end()) {
         return it->second;
     }
     return "";
 }
-auto Config::getInt(const std::string_view key) const -> int {
-    std::string keyStr{key};
-    auto it = values.find(keyStr);
+auto Config::getInt(const std::string_view option) const -> int {
+    std::string optionStr{option};
+    auto it = values.find(optionStr);
     if (it != values.end()) {
         try { return std::stoi(it->second); }
         catch (...) {
@@ -454,9 +468,9 @@ auto Config::getInt(const std::string_view key) const -> int {
     }
     return 0;
 }
-auto Config::getBool(const std::string_view key) const -> bool {
-    std::string keyStr{key};
-    auto it = values.find(keyStr);
+auto Config::getBool(const std::string_view option) const -> bool {
+    std::string optionStr{option};
+    auto it = values.find(optionStr);
     if (it != values.end()) {
         if (it->second == "true") {
             return true;
