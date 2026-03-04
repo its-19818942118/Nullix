@@ -23,11 +23,11 @@ int main() {
 
     // Create directory tree
     fs::create_directories(base / "bin");
-    fs::create_directories(base / "state");
+    // fs::create_directories(base / "state");
     fs::create_directories(base / "templates");
     fs::create_directories(base / "generated");
-    fs::create_directories(base / "wallpapers");
-    fs::create_directories(base / "apply");
+    // fs::create_directories(base / "wallpapers");
+    fs::create_directories(base / "themes");
 
     // Create default config
     std::ofstream config(base / "nullix.conf");
@@ -38,7 +38,7 @@ int main() {
         "wallpaper.backend = swww\n"
         "\n"
         "volume.step = 5\n"
-        "brightness.step = 10\n"
+        "brightness.step = 5\n"
         "\n";
     config.close();
 

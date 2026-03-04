@@ -55,7 +55,8 @@ target_sources ( main PRIVATE
     src/lib_nullix/wallpaperManager.cpp
     src/lib_nullix/volumeManager.cpp
     # src/scripts/wallselect.cpp
-    src/main.cpp
+    # src/main.cpp
+    # src/shell.cpp
 )
 
 target_include_directories ( main PUBLIC
