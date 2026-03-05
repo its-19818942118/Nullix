@@ -1,4 +1,4 @@
-#include "lib_nullix/config.hpp"
+#include "config/config.hpp"
 #include <iostream>
 #include <string>
 #include <unordered_map>
@@ -20,6 +20,6 @@ auto main ([[maybe_unused]]int argc ,[[maybe_unused]] char** argv) -> int{
         }
     }
 
-    
+
 
 }
